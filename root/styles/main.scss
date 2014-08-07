@@ -1,5 +1,5 @@
-$green: #329865;
 @import "_normalize.scss";
+$green: #329865;
 body {
   background-image: url("../images/wood_pattern.png");
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -15,25 +15,33 @@ header {
   top: 0em;
   width: 100%;
 }
-nav{
-padding: 0 10%;
-ul {
-  float:right;
-  margin-bottom: 0;
-  li {
-    color: white;
-    float: left;
-    a{
-      font-size: 1.5em;
-      position: relative;
-      top: 0.5em;
-    }
-    list-style-type: none;
-    padding: 1.5em;
-    border-right: 2px solid white;
-    &:last-of-type {
-      border: none;
+nav {
+  padding: 0em 10%;
+  ul {
+    float: right;
+    margin-bottom: 0em;
+    li {
+      transition: all 0.5s;
+      color: white;
+      background: linear-gradient(to top, white 50%, $green 50%);
+      background-size: 200%;
+      background-position-y: 0%;
+      float: left;
+      border-right: 2px solid white;
+      list-style-type: none;
+      padding: 1.5em;
+      a {
+        font-size: 1.5em;
+        position: relative;
+        top: 0.5em;
+      }
+      &:last-of-type {
+        border: none;
+      }
+      &:hover {
+        background-position-y: 100%;
+        color: $green;
+      }
     }
   }
-}
 }
