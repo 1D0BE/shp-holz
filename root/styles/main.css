@@ -440,9 +440,15 @@ nav ul li {
   padding: 1.5em;
 }
 nav ul li a {
+  text-decoration: inherit;
+  color: inherit;
   font-size: 1.5em;
   position: relative;
   top: 0.5em;
+}
+nav ul li.selected {
+  background-position-y: 75%;
+  color: #329865;
 }
 nav ul li:last-of-type {
   border: none;
