@@ -3,16 +3,34 @@ header {
   box-shadow: 0px 0px 7px black;
   padding-top: 1.5em;
   position: absolute;
-  top: 0em;
+  top: 0;
   width: 100%;
 }
+
 nav {
-  padding: 0em 10%;
+  @include bp-lower('medium') {
+    padding: 0;
+    float: left;
+    width: 100%;
+  }
+  @include bp-up('medium') {
+    padding: 0 10%;
+    float: right;
+  }
+  @include bp-lower('large') {
+    font-size: 62%;
+  }
+  @include bp-up('large') {
+    font-size: 100%;
+  }
   ul {
     float: right;
     margin-bottom: 0em;
     li {
-      transition: all 0.5s;
+      @include bp('small') {
+        width: 100%;
+      }
+      transition: background 0.5s, color 0.5s;
       color: white;
       background: linear-gradient(to top, white 50%, $green 50%);
       background-size: 200%;

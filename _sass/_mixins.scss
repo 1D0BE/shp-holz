@@ -1,6 +1,22 @@
 //BREAKPOINT
+@mixin bp-up($breakpoint) {
+  $value: map-get($breakpoints, #{$breakpoint}-min);
+   @media (min-width: $value) {
+     @content;
+   }
+}
+
+@mixin bp-lower($breakpoint) {
+  $value: map-get($breakpoints, #{$breakpoint}-min);
+   @media (max-width: $value) {
+     @content;
+   }
+}
+
 @mixin bp($breakpoint) {
-   @media (min-width: $#{$breakpoint}-min) {
+  $value-min: map-get($breakpoints, #{$breakpoint}-min);
+  $value-max: map-get($breakpoints, #{$breakpoint}-max);
+   @media (min-width: $value-min) and (max-width: $value-max) {
      @content;
    }
 }

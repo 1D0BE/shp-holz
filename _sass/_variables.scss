@@ -1,13 +1,15 @@
 //BREAKPOINTS
-$small-min:   0;
-$small-max:   40em;       /* 640px */
-$medium-min:  40.063em;   /* 641px */
-$medium-max:  64em;       /* 1024px */
-$large-min:   64.063em;   /* 1025px */
-$large-max:   90em;       /* 1440px */
-$xlarge-min:  90.063em;   /* 1441px */
-$xlarge-max:  120em;      /* 1920px */
-$xxlarge-min: 120.063em; /* 1921px */
+$breakpoints: (
+  'small-min'  : 0,
+  'small-max'  : 40em,
+  'medium-min' : 40.063em,
+  'medium-max' : 67em,
+  'large-min'  : 67.063em,
+  'large-max'  : 90em,
+  'xlarge-min' : 90.063em,
+  'xlarge-max' : 120em,
+  'xxlarge-min': 120.063em
+);
 
 //COLORS
 $green: #329865;

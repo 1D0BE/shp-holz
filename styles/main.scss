@@ -1,8 +1,8 @@
 //PARTIALS
-@import "_sass/_normalize.scss";
-@import "_sass/_mixins.scss";
-@import "_sass/_variables.scss";
+@import "../_sass/_normalize.scss";
+@import "../_sass/_mixins.scss";
+@import "../_sass/_variables.scss";
 
 //REGIONS
-@import "_sass/_body.scss";
-@import "_sass/_header.scss";
+@import "../_sass/regions/_body.scss";
+@import "../_sass/regions/_header.scss";
