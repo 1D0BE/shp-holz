@@ -1,6 +1,7 @@
+//PARTIALS
 @import "_sass/_normalize.scss";
-
-$green: #329865;
+@import "_sass/_mixins.scss";
+@import "_sass/_variables.scss";
 
 //REGIONS
 @import "_sass/_body.scss";
