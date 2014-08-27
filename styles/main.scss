@@ -1,8 +1,12 @@
-//PARTIALS
-@import "../_sass/_normalize.scss";
-@import "../_sass/_mixins.scss";
-@import "../_sass/_variables.scss"; //breakpoints, colors
+// Mixins and Variables
+@import "partials/base";
 
-//REGIONS
-@import "../_sass/regions/_body.scss";
-@import "../_sass/regions/_header.scss";
+// General Partials
+@import "vendor/normalize";
+
+// Modules
+// currently none
+
+// Regions
+@import "partials/regions/header";
+@import "partials/regions/body";

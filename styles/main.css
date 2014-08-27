@@ -420,16 +420,6 @@ ul {
   -webkit-padding-start: 0;
 }
 
-body {
-  background-image: url("../images/wood_pattern.png");
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-@media all and (min-device-pixel-ratio: 2) {
-  body {
-    background-image: url("../images/wood_pattern_@2x.png");
-  }
-}
-
 header {
   background-color: #329865;
   -webkit-box-shadow: 0px 0px 7px black;
@@ -510,4 +500,14 @@ nav ul li:last-of-type {
 nav ul li:hover {
   background-position-y: 100%;
   color: #329865;
+}
+
+body {
+  background-image: url("../images/wood_pattern.png");
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+@media all and (min-device-pixel-ratio: 2) {
+  body {
+    background-image: url("../images/wood_pattern_@2x.png");
+  }
 }
