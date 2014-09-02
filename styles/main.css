@@ -188,6 +188,7 @@ figure {
  */
 hr {
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -304,6 +305,8 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -398,12 +401,16 @@ th {
  * use border-box as default
  */
 html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -415,6 +422,7 @@ ul {
 
 header {
   background-color: #329865;
+  -webkit-box-shadow: 0px 0px 7px black;
   box-shadow: 0px 0px 7px black;
   position: absolute;
   z-index: -1;
@@ -489,9 +497,13 @@ nav ul {
   }
 }
 nav ul li {
+  -webkit-transition: background 0.5s, color 0.5s;
   transition: background 0.5s, color 0.5s;
   color: white;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, white), color-stop(50%, #329865));
+  background: -webkit-linear-gradient(bottom, white 50%, #329865 50%);
   background: linear-gradient(to top, white 50%, #329865 50%);
+  -webkit-background-size: 200%;
   background-size: 200%;
   background-position-y: 0%;
   float: left;
