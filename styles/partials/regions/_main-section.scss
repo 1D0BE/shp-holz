@@ -2,7 +2,7 @@
   float:left;
   width:100%;
 
-@include bp-lower("medium") {
+@include bp-lower('medium') {
   & article > *:not(img){
     margin: 0 0.5em;
     margin: 0 0.5rem;
@@ -21,4 +21,5 @@
     box-shadow: 0px 0px 7px black;
     }
   }
+  margin-bottom: 2rem;
 }
