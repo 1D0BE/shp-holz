@@ -417,13 +417,13 @@ header {
   background-color: #329865;
   box-shadow: 0px 0px 7px black;
   position: absolute;
+  z-index: -1;
   width: 100%;
 }
 @media (max-width: 40.063em) {
   header {
-    position: relative;
-    bottom: 2em;
-    z-index: -1;
+    padding-top: 0.5em;
+    top: 2em;
   }
 }
 @media (min-width: 40.063em) {
@@ -433,12 +433,14 @@ header {
   }
 }
 
+.logo {
+  z-index: 1;
+}
 @media (max-width: 40.063em) {
   .logo {
     display: block;
     margin: .5em auto;
     width: 4em;
-    z-index: 1;
   }
 }
 
@@ -448,6 +450,7 @@ header {
     float: left;
     width: 100%;
     font-size: 62%;
+    font-size: 3vw;
   }
 }
 @media (min-width: 40.063em) {
@@ -470,6 +473,11 @@ header {
 nav ul {
   float: right;
   margin-bottom: 0em;
+}
+@media (min-width: 0) and (max-width: 40em) {
+  nav ul {
+    width: 100%;
+  }
 }
 nav ul li {
   transition: background 0.5s, color 0.5s;
