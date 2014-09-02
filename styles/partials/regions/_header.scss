@@ -4,9 +4,10 @@ header {
   position: absolute;
   z-index:-1;
   @include bp-lower('medium') {
-    //position:relative;
+    position:relative;
     padding-top: 0.5em;
-    top: 2em;
+    bottom: 2em;
+    bottom: 8vw;
   }
   @include bp-up('medium') {
     padding-top: 1.5em;
@@ -16,14 +17,25 @@ header {
   width: 100%;
 }
 
+%li-hover {
+  background-position-y: 100%;
+  color: $green;
+}
+
 .logo{
   z-index:1;
   @include bp-lower('medium') {
     display: block;
     margin: .5em auto;
     width: 4em;
+    margin: 1vw auto;
+    width: 20vw;
   }
 }
+.logo-link:hover + header nav ul .home {
+  @extend %li-hover;
+}
+
 
 nav {
   @include bp-lower('medium') {
@@ -62,14 +74,10 @@ nav {
       float: left;
       border-right: 2px solid white;
       list-style-type: none;
-      padding: 1.5em;
-      a {
-        text-decoration : inherit;
-        color: inherit;
-        font-size: 1.5em;
-        position: relative;
-        top: 0.5em;
-      }
+      padding-left: 1.5em;
+      padding-top: 1.5em;
+      padding-bottom:.75em;
+      font-size: 1.5em;
       &.selected{
         background-position-y: 75%;
         color: $green;
@@ -78,8 +86,7 @@ nav {
         border: none;
       }
       &:hover{
-        background-position-y: 100%;
-        color: $green;
+        @extend %li-hover;
       }
     }
   }
