@@ -27,10 +27,10 @@ header {
   z-index:1;
   @include bp-lower('medium') {
     display: block;
-    margin: .5em auto;
     width: 4em;
-    margin: 1vw auto;
     width: 20vw;
+    margin: .5em auto;
+    margin: 1vw auto;
   }
 }
 .logo-link:hover + header nav ul .home {
