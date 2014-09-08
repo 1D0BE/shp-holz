@@ -100,23 +100,21 @@ nav {
       background-position-y: 0%;
       float: left;
       list-style-type: none;
-      font-size: 1.5em; //we totally should get rid of this...
-      //had to recalculate rem values because em values were based on 24px font-size
-      //calcualtion: [em size] * 1,5 = [rem size]
+      font-size: 1.5em;
       @include bp('small') {
         width: 100%;
-        @include rem('padding', 2.25rem); //same as 1.5em
-        @include rem('padding-bottom', 1.125rem); //same as .75em
+        @include rem('padding', 1.5rem);
+        @include rem('padding-bottom', .75rem);
       }
       @include bp-up('medium') {
-        @include rem('padding', .75rem); //same as .5em
-        @include rem('border-right-width', .15rem); //same as .1em
+        @include rem('padding', .5rem);
+        @include rem('border-right-width', .1rem);
         border-right-style: solid;
         border-right-color: white;
       }
       @include bp-up('xlarge') {
-        @include rem('padding', 1.5rem 1.8rem); //same as 1em 1.2em
-        @include rem('padding-bottom', .75rem); //same as .5em
+        @include rem('padding', 1rem 1.2rem);
+        @include rem('padding-bottom', .5rem);
       }
 
       &.selected{
