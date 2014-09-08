@@ -1,3 +1,6 @@
+/*********************************************************\
+* http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/  *
+\*********************************************************/
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -422,8 +425,10 @@ ul {
 
 header {
   background-color: #329865;
-  -webkit-box-shadow: 0px 0px 7px black;
-  box-shadow: 0px 0px 7px black;
+  -webkit-box-shadow: 0 0 8px black;
+  box-shadow: 0 0 8px black;
+  -webkit-box-shadow: 0 0 0.5rem black;
+  box-shadow: 0 0 0.5rem black;
   overflow: initial;
   /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
   width: 100%;
@@ -432,8 +437,10 @@ header {
   header {
     position: relative;
     float: left;
-    padding-top: 0.5em;
-    bottom: 2em;
+    padding-top: 8px;
+    padding-top: 0.5rem;
+    bottom: 32px;
+    bottom: 2rem;
     bottom: 8vw;
     z-index: -1;
   }
@@ -441,7 +448,8 @@ header {
 @media (min-width: 40.063em) {
   header {
     position: fixed;
-    padding-top: 1.5em;
+    padding-top: 24px;
+    padding-top: 1.5rem;
     top: 0;
     z-index: 0;
   }
@@ -458,17 +466,21 @@ header {
 @media (max-width: 40.063em) {
   .logo {
     display: block;
-    width: 4em;
+    width: 64px;
+    width: 4rem;
     width: 20vw;
-    margin: .5em auto;
+    margin: 8px auto;
+    margin: 0.5rem auto;
     margin: 1vw auto;
   }
 }
 @media (min-width: 40.063em) {
   .logo {
     position: fixed;
-    top: 1.5em;
-    width: 6em;
+    top: 24px;
+    top: 1.5rem;
+    wdith: 96px;
+    wdith: 6rem;
     width: 10vw;
   }
 }
@@ -485,7 +497,8 @@ header {
 @media (min-width: 100.063em) {
   .logo {
     left: 15%;
-    width: 8em;
+    width: 128px;
+    width: 8rem;
     width: 10vw;
   }
 }
@@ -551,26 +564,33 @@ nav ul li {
   background-position-y: 0%;
   float: left;
   list-style-type: none;
-  padding-left: 1.5em;
-  padding-top: 1.5em;
-  padding-bottom: .75em;
   font-size: 1.5em;
 }
 @media (min-width: 0) and (max-width: 40em) {
   nav ul li {
     width: 100%;
+    padding: 24px;
+    padding: 1.5rem;
+    padding-bottom: 12px;
+    padding-bottom: 0.75rem;
   }
 }
 @media (min-width: 40.063em) {
   nav ul li {
-    padding: .5em;
-    border-right: 0.1em solid white;
+    padding: 8px;
+    padding: 0.5rem;
+    border-right-width: 1.6px;
+    border-right-width: 0.1rem;
+    border-right-style: solid;
+    border-right-color: white;
   }
 }
 @media (min-width: 100.063em) {
   nav ul li {
-    padding: 1em 1.2em;
-    padding-bottom: .5em;
+    padding: 16px 19.2px;
+    padding: 1rem 1.2rem;
+    padding-bottom: 8px;
+    padding-bottom: 0.5rem;
   }
 }
 nav ul li.selected {
@@ -603,7 +623,8 @@ body {
   position: absolute;
   color: gray;
   left: 62%;
-  top: 1.2em;
+  top: 19.2px;
+  top: 1.2rem;
   top: 7.9vw;
 }
 
@@ -615,17 +636,18 @@ a, a:visited {
 .main-section {
   float: left;
   width: 100%;
+  margin-bottom: 32px;
   margin-bottom: 2rem;
 }
 @media (max-width: 40.063em) {
   .main-section article > *:not(img) {
-    margin: 0 0.5em;
-    margin: 0 0.5rem;
     background-color: white;
-    padding: 0.5em;
-    padding: 0.5rem;
-    margin-top: -0.5em;
+    margin: 0 8px;
+    margin: 0 0.5rem;
+    margin-top: -8px;
     margin-top: -0.5rem;
+    padding: 8px;
+    padding: 0.5rem;
   }
   .main-section h1 {
     color: #329865;
@@ -633,8 +655,10 @@ a, a:visited {
   }
   .main-section img {
     width: 100%;
-    -webkit-box-shadow: 0px 0px 7px black;
-    box-shadow: 0px 0px 7px black;
+    -webkit-box-shadow: 0 0 8px black;
+    box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
+    box-shadow: 0 0 0.5rem black;
   }
 }
 
@@ -643,18 +667,23 @@ footer {
   color: white;
   text-align: center;
   float: left;
+  -webkit-box-shadow: 0 0 8px black;
+  box-shadow: 0 0 8px black;
+  -webkit-box-shadow: 0 0 0.5rem black;
+  box-shadow: 0 0 0.5rem black;
+  padding: 8px;
   padding: 0.5rem;
-  -webkit-box-shadow: 0px 0px 7px black;
-  box-shadow: 0px 0px 7px black;
 }
 @media (min-width: 40.063em) {
   footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    border-top-right-radius: 2em;
+    border-top-right-radius: 32px;
+    border-top-right-radius: 2rem;
   }
 }
 footer > * {
+  margin: 8px;
   margin: 0.5rem;
 }
