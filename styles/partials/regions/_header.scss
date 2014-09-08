@@ -1,18 +1,20 @@
 header {
   background-color: $green;
   box-shadow: 0px 0px 7px black;
-  position: absolute;
-  z-index:-1;
+
   @include bp-lower('medium') {
     position:relative;
     float: left;
     padding-top: 0.5em;
     bottom: 2em;
     bottom: 8vw;
+    z-index: -1;
   }
   @include bp-up('medium') {
+    position:fixed;
     padding-top: 1.5em;
     top: 0;
+    z-index: 0;
   }
   overflow: initial; /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
   width: 100%;
@@ -32,6 +34,23 @@ header {
     margin: .5em auto;
     margin: 1vw auto;
   }
+  @include bp-up('medium') {
+    position: fixed;
+    top: 1.5em;
+    width: 6em;
+    width: 10vw;
+  }
+  @include bp('medium') {
+    left: 10%;
+  }
+  @include bp('large') {
+    left: 12%;
+  }
+  @include bp-up('xlarge') {
+    left: 15%;
+    width: 8em;
+    width: 10vw;
+  }
 }
 .logo-link:hover + header nav ul .home {
   @extend %li-hover;
@@ -47,50 +66,70 @@ nav {
     font-size: 3vw;
   }
   @include bp-up('medium') {
-    padding: 0 10%;
     float: right;
   }
   @include bp('medium') {
+    padding: 0 10%;
     font-size: 62%;
     font-size: 1.5vw;
   }
+  @include bp('large') {
+    padding: 0 12%;
+  }
   @include bp-up('large') {
     font-size: 100%;
+    font-size: 1.2vw;
+  }
+  @include bp-up('xlarge') {
+    padding: 0 15%;
+    font-size: 110%;
+    font-size: 1vw;
   }
   ul {
+    padding:0;
     float: right;
     margin-bottom: 0em;
     @include bp('small') {
       width: 100%;
     }
-    a {
-      text-decoration:none;
-    }
     li {
-      @include bp('small') {
-        width: 100%;
-      }
       transition: background 0.5s, color 0.5s;
       color: white;
       background: linear-gradient(to top, white 50%, $green 50%);
       background-size: 200%;
       background-position-y: 0%;
       float: left;
-      border-right: 2px solid white;
       list-style-type: none;
       padding-left: 1.5em;
       padding-top: 1.5em;
-      padding-bottom:.75em;
+      padding-bottom: .75em;
       font-size: 1.5em;
+      @include bp('small') {
+        width: 100%;
+      }
+      @include bp-up('medium'){
+        padding: .5em;
+        border-right: 0.1em solid white;
+      }
+      @include bp-up('xlarge'){
+        padding: 1em 1.2em;
+        padding-bottom:.5em;
+      }
+
       &.selected{
         background-position-y: 75%;
         color: $green;
       }
       &:last-of-type {
-        border: none;
-      }
+        }
       &:hover{
         @extend %li-hover;
+      }
+    }
+    a {
+      text-decoration:none;
+      &:last-of-type > li {
+        border: none;
       }
     }
   }
