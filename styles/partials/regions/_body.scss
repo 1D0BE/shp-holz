@@ -5,7 +5,6 @@ body {
   @media all and (min-device-pixel-ratio:2) {
     background-image: url("../images/wood_pattern_@2x.png");
   }
-
 }
 
 .subtitle {
@@ -16,7 +15,7 @@ body {
   position: absolute;
   color:gray;
   left:62%;
-  top:1.2em;
+  @include rem('top', 1.2rem);
   top:7.9vw;
 }
 
