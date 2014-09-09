@@ -646,10 +646,16 @@ body {
     top: 6.5vw;
   }
 }
-@media (min-width: 67.063em) {
+@media (min-width: 67.063em) and (max-width: 100em) {
   .subtitle {
     top: 4vw;
     left: 23%;
+  }
+}
+@media (min-width: 100.063em) {
+  .subtitle {
+    top: 2.5vw;
+    left: 26%;
   }
 }
 

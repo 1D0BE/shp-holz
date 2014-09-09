@@ -28,9 +28,13 @@ body {
   @include bp('subtitle-sm') {
     top: 6.5vw;
   }
-  @include bp-up('large') {
+  @include bp('large') {
     top: 4vw;
-    left: 23%
+    left: 23%;
+  }
+  @include bp-up('xlarge') {
+    top: 2.5vw;
+    left: 26%;
   }
 }
 
