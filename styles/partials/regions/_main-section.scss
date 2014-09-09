@@ -1,8 +1,8 @@
 .main-section {
-  float: left;
   width: 100%;
   @include rem('margin-bottom', 2rem);
   @include bp-lower('medium') {
+    float: left;
     & article > *:not(img) {
       background-color: white;
       @include rem('margin', 0 0.5rem);
@@ -16,6 +16,33 @@
     img {
       width: 100%;
       @include shadow();
+    }
+  }
+  @include bp-up('medium') {
+    background-color: white;
+    position: relative;
+    z-index: -1;
+    @include rem('padding', 2rem);
+    @include rem('margin-top', 15rem);
+    & article > *:not(img) {
+      background-color: white;
+    }
+    h1 {
+      color: $green;
+    }
+    h1, p {
+      position: relative;
+      left: 55%;
+      width: 40%;
+    }
+    img {
+      @include rem('width', 60rem);
+      @include shadow();
+      position: absolute;
+      top: -5%;
+      right: 50%;
+      height: 110%;
+      width: auto;
     }
   }
 }
