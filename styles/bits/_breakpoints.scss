@@ -20,7 +20,7 @@ $breakpoints: (
 }
 
 @mixin bp-lower($breakpoint) {
-  $value: map-get($breakpoints, #{$breakpoint}-min);
+  $value: map-get($breakpoints, #{$breakpoint}-min) - 0.63em;
    @media (max-width: $value) {
      @content;
    }
