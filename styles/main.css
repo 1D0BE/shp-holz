@@ -638,7 +638,6 @@ body {
 @media (max-width: 40.063em) {
   .subtitle {
     position: absolute;
-    left: 62%;
     top: 19.2px;
     top: 1.2rem;
     top: 7.9vw;
@@ -647,7 +646,8 @@ body {
 @media (min-width: 40.063em) {
   .subtitle {
     position: fixed;
-    left: 19%;
+    top: 67.2px;
+    top: 4.2rem;
     top: 5.1vw;
   }
 }
@@ -659,13 +659,43 @@ body {
 @media (min-width: 67.063em) and (max-width: 100em) {
   .subtitle {
     top: 5vw;
-    left: 21%;
   }
 }
 @media (min-width: 100.063em) {
   .subtitle {
     top: 3.8vw;
+  }
+}
+
+@media (max-width: 40.063em) {
+  .left {
+    left: 62%;
+  }
+}
+@media (min-width: 40.063em) {
+  .left {
+    left: 19%;
+  }
+}
+@media (min-width: 67.063em) and (max-width: 100em) {
+  .left {
+    left: 21%;
+  }
+}
+@media (min-width: 100.063em) {
+  .left {
     left: 22%;
+  }
+}
+
+@media (max-width: 40.063em) {
+  .right {
+    right: 62%;
+  }
+}
+@media (min-width: 40.063em) {
+  .right {
+    right: 5%;
   }
 }
 

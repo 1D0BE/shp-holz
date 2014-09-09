@@ -21,14 +21,12 @@ body {
   }
   @include bp-lower('medium') {
     position: absolute;
-    left: 62%;
     @include rem('top', 1.2rem);
     top: 7.9vw;
   }
   @include bp-up('medium') {
     position: fixed;
-    left: 19%;
-    //@include rem('top', 4.2rem);
+    @include rem('top', 4.2rem);
     top: 5.1vw;
   }
   @include bp('subtitle-sm') {
@@ -36,12 +34,38 @@ body {
   }
   @include bp('large') {
     top: 5vw;
-    left: 21%;
   }
   @include bp-up('xlarge') {
     top: 3.8vw;
+  }
+}
+.left{
+  @include bp-lower('medium') {
+    left: 62%;
+  }
+  @include bp-up('medium') {
+    left: 19%;
+  }
+  @include bp('large') {
+    left: 21%;
+  }
+  @include bp-up('xlarge') {
     left: 22%;
   }
+}
+.right{
+@include bp-lower('medium') {
+  right: 62%;
+}
+@include bp-up('medium') {
+  right: 5%;
+}
+//@include bp('large') {
+//  left: 79%;
+//}
+//@include bp-up('xlarge') {
+//  left: 78%;
+//}
 }
 
 a,a:visited{
