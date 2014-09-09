@@ -502,7 +502,7 @@ header {
     left: 15%;
     width: 128px;
     width: 8rem;
-    width: 10vw;
+    width: 7vw;
   }
 }
 
@@ -619,11 +619,21 @@ body {
 }
 
 .subtitle {
-  font-size: 100%;
-  font-size: 3vw;
   font-weight: normal;
   font-style: italic;
   color: gray;
+}
+@media (max-width: 100.063em) {
+  .subtitle {
+    font-size: 100%;
+    font-size: 3vw;
+  }
+}
+@media (min-width: 100.063em) {
+  .subtitle {
+    font-size: 70%;
+    font-size: 2vw;
+  }
 }
 @media (max-width: 40.063em) {
   .subtitle {
@@ -654,8 +664,8 @@ body {
 }
 @media (min-width: 100.063em) {
   .subtitle {
-    top: 2.5vw;
-    left: 26%;
+    top: 2.6vw;
+    left: 22%;
   }
 }
 
