@@ -459,6 +459,9 @@ header {
   background-position-y: 100%;
   color: #329865;
 }
+.no-cssgradients .logo-link:hover + header nav ul .home, .logo-link:hover + header nav ul .no-cssgradients .home, .no-cssgradients nav ul li:hover, nav ul .no-cssgradients li:hover {
+  background-color: white;
+}
 
 .logo {
   z-index: 1;
@@ -620,12 +623,34 @@ body {
   font-size: 3vw;
   font-weight: normal;
   font-style: italic;
-  position: absolute;
   color: gray;
-  left: 62%;
-  top: 19.2px;
-  top: 1.2rem;
-  top: 7.9vw;
+}
+@media (max-width: 40.063em) {
+  .subtitle {
+    position: absolute;
+    left: 62%;
+    top: 19.2px;
+    top: 1.2rem;
+    top: 7.9vw;
+  }
+}
+@media (min-width: 40.063em) {
+  .subtitle {
+    position: fixed;
+    left: 20%;
+    top: 5.1vw;
+  }
+}
+@media (min-width: 40.063em) and (max-width: 53em) {
+  .subtitle {
+    top: 6.5vw;
+  }
+}
+@media (min-width: 67.063em) {
+  .subtitle {
+    top: 4vw;
+    left: 23%;
+  }
 }
 
 a, a:visited {

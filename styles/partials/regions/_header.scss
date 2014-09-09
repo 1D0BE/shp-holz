@@ -23,9 +23,12 @@ header {
 %li-hover {
   background-position-y: 100%;
   color: $green;
+  .no-cssgradients & {
+    background-color: white;
+  }
 }
 
-.logo{
+.logo {
   z-index:1;
   @include bp-lower('medium') {
     display: block;

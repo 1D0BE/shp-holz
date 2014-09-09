@@ -11,12 +11,27 @@ body {
   font-size: 100%;
   font-size: 3vw;
   font-weight: normal;
-  font-style:italic;
-  position: absolute;
-  color:gray;
-  left:62%;
-  @include rem('top', 1.2rem);
-  top:7.9vw;
+  font-style: italic;
+  color: gray;
+  @include bp-lower('medium') {
+    position: absolute;
+    left: 62%;
+    @include rem('top', 1.2rem);
+    top: 7.9vw;
+  }
+  @include bp-up('medium') {
+    position: fixed;
+    left: 20%;
+    //@include rem('top', 4.2rem);
+    top: 5.1vw;
+  }
+  @include bp('subtitle-sm') {
+    top: 6.5vw;
+  }
+  @include bp-up('large') {
+    top: 4vw;
+    left: 23%
+  }
 }
 
 a,a:visited{
