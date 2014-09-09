@@ -482,9 +482,9 @@ header {
     position: fixed;
     top: 24px;
     top: 1.5rem;
-    wdith: 96px;
-    wdith: 6rem;
-    width: 10vw;
+    width: 96px;
+    width: 6rem;
+    width: 9vw;
   }
 }
 @media (min-width: 40.063em) and (max-width: 67em) {
@@ -623,16 +623,16 @@ body {
   font-style: italic;
   color: gray;
 }
-@media (max-width: 100.063em) {
+@media (max-width: 67.063em) {
   .subtitle {
     font-size: 100%;
     font-size: 3vw;
   }
 }
-@media (min-width: 100.063em) {
+@media (min-width: 67.063em) {
   .subtitle {
-    font-size: 70%;
-    font-size: 2vw;
+    font-size: 50%;
+    font-size: 1.5vw;
   }
 }
 @media (max-width: 40.063em) {
@@ -647,7 +647,7 @@ body {
 @media (min-width: 40.063em) {
   .subtitle {
     position: fixed;
-    left: 20%;
+    left: 19%;
     top: 5.1vw;
   }
 }
@@ -658,13 +658,13 @@ body {
 }
 @media (min-width: 67.063em) and (max-width: 100em) {
   .subtitle {
-    top: 4vw;
-    left: 23%;
+    top: 5vw;
+    left: 21%;
   }
 }
 @media (min-width: 100.063em) {
   .subtitle {
-    top: 2.6vw;
+    top: 3.8vw;
     left: 22%;
   }
 }

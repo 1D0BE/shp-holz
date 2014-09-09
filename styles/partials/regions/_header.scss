@@ -40,8 +40,8 @@ header {
   @include bp-up('medium') {
     position: fixed;
     @include rem('top', 1.5rem);
-    @include rem('wdith', 6rem);
-    width: 10vw;
+    @include rem('width', 6rem);
+    width: 9vw;
   }
   @include bp('medium') {
     left: 10%;

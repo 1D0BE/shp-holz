@@ -11,13 +11,13 @@ body {
   font-weight: normal;
   font-style: italic;
   color: gray;
-  @include bp-lower('xlarge') {
+  @include bp-lower('large') {
     font-size: 100%;
     font-size: 3vw;
   }
-  @include bp-up('xlarge') {
-    font-size: 70%;
-    font-size: 2vw;
+  @include bp-up('large') {
+    font-size: 50%;
+    font-size: 1.5vw;
   }
   @include bp-lower('medium') {
     position: absolute;
@@ -27,7 +27,7 @@ body {
   }
   @include bp-up('medium') {
     position: fixed;
-    left: 20%;
+    left: 19%;
     //@include rem('top', 4.2rem);
     top: 5.1vw;
   }
@@ -35,11 +35,11 @@ body {
     top: 6.5vw;
   }
   @include bp('large') {
-    top: 4vw;
-    left: 23%;
+    top: 5vw;
+    left: 21%;
   }
   @include bp-up('xlarge') {
-    top: 2.6vw;
+    top: 3.8vw;
     left: 22%;
   }
 }
