@@ -706,8 +706,8 @@ a, a:visited {
 
 .main-section {
   width: 100%;
-  margin-bottom: 32px;
-  margin-bottom: 2rem;
+  margin-bottom: 128px;
+  margin-bottom: 8rem;
 }
 @media (max-width: 40.063em) {
   .main-section {
