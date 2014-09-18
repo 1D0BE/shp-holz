@@ -1,0 +1,26 @@
+aside{
+  position:fixed;
+  background-color:white;
+  right:0;
+  top:0;
+  z-index:-1;
+  height:100%;
+  width:15%;
+  text-align:center;
+  .container{
+    height:80%;
+    bottom:0;
+    position:inherit;
+    img{
+      width:80%;
+      text-align:center;
+
+    }
+  }
+}
+.imgText{
+  height:5%;
+  position:relative;
+  right:5%;
+  bottom:5%;
+}
