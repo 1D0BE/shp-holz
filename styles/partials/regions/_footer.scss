@@ -5,13 +5,27 @@ footer{
   float:left;
   @include shadow();
   @include rem('padding', 0.5rem);
+  @include bp-lower('medium') {
+    width: 100%;
+  }
   @include bp-up('medium') {
     position:fixed;
     bottom:0;
     left:0;
     @include rem('border-top-right-radius', 2rem);
   }
-  > *{
+  @include bp-lower('large') {
+    .footer-break {
+      @include rem('margin', 0.2rem);
+    }
+  }
+  @include bp-up('large') {
+    .footer-break {
+      display: none;
+    }
+  }
+  > * {
     @include rem('margin', 0.5rem);
+    white-space: nowrap;
   }
 }
