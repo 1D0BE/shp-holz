@@ -191,7 +191,6 @@ figure {
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -308,8 +307,6 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -404,16 +401,12 @@ th {
  * use border-box as default
  */
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -425,9 +418,7 @@ ul {
 
 header {
   background-color: #329865;
-  -webkit-box-shadow: 0 0 8px black;
   box-shadow: 0 0 8px black;
-  -webkit-box-shadow: 0 0 0.5rem black;
   box-shadow: 0 0 0.5rem black;
   overflow: initial;
   /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
@@ -455,11 +446,11 @@ header {
   }
 }
 
-.logo-link:hover + header nav ul .home, nav ul li:hover {
+.logo-link:hover + header nav ul .home, nav ul li:hover, nav ul li .selected:hover, nav ul a.selected:hover {
   background-position-y: 100%;
   color: #329865;
 }
-.no-cssgradients .logo-link:hover + header nav ul .home, .logo-link:hover + header nav ul .no-cssgradients .home, .no-cssgradients nav ul li:hover, nav ul .no-cssgradients li:hover {
+.no-cssgradients .logo-link:hover + header nav ul .home, .logo-link:hover + header nav ul .no-cssgradients .home, .no-cssgradients nav ul li:hover, nav ul .no-cssgradients li:hover, .no-cssgradients nav ul li .selected:hover, nav ul li .no-cssgradients .selected:hover, .no-cssgradients nav ul a.selected:hover, nav ul .no-cssgradients a.selected:hover {
   background-color: white;
 }
 
@@ -556,13 +547,9 @@ nav ul {
   }
 }
 nav ul li {
-  -webkit-transition: background 0.5s, color 0.5s;
   transition: background 0.5s, color 0.5s;
   color: white;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, white), color-stop(50%, #329865));
-  background: -webkit-linear-gradient(bottom, white 50%, #329865 50%);
   background: linear-gradient(to top, white 50%, #329865 50%);
-  -webkit-background-size: 200%;
   background-size: 200%;
   background-position-y: 0%;
   float: left;
@@ -728,9 +715,7 @@ a, a:visited {
   }
   .main-section img {
     width: 100%;
-    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
   }
 }
@@ -754,6 +739,44 @@ a, a:visited {
     position: relative;
     left: 55%;
     width: 40%;
+  }
+  .main-section img {
+    width: 960px;
+    width: 60rem;
+    box-shadow: 0 0 8px black;
+    box-shadow: 0 0 0.5rem black;
+    position: absolute;
+    top: -5%;
+    right: 50%;
+    height: 110%;
+    width: auto;
+  }
+}
+
+footer {
+  background-color: #329865;
+  color: white;
+  text-align: center;
+  float: left;
+  box-shadow: 0 0 8px black;
+  box-shadow: 0 0 0.5rem black;
+  padding: 8px;
+  padding: 0.5rem;
+}
+@media (min-width: 40.063em) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 32px;
+    border-top-right-radius: 2rem;
+  }
+}
+footer > * {
+  margin: 8px;
+  margin: 0.5rem;
+}
+
   }
   .main-section img {
     width: 960px;

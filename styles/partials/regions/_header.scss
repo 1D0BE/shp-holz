@@ -126,7 +126,7 @@ nav {
       }
       &:last-of-type {
         }
-      &:hover{
+      &:hover,&.selected:hover{
         @extend %li-hover;
       }
     }
