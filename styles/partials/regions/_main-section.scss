@@ -11,9 +11,7 @@
   }
 
   .example {
-      background-color: white;
       width: 96%;
-      //display: border-box;
       float: left;
   }
 
@@ -37,6 +35,9 @@
     textarea {
       height:10rem;
     }
+    .example {
+      background-color: white;
+    }
   }
   @include bp-up('medium') {
     background-color: white;
@@ -48,6 +49,9 @@
     }
     & article > *:not(img) {
       background-color: white;
+      &.example {
+        background-color:transparent;
+      }
     }
     h1 {
       color: $green;

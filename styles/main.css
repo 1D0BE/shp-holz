@@ -718,7 +718,6 @@ a, a:visited {
   resize: none;
 }
 .main-section .example {
-  background-color: white;
   width: 96%;
   float: left;
 }
@@ -745,6 +744,9 @@ a, a:visited {
   .main-section textarea {
     height: 10rem;
   }
+  .main-section .example {
+    background-color: white;
+  }
 }
 @media (min-width: 40.063em) {
   .main-section {
@@ -760,6 +762,9 @@ a, a:visited {
   }
   .main-section article > *:not(img) {
     background-color: white;
+  }
+  .main-section article > *:not(img).example {
+    background-color: transparent;
   }
   .main-section h1 {
     color: #329865;
