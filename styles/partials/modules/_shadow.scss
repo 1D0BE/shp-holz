@@ -2,3 +2,8 @@
   box-shadow: 0 0 8px black;
   box-shadow: 0 0 0.5rem black;
 }
+
+@mixin shadow-small() {
+  box-shadow: 0 2px 4px black;
+  box-shadow: 0 0.10rem 0.25rem black;
+}

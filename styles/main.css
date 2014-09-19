@@ -423,6 +423,119 @@ ul {
   -webkit-padding-start: 0;
 }
 
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+scss */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #f8f8f2;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #f8f8f2;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+  color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value {
+  color: #e6db74;
+}
+
+.token.keyword {
+  color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+  color: #fd971f;
+}
+
+.token.important {
+  font-weight: bold;
+}
+
+.token.entity {
+  cursor: help;
+}
+
 header {
   background-color: #329865;
   -webkit-box-shadow: 0 0 8px black;
@@ -706,32 +819,45 @@ a, a:visited {
 
 .main-section {
   width: 100%;
+  float: left;
   margin-bottom: 128px;
   margin-bottom: 8rem;
 }
+.main-section .code code {
+  color: white;
+  width: 100%;
+}
+.main-section .example {
+  width: 96%;
+  float: left;
+}
+.main-section pre {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
 @media (max-width: 40.063em) {
-  .main-section {
-    float: left;
-  }
   .main-section article > *:not(img) {
     background-color: white;
-    margin: 0 8px;
-    margin: 0 0.5rem;
     margin-top: -8px;
     margin-top: -0.5rem;
     padding: 8px;
     padding: 0.5rem;
+    margin: 0 2%;
   }
   .main-section h1 {
     color: #329865;
     text-align: center;
   }
-  .main-section img {
+  .main-section img, .main-section .code pre {
     width: 100%;
     -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
     -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
+  }
+  .main-section .example {
+    background-color: white;
   }
 }
 @media (min-width: 40.063em) {
@@ -741,11 +867,20 @@ a, a:visited {
     z-index: -1;
     padding: 32px;
     padding: 2rem;
+  }
+  .styleguide .main-section {
+    padding: 48px;
+    padding: 3rem;
+  }
+  .main-section:first-of-type {
     margin-top: 240px;
     margin-top: 15rem;
   }
   .main-section article > *:not(img) {
     background-color: white;
+  }
+  .main-section article > *:not(img).example {
+    background-color: transparent;
   }
   .main-section h1 {
     color: #329865;
@@ -755,7 +890,7 @@ a, a:visited {
     left: 55%;
     width: 40%;
   }
-  .main-section img {
+  .main-section img, .main-section .code {
     width: 960px;
     width: 60rem;
     -webkit-box-shadow: 0 0 8px black;
@@ -766,8 +901,69 @@ a, a:visited {
     top: -5%;
     right: 50%;
     height: 110%;
+  }
+  .main-section img {
     width: auto;
   }
+  .main-section .example {
+    position: relative;
+    left: 55%;
+    width: 40%;
+  }
+  .main-section .example nav {
+    padding: 0;
+    float: left;
+  }
+  .main-section .code {
+    width: 40%;
+  }
+  .main-section .code code {
+    height: 100%;
+  }
+  .main-section .button {
+    -webkit-box-shadow: 0 2px 4px black;
+    box-shadow: 0 2px 4px black;
+    -webkit-box-shadow: 0 0.10rem 0.25rem black;
+    box-shadow: 0 0.10rem 0.25rem black;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    position: absolute;
+    left: 16px;
+    left: 1rem;
+    padding: 8px;
+    padding: 0.5rem;
+    border: 0 solid white;
+    color: #329865;
+    border-width: 3.2px;
+    border-width: 0.2rem;
+    border-radius: 1584px;
+    border-radius: 99rem;
+  }
+  .main-section .button.top {
+    top: 48px;
+    top: 3rem;
+  }
+  .main-section .button.bottom {
+    bottom: 48px;
+    bottom: 3rem;
+  }
+  .main-section .button:target {
+    background-color: #329865;
+    color: white;
+  }
+  .main-section .button:hover {
+    background-color: #329865;
+    color: white;
+    border-color: #329865;
+  }
+}
+.main-section .hide {
+  display: none;
+}
+
+footer.not-fixed {
+  position: relative;
+  width: 100%;
 }
 
 footer {
