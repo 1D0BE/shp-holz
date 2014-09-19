@@ -30,16 +30,16 @@
       <article>
         <h1>navigation</h1>
           <div class="code">
-            <code>
-            <textarea wrap="off">
+            <pre>
+            <code class="language-markup">
 <nav role="navigation" >
   <ul>
     <a href="../index.html" ><li class="home">Home</li></a>
     <a href="unternehmen.html"><li>Unternehmen</li></a>
   </ul>
 </nav>
-          </textarea>
-        </code>
+          </code>
+        </pre>
           </div>
           <div class="example">
           <nav role="navigation">
@@ -55,16 +55,16 @@
       <article>
         <h1>navigation</h1>
           <div class="code">
-            <code>
-            <textarea wrap="off">
+            <pre>
+            <code class="language-markup">
 <nav role="navigation" >
   <ul>
     <a href="../index.html" ><li class="home">Home</li></a>
     <a href="unternehmen.html"><li>Unternehmen</li></a>
   </ul>
 </nav>
-          </textarea>
-        </code>
+          </code>
+        </pre>
           </div>
           <div class="example">
           <nav role="navigation">
@@ -90,5 +90,14 @@
       </span>
       <span class="uid">ATU 55070602</span>
     </footer>
+    <script>
+    var elems = document.getElementsByTagName('code'), i;
+    for (i in elems) {
+    var inner = elems[i].innerHTML;
+    inner=inner.replace(/</g, "&lt;");
+      elems[i].innerHTML=inner;
+    }
+    </script>
+    <script src="../javascript/prism.js"></script>
   </body>
 </html>
