@@ -868,6 +868,10 @@ a, a:visited {
     padding: 32px;
     padding: 2rem;
   }
+  .styleguide .main-section {
+    padding: 48px;
+    padding: 3rem;
+  }
   .main-section:first-of-type {
     margin-top: 240px;
     margin-top: 15rem;
@@ -903,8 +907,12 @@ a, a:visited {
   }
   .main-section .example {
     position: relative;
-    left: 45%;
+    left: 55%;
     width: 40%;
+  }
+  .main-section .example nav {
+    padding: 0;
+    float: left;
   }
   .main-section .code {
     width: 40%;
@@ -912,6 +920,50 @@ a, a:visited {
   .main-section .code code {
     height: 100%;
   }
+  .main-section .button {
+    -webkit-box-shadow: 0 2px 4px black;
+    box-shadow: 0 2px 4px black;
+    -webkit-box-shadow: 0 0.10rem 0.25rem black;
+    box-shadow: 0 0.10rem 0.25rem black;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    position: absolute;
+    left: 16px;
+    left: 1rem;
+    padding: 8px;
+    padding: 0.5rem;
+    border: 0 solid white;
+    color: #329865;
+    border-width: 3.2px;
+    border-width: 0.2rem;
+    border-radius: 1584px;
+    border-radius: 99rem;
+  }
+  .main-section .button.top {
+    top: 48px;
+    top: 3rem;
+  }
+  .main-section .button.bottom {
+    bottom: 48px;
+    bottom: 3rem;
+  }
+  .main-section .button:target {
+    background-color: #329865;
+    color: white;
+  }
+  .main-section .button:hover {
+    background-color: #329865;
+    color: white;
+    border-color: #329865;
+  }
+}
+.main-section .hide {
+  display: none;
+}
+
+footer.not-fixed {
+  position: relative;
+  width: 100%;
 }
 
 footer {

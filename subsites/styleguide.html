@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
   </head>
-  <body>
+  <body class="styleguide">
     <h1 class="subtitle right"><a href="impressum.html">Impressum</a></h1>
     <a href="../index.html" class="logo-link">
       <h1 class="subtitle left">holz gmbh</h1>
@@ -27,10 +27,12 @@
       </nav>
     </header>
     <section class="main-section">
+      <a class="button top" role="button" onclick="showCode(this,'html','scss');">scss</a>
+      <a class="button bottom" role="button" onclick="showCode(this,'scss','html');">html</a>
       <article>
         <h1>navigation</h1>
           <div class="code">
-            <pre>
+            <pre class="html">
             <code class="language-markup">
 <nav role="navigation" >
   <ul>
@@ -40,6 +42,88 @@
 </nav>
           </code>
         </pre>
+        <pre class="scss hide">
+        <code class="language-scss">
+nav {
+  @include bp-lower('medium') {
+    padding: 0;
+    float: left;
+    width: 100%;
+    font-size: 62%;
+    font-size: 3vw;
+  }
+  @include bp-up('medium') {
+    float: right;
+  }
+  @include bp('medium') {
+    padding: 0 10%;
+    font-size: 62%;
+    font-size: 1.5vw;
+  }
+  @include bp('large') {
+    padding: 0 12%;
+  }
+  @include bp-up('large') {
+    font-size: 100%;
+    font-size: 1.2vw;
+  }
+  @include bp-up('xlarge') {
+    padding: 0 15%;
+    font-size: 110%;
+    font-size: 1vw;
+  }
+  ul {
+    padding:0;
+    float: right;
+    margin-bottom: 0em;
+    @include bp('small') {
+      width: 100%;
+    }
+    li {
+      transition: background 0.5s, color 0.5s;
+      color: white;
+      background: linear-gradient(to top, white 50%, $green 50%);
+      background-size: 200%;
+      background-position-y: 0%;
+      float: left;
+      list-style-type: none;
+      font-size: 1.5em;
+      @include bp('small') {
+        width: 100%;
+        @include rem('padding', 1.5rem);
+        @include rem('padding-bottom', .75rem);
+      }
+      @include bp-up('medium') {
+        @include rem('padding', .5rem);
+        @include rem('border-right-width', .1rem);
+        border-right-style: solid;
+        border-right-color: white;
+      }
+      @include bp-up('xlarge') {
+        @include rem('padding', 1rem 1.2rem);
+        @include rem('padding-bottom', .5rem);
+      }
+
+      &.selected{
+        background-position-y: 75%;
+        color: $green;
+      }
+      &:last-of-type {
+        }
+      &:hover,&.selected:hover{
+        @extend %li-hover;
+      }
+    }
+    a {
+      text-decoration:none;
+      &:last-of-type > li {
+        border: none;
+      }
+    }
+  }
+}
+      </code>
+    </pre>
           </div>
           <div class="example">
           <nav role="navigation">
@@ -52,27 +136,62 @@
       </article>
     </section>
     <section class="main-section">
+      <a class="button top" role="button" onclick="showCode(this,'html','scss');">scss</a>
+      <a class="button bottom" role="button" onclick="showCode(this,'scss','html');">html</a>
       <article>
-        <h1>navigation</h1>
+        <h1>footer</h1>
           <div class="code">
-            <pre>
+            <pre class="html">
             <code class="language-markup">
-<nav role="navigation" >
-  <ul>
-    <a href="../index.html" ><li class="home">Home</li></a>
-    <a href="unternehmen.html"><li>Unternehmen</li></a>
-  </ul>
-</nav>
+<footer class="vcard">
+  <span class= "org">shp holz gmbh</span>
+  <hr class="footer-break">
+  <span class= "fn">DI Gerhard Pipp</span>
+</footer>
           </code>
         </pre>
+        <pre class="scss hide">
+        <code class="language-scss">
+footer{
+  background-color:$green;
+  color: white;
+  text-align:center;
+  float:left;
+  @include shadow();
+  @include rem('padding', 0.5rem);
+  @include bp-lower('medium') {
+    width: 100%;
+  }
+  @include bp-up('medium') {
+    position:fixed;
+    bottom:0;
+    left:0;
+    @include rem('border-top-right-radius', 2rem);
+  }
+  @include bp-lower('large') {
+    .footer-break {
+      @include rem('margin', 0.2rem);
+    }
+  }
+  @include bp-up('large') {
+    .footer-break {
+      display: none;
+    }
+  }
+  > * {
+    @include rem('margin', 0.5rem);
+    white-space: nowrap;
+  }
+}
+      </code>
+    </pre>
           </div>
           <div class="example">
-          <nav role="navigation">
-            <ul>
-              <a href="../index.html" ><li class="home">Home</li></a>
-              <a href="unternehmen.html"><li>Unternehmen</li></a>
-            </ul>
-          </nav>
+<footer class="vcard not-fixed">
+  <span class= "org">shp holz gmbh</span>
+  <hr class="footer-break">
+  <span class= "fn">DI Gerhard Pipp</span>
+</footer>
         </div>
       </article>
     </section>
@@ -90,14 +209,28 @@
       </span>
       <span class="uid">ATU 55070602</span>
     </footer>
+    <script src="../javascript/prism.js"></script>
     <script>
     var elems = document.getElementsByTagName('code'), i;
     for (i in elems) {
     var inner = elems[i].innerHTML;
-    inner=inner.replace(/</g, "&lt;");
+    if (typeof inner != 'undefined') {
+      inner=inner.replace(/</g, "&lt;");
       elems[i].innerHTML=inner;
     }
+    }
+
+    function showCode(elem,hide,show) {
+      var elems = elem.parentNode.getElementsByTagName('pre'), i = 0;
+      for (i in elems) {
+        if((' ' + elems[i].className + ' ').indexOf(hide) > -1) {
+            elems[i].className += " hide";
+        } else {
+            elems[i].className = show;
+        }
+      }
+      Prism.highlightAll();
+    }
     </script>
-    <script src="../javascript/prism.js"></script>
   </body>
 </html>
