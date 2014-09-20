@@ -537,6 +537,7 @@ pre[class*="language-"] {
 }
 
 header {
+  position: relative;
   overflow: initial;
   /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
   width: 100%;
@@ -619,11 +620,11 @@ nav {
   -webkit-box-shadow: 0 0 0.5rem black;
   box-shadow: 0 0 0.5rem black;
   background-color: #329865;
+  position: relative;
 }
 @media (max-width: 40.063em) {
   nav {
     padding: 0;
-    position: relative;
     bottom: 32px;
     bottom: 2rem;
     bottom: 10vw;
@@ -740,6 +741,7 @@ nav ul a:last-of-type > li {
   font-weight: normal;
   font-style: italic;
   color: gray;
+  position: absolute;
 }
 @media (max-width: 67.063em) {
   .subtitle {
@@ -755,7 +757,6 @@ nav ul a:last-of-type > li {
 }
 @media (max-width: 40.063em) {
   .subtitle {
-    position: absolute;
     top: 8px;
     top: 0.5rem;
     top: 7.9vw;
@@ -763,25 +764,17 @@ nav ul a:last-of-type > li {
 }
 @media (min-width: 40.063em) {
   .subtitle {
-    position: fixed;
-    top: 67.2px;
-    top: 4.2rem;
-    top: 5.1vw;
-  }
-}
-@media (min-width: 40.063em) and (max-width: 53em) {
-  .subtitle {
-    top: 6.5vw;
+    bottom: -2em;
   }
 }
 @media (min-width: 67.063em) and (max-width: 100em) {
   .subtitle {
-    top: 5vw;
+    bottom: -2em;
   }
 }
 @media (min-width: 100.063em) {
   .subtitle {
-    top: 4vw;
+    bottom: -2em;
   }
 }
 

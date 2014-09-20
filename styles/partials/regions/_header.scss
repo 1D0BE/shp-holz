@@ -1,4 +1,5 @@
 header {
+  position: relative;
 
   @include bp-lower('medium') {
     position:relative;
@@ -61,10 +62,10 @@ header {
 nav {
   @include shadow();
   background-color: $green;
+  position: relative;
 
   @include bp-lower('medium') {
     padding: 0;
-    position: relative;
     @include rem('bottom', 2rem);
     bottom: 10vw;
     width: 100%;
@@ -156,6 +157,8 @@ nav {
   font-weight: normal;
   font-style: italic;
   color: gray;
+  position: absolute;
+
   @include bp-lower('large') {
     font-size: 100%;
     font-size: 3vw;
@@ -165,23 +168,17 @@ nav {
     font-size: 1.5vw;
   }
   @include bp-lower('medium') {
-    position: absolute;
     @include rem('top', .5rem);
     top: 7.9vw;
   }
   @include bp-up('medium') {
-    position: fixed;
-    @include rem('top', 4.2rem);
-    top: 5.1vw;
-  }
-  @include bp('subtitle-sm') {
-    top: 6.5vw;
+    bottom: -2em;
   }
   @include bp('large') {
-    top: 5vw;
+    bottom: -2em;
   }
   @include bp-up('xlarge') {
-    top: 4vw;
+    bottom: -2em;
   }
 }
 .left{
