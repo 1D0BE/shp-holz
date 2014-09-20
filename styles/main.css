@@ -864,8 +864,10 @@ a, a:visited {
     box-shadow: 0 2px 4px black;
     -webkit-box-shadow: 0 0.10rem 0.25rem black;
     box-shadow: 0 0.10rem 0.25rem black;
-    -webkit-transition: all 1s;
-    transition: all 1s;
+    -webkit-transition: color 1s;
+    transition: color 1s;
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
     position: relative;
     padding: 8px;
     padding: 0.5rem;
@@ -940,6 +942,10 @@ a, a:visited {
     top: -5%;
     right: 50%;
     height: 110%;
+    background-color: transparent;
+  }
+  .main-section pre {
+    border-radius: 0;
   }
   .main-section img {
     width: auto;

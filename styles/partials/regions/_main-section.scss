@@ -39,7 +39,8 @@
     }
     .button {
       @include shadow-small();
-      transition: all 1s;
+      transition: color 1s;
+      transition: background-color 1s;
       position: relative;
 
       @include rem('padding', 0.5rem);
@@ -99,6 +100,10 @@
       top: -5%;
       right: 50%;
       height: 110%;
+      background-color:transparent;
+    }
+    pre {
+      border-radius:0;
     }
     img {
       width: auto;
