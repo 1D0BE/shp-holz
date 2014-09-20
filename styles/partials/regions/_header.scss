@@ -1,6 +1,5 @@
 header {
   position: relative;
-
   @include bp-lower('medium') {
     position:relative;
     float: left;
@@ -28,7 +27,7 @@ header {
 }
 
 .logo {
-  z-index:1;
+  z-index: 1;
   @include bp-lower('medium') {
     display: block;
     @include rem('width', 4rem);
@@ -54,7 +53,7 @@ header {
     width: 7vw;
   }
 }
-.logo-link:hover + header nav ul .home {
+.logo-link:hover + nav ul .home {
   @extend %li-hover;
 }
 
@@ -65,6 +64,7 @@ nav {
   position: relative;
 
   @include bp-lower('medium') {
+    z-index: -1;
     padding: 0;
     @include rem('bottom', 2rem);
     bottom: 10vw;
@@ -102,6 +102,7 @@ nav {
     float: right;
     margin-bottom: 0em;
     @include bp('small') {
+      @include shadow();
       width: 100%;
     }
     li {
@@ -135,7 +136,7 @@ nav {
       }
       &:last-of-type {
         }
-      &:hover,&.selected:hover{
+      &:hover, &.selected:hover{
         @extend %li-hover;
       }
       .no-cssgradients &, .no-bgpositionxy &, .no-js & {

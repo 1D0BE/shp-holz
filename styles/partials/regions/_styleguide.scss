@@ -79,7 +79,11 @@
     }
 
     .example {
-      float:left;
+      nav {
+        z-index: 0;
+        @include rem('margin-top', 3rem);
+      }
+      float: left;
       background-color: white;
     }
 
@@ -98,7 +102,7 @@
     .padding .button {
       float:left;
       position:relative;
-      margin-bottom:1rem;
+      margin-bottom: 1rem;
     }
   }
 

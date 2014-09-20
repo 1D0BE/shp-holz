@@ -7,3 +7,8 @@
   box-shadow: 0 2px 4px black;
   box-shadow: 0 0.10rem 0.25rem black;
 }
+
+@mixin shadow-inner() {
+  box-shadow: inset 0 4px 8px black;
+  box-shadow: inset 0 0.25rem 0.5rem black;
+}
