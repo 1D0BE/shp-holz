@@ -572,7 +572,8 @@ header {
   background-position-y: 100%;
   color: #329865;
 }
-.no-cssgradients .logo-link:hover + header nav ul .home, .logo-link:hover + header nav ul .no-cssgradients .home, .no-cssgradients nav ul li:hover, nav ul .no-cssgradients li:hover {
+.no-cssgradients .logo-link:hover + header nav ul .home, .logo-link:hover + header nav ul .no-cssgradients .home, .no-cssgradients nav ul li:hover, nav ul .no-cssgradients li:hover, .no-bgpositionxy .logo-link:hover + header nav ul .home, .logo-link:hover + header nav ul .no-bgpositionxy .home, .no-bgpositionxy nav ul li:hover, nav ul .no-bgpositionxy li:hover, .no-js .logo-link:hover + header nav ul .home, .logo-link:hover + header nav ul .no-js .home, .no-js nav ul li:hover, nav ul .no-js li:hover {
+  background: none;
   background-color: white;
 }
 
@@ -712,6 +713,10 @@ nav ul li {
 nav ul li.selected {
   background-position-y: 75%;
   color: #329865;
+}
+.no-cssgradients nav ul li, .no-bgpositionxy nav ul li, .no-js nav ul li {
+  background: none;
+  background-color: #329865;
 }
 nav ul a {
   text-decoration: none;

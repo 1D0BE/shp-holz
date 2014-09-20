@@ -23,7 +23,8 @@ header {
 %li-hover {
   background-position-y: 100%;
   color: $green;
-  .no-cssgradients & {
+  .no-cssgradients &, .no-bgpositionxy &, .no-js & {
+    background: none;
     background-color: white;
   }
 }
@@ -128,6 +129,10 @@ nav {
         }
       &:hover,&.selected:hover{
         @extend %li-hover;
+      }
+      .no-cssgradients &, .no-bgpositionxy &, .no-js & {
+        background: none;
+        background-color: $green;
       }
     }
     a {
