@@ -1,23 +1,4 @@
 .main-section {
-  width: 100%;
-  float: left;
-  position:relative;
-
-  .code code {
-      color: white;
-      width: 100%;
-  }
-
-  .example {
-      width: 96%;
-      float: left;
-  }
-
-  pre {
-    padding:0;
-    margin:0;
-    height: 100%;
-  }
 
   @include rem('margin-bottom', 8rem);
   @include bp-lower('medium') {
@@ -31,58 +12,20 @@
       color: $green;
       text-align: center;
     }
-    img, .code pre{
+    img {
       width: 100%;
       @include rem('max-height', 20rem);
       @include shadow();
     }
-    .example {
-      background-color: white;
-    }
-    .button {
-      @include shadow-small();
-      transition: background-color 1s, color 1s, border-color 1s;
-      position: absolute;
 
-      @include rem('padding', 0.5rem);
-      border: 0 solid white;
-      color: $green;
-      @include rem('border-width', 0.2rem);
-      @include rem('border-radius', 99rem);
-      @include rem('top', 0.4rem);
-      &.top {
-        @include rem('left', 1.5rem);
-      }
-      &.bottom {
-        @include rem('right', 1.5rem);
-      }
-      &.btn-selected {
-        background-color: $green;
-        color: white;
-      }
-      &:hover {
-        background-color: $green;
-        color: white;
-        border-color: $green;
-      }
-    }
   }
   @include bp-up('medium') {
     background-color: white;
     position: relative;
     z-index: -1;
-    @include rem('padding', 2rem);
-    .styleguide & {
-      @include rem('padding', 3rem);
-    }
-    &:first-of-type {
-      @include rem('margin-top', 15rem);
-    }
+    @include rem('padding', 2rem);    
     & article > *:not(img) {
       background-color: white;
-      &.example {
-        background-color:transparent;
-      }
     }
     h1 {
       color: $green;
@@ -92,7 +35,7 @@
       left: 55%;
       width: 40%;
     }
-    img, .code {
+    img {
       @include rem('width', 60rem);
       @include shadow();
       position: absolute;
@@ -101,61 +44,8 @@
       height: 110%;
       background-color:transparent;
     }
-    pre {
-      border-radius:0;
-    }
     img {
       width: auto;
     }
-    .example {
-      position: relative;
-      left: 55%;
-      width: 40%;
-      nav {
-          padding: 0;
-          float: left;
-      }
-    }
-    .code {
-      width: 40%;
-      code {
-          height: 100%;
-      }
-    }
-    .button {
-      @include shadow-small();
-      transition: background-color 1s, color 1s, border-color 1s;
-      position: absolute;
-      @include rem('left', 1rem);
-      @include rem('padding', 0.5rem);
-      border: 0 solid white;
-      color: $green;
-      @include rem('border-width', 0.2rem);
-      @include rem('border-radius', 99rem);
-      &.top {
-        @include rem('top', 3rem);
-      }
-      &.bottom {
-        @include rem('bottom', 3rem);
-      }
-      &.btn-selected {
-        background-color: $green;
-        color: white;
-      }
-      &:hover {
-        background-color: $green;
-        color: white;
-        border-color: $green;
-      }
-    }
   }
-
-  .hide {
-    display: none;
-  }
-}
-
-footer.not-fixed {
-  position: relative;
-  width: 100%;
 }

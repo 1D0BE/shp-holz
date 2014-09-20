@@ -818,24 +818,8 @@ a, a:visited {
 }
 
 .main-section {
-  width: 100%;
-  float: left;
-  position: relative;
   margin-bottom: 128px;
   margin-bottom: 8rem;
-}
-.main-section .code code {
-  color: white;
-  width: 100%;
-}
-.main-section .example {
-  width: 96%;
-  float: left;
-}
-.main-section pre {
-  padding: 0;
-  margin: 0;
-  height: 100%;
 }
 @media (max-width: 40.063em) {
   .main-section article > *:not(img) {
@@ -850,7 +834,7 @@ a, a:visited {
     color: #329865;
     text-align: center;
   }
-  .main-section img, .main-section .code pre {
+  .main-section img {
     width: 100%;
     max-height: 320px;
     max-height: 20rem;
@@ -858,45 +842,6 @@ a, a:visited {
     box-shadow: 0 0 8px black;
     -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
-  }
-  .main-section .example {
-    background-color: white;
-  }
-  .main-section .button {
-    -webkit-box-shadow: 0 2px 4px black;
-    box-shadow: 0 2px 4px black;
-    -webkit-box-shadow: 0 0.10rem 0.25rem black;
-    box-shadow: 0 0.10rem 0.25rem black;
-    -webkit-transition: background-color 1s, color 1s, border-color 1s;
-    transition: background-color 1s, color 1s, border-color 1s;
-    position: absolute;
-    padding: 8px;
-    padding: 0.5rem;
-    border: 0 solid white;
-    color: #329865;
-    border-width: 3.2px;
-    border-width: 0.2rem;
-    border-radius: 1584px;
-    border-radius: 99rem;
-    top: 6.4px;
-    top: 0.4rem;
-  }
-  .main-section .button.top {
-    left: 24px;
-    left: 1.5rem;
-  }
-  .main-section .button.bottom {
-    right: 24px;
-    right: 1.5rem;
-  }
-  .main-section .button.btn-selected {
-    background-color: #329865;
-    color: white;
-  }
-  .main-section .button:hover {
-    background-color: #329865;
-    color: white;
-    border-color: #329865;
   }
 }
 @media (min-width: 40.063em) {
@@ -907,19 +852,8 @@ a, a:visited {
     padding: 32px;
     padding: 2rem;
   }
-  .styleguide .main-section {
-    padding: 48px;
-    padding: 3rem;
-  }
-  .main-section:first-of-type {
-    margin-top: 240px;
-    margin-top: 15rem;
-  }
   .main-section article > *:not(img) {
     background-color: white;
-  }
-  .main-section article > *:not(img).example {
-    background-color: transparent;
   }
   .main-section h1 {
     color: #329865;
@@ -929,7 +863,7 @@ a, a:visited {
     left: 55%;
     width: 40%;
   }
-  .main-section img, .main-section .code {
+  .main-section img {
     width: 960px;
     width: 60rem;
     -webkit-box-shadow: 0 0 8px black;
@@ -942,71 +876,9 @@ a, a:visited {
     height: 110%;
     background-color: transparent;
   }
-  .main-section pre {
-    border-radius: 0;
-  }
   .main-section img {
     width: auto;
   }
-  .main-section .example {
-    position: relative;
-    left: 55%;
-    width: 40%;
-  }
-  .main-section .example nav {
-    padding: 0;
-    float: left;
-  }
-  .main-section .code {
-    width: 40%;
-  }
-  .main-section .code code {
-    height: 100%;
-  }
-  .main-section .button {
-    -webkit-box-shadow: 0 2px 4px black;
-    box-shadow: 0 2px 4px black;
-    -webkit-box-shadow: 0 0.10rem 0.25rem black;
-    box-shadow: 0 0.10rem 0.25rem black;
-    -webkit-transition: background-color 1s, color 1s, border-color 1s;
-    transition: background-color 1s, color 1s, border-color 1s;
-    position: absolute;
-    left: 16px;
-    left: 1rem;
-    padding: 8px;
-    padding: 0.5rem;
-    border: 0 solid white;
-    color: #329865;
-    border-width: 3.2px;
-    border-width: 0.2rem;
-    border-radius: 1584px;
-    border-radius: 99rem;
-  }
-  .main-section .button.top {
-    top: 48px;
-    top: 3rem;
-  }
-  .main-section .button.bottom {
-    bottom: 48px;
-    bottom: 3rem;
-  }
-  .main-section .button.btn-selected {
-    background-color: #329865;
-    color: white;
-  }
-  .main-section .button:hover {
-    background-color: #329865;
-    color: white;
-    border-color: #329865;
-  }
-}
-.main-section .hide {
-  display: none;
-}
-
-footer.not-fixed {
-  position: relative;
-  width: 100%;
 }
 
 footer {
@@ -1077,4 +949,164 @@ aside .container img {
   position: relative;
   right: 5%;
   bottom: 5%;
+}
+
+.main-section {
+  width: 100%;
+  float: left;
+  position: relative;
+}
+.main-section .example {
+  width: 96%;
+  float: left;
+}
+.main-section pre {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+@media (max-width: 40.063em) {
+  .main-section .code pre {
+    width: 100%;
+    max-height: 320px;
+    max-height: 20rem;
+    -webkit-box-shadow: 0 0 8px black;
+    box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
+    box-shadow: 0 0 0.5rem black;
+  }
+  .main-section .example {
+    background-color: white;
+  }
+  .main-section .button {
+    -webkit-box-shadow: 0 2px 4px black;
+    box-shadow: 0 2px 4px black;
+    -webkit-box-shadow: 0 0.10rem 0.25rem black;
+    box-shadow: 0 0.10rem 0.25rem black;
+    -webkit-transition: background-color 1s, color 1s, border-color 1s;
+    transition: background-color 1s, color 1s, border-color 1s;
+    position: absolute;
+    padding: 8px;
+    padding: 0.5rem;
+    border: 0 solid white;
+    color: #329865;
+    border-width: 3.2px;
+    border-width: 0.2rem;
+    border-radius: 1584px;
+    border-radius: 99rem;
+    top: 6.4px;
+    top: 0.4rem;
+  }
+  .main-section .button.top {
+    left: 24px;
+    left: 1.5rem;
+  }
+  .main-section .button.bottom {
+    right: 24px;
+    right: 1.5rem;
+  }
+  .main-section .button.btn-selected {
+    background-color: #329865;
+    color: white;
+  }
+  .main-section .button:hover {
+    background-color: #329865;
+    color: white;
+    border-color: #329865;
+  }
+}
+@media (min-width: 40.063em) {
+  .main-section {
+    background-color: white;
+    position: relative;
+    z-index: -1;
+    padding: 32px;
+    padding: 2rem;
+  }
+  .styleguide .main-section {
+    padding: 48px;
+    padding: 3rem;
+  }
+  .main-section:first-of-type {
+    margin-top: 240px;
+    margin-top: 15rem;
+  }
+  .main-section article > *:not(img).example {
+    background-color: transparent;
+  }
+  .main-section .code {
+    width: 960px;
+    width: 60rem;
+    -webkit-box-shadow: 0 0 8px black;
+    box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
+    box-shadow: 0 0 0.5rem black;
+    position: absolute;
+    top: -5%;
+    right: 50%;
+    height: 110%;
+    background-color: transparent;
+  }
+  .main-section pre {
+    border-radius: 0;
+  }
+  .main-section .example {
+    position: relative;
+    left: 55%;
+    width: 40%;
+  }
+  .main-section .example nav {
+    padding: 0;
+    float: left;
+  }
+  .main-section .code {
+    width: 40%;
+  }
+  .main-section .code code {
+    height: 100%;
+  }
+  .main-section .button {
+    -webkit-box-shadow: 0 2px 4px black;
+    box-shadow: 0 2px 4px black;
+    -webkit-box-shadow: 0 0.10rem 0.25rem black;
+    box-shadow: 0 0.10rem 0.25rem black;
+    -webkit-transition: background-color 1s, color 1s, border-color 1s;
+    transition: background-color 1s, color 1s, border-color 1s;
+    position: absolute;
+    left: 16px;
+    left: 1rem;
+    padding: 8px;
+    padding: 0.5rem;
+    border: 0 solid white;
+    color: #329865;
+    border-width: 3.2px;
+    border-width: 0.2rem;
+    border-radius: 1584px;
+    border-radius: 99rem;
+  }
+  .main-section .button.top {
+    top: 48px;
+    top: 3rem;
+  }
+  .main-section .button.bottom {
+    bottom: 48px;
+    bottom: 3rem;
+  }
+  .main-section .button.btn-selected {
+    background-color: #329865;
+    color: white;
+  }
+  .main-section .button:hover {
+    background-color: #329865;
+    color: white;
+    border-color: #329865;
+  }
+}
+.main-section .hide {
+  display: none;
+}
+
+footer.not-fixed {
+  position: relative;
+  width: 100%;
 }
