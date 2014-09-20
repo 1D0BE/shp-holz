@@ -1,0 +1,171 @@
+.main-section {
+  width: 100%;
+  float: left;
+  position: relative;
+
+  .example {
+    width: 96%;
+    float: left;
+    .not-fixed {
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  pre {
+    margin: 0;
+    height: 100%;
+  }
+
+  .logo {
+    box-shadow:none;
+  }
+
+  .logo-link:hover + nav ul .home {
+    background-position-y: 100%;
+    color: $green;
+    .no-cssgradients & {
+      background-color: white;
+    }
+  }
+
+  .button {
+    @include shadow-small();
+    @include rem('padding', 0.5rem);
+    border: 0 solid white;
+    @include rem('border-width', 0.2rem);
+    @include rem('border-radius', 99rem);
+    cursor: pointer;
+    transition: background-color 1s, color 1s, border-color 1s;
+    color: $green;
+
+    &.btn-selected {
+      background-color: $green;
+      color: white;
+    }
+
+    &:hover {
+      background-color: $green;
+      border-color: $green;
+      color: white;
+    }
+  }
+
+  @include bp-lower('medium') {
+    @include rem('margin-bottom', 3rem);
+
+    .logo {
+      float:left;
+      width:20%;
+      position:relative;
+      left:-30%;
+      margin:0 0 2rem 0;
+    }
+
+    .subtitle
+    {
+      float:left;
+      position:relative;
+      left:35%;
+      width:40%;
+      text-align:left;
+      bottom:30%;
+    }
+
+    pre {
+      @include rem('max-height', 20rem);
+      @include shadow();
+      width: 100%;
+    }
+
+    .example {
+      float:left;
+      background-color: white;
+    }
+
+    .button {
+      position: absolute;
+      @include rem('top', 0.4rem);
+
+      &.top {
+        @include rem('left', 1.5rem);
+      }
+
+      &.bottom {
+        @include rem('right', 1.5rem);
+      }
+    }
+    .padding .button {
+      float:left;
+      position:relative;
+      margin-bottom:1rem;
+    }
+  }
+
+  @include bp-up('medium') {
+    position: relative;
+    z-index: -1;
+
+    .navlogo {
+      position:absolute;
+      right:25%
+    }
+
+    .subtitle {
+      width:100%;
+    }
+
+    .styleguide & {
+      @include rem('padding', 3rem);
+    }
+
+    &:first-of-type {
+      @include rem('margin-top', 15rem);
+    }
+
+    .code {
+      @include shadow();
+      position: absolute;
+      top: -5%;
+      right: 50%;
+      height: 110%;
+      width: 40%;
+      background-color:transparent;
+    }
+
+    pre {
+      border-radius:0;
+    }
+
+    .example {
+      background-color:transparent;
+      position: relative;
+      left: 55%;
+      width: 40%;
+
+      &:not(.padding) > * {
+        padding: 0;
+        float: left;
+      }
+      &.padding {
+        @include rem('margin-bottom', 2rem);
+      }
+    }
+    .button {
+      position: absolute;
+      @include rem('left', 1rem);
+
+      &.top {
+        @include rem('top', 3rem);
+      }
+
+      &.bottom {
+        @include rem('bottom', 3rem);
+      }
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+}
