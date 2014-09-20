@@ -1,6 +1,5 @@
 header {
-  background-color: $green;
-  @include shadow();
+  position: relative;
 
   @include bp-lower('medium') {
     position:relative;
@@ -12,7 +11,6 @@ header {
   }
   @include bp-up('medium') {
     position: fixed;
-    @include rem('padding-top', 1.5rem);
     top: 0;
     z-index: 0;
   }
@@ -62,23 +60,32 @@ header {
 
 
 nav {
+  @include shadow();
+  background-color: $green;
+  position: relative;
+
   @include bp-lower('medium') {
     padding: 0;
-    float: left;
+    @include rem('bottom', 2rem);
+    bottom: 10vw;
     width: 100%;
+    height: 20%;
     font-size: 62%;
     font-size: 3vw;
   }
   @include bp-up('medium') {
     float: right;
+    width: 100%;
   }
   @include bp('medium') {
     padding: 0 10%;
+    @include rem('padding-top', 1.5rem);
     font-size: 62%;
     font-size: 1.5vw;
   }
   @include bp('large') {
     padding: 0 12%;
+    @include rem('padding-top', 1.5rem);
   }
   @include bp-up('large') {
     font-size: 100%;
@@ -86,6 +93,7 @@ nav {
   }
   @include bp-up('xlarge') {
     padding: 0 15%;
+    @include rem('padding-top', 1.5rem);
     font-size: 110%;
     font-size: 1vw;
   }
@@ -141,5 +149,57 @@ nav {
         border: none;
       }
     }
+  }
+}
+
+
+.subtitle {
+  font-weight: normal;
+  font-style: italic;
+  color: gray;
+  position: absolute;
+
+  @include bp-lower('large') {
+    font-size: 100%;
+    font-size: 3vw;
+  }
+  @include bp-up('large') {
+    font-size: 50%;
+    font-size: 1.5vw;
+  }
+  @include bp-lower('medium') {
+    @include rem('top', .5rem);
+    top: 7.9vw;
+  }
+  @include bp-up('medium') {
+    bottom: -2em;
+  }
+  @include bp('large') {
+    bottom: -2em;
+  }
+  @include bp-up('xlarge') {
+    bottom: -2em;
+  }
+}
+.left{
+  @include bp-lower('medium') {
+    left: 62%;
+  }
+  @include bp-up('medium') {
+    left: 19%;
+  }
+  @include bp('large') {
+    left: 21%;
+  }
+  @include bp-up('xlarge') {
+    left: 22%;
+  }
+}
+.right{
+  @include bp-lower('medium') {
+    right: 62%;
+  }
+  @include bp-up('medium') {
+    right: 5%;
   }
 }

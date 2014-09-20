@@ -537,11 +537,7 @@ pre[class*="language-"] {
 }
 
 header {
-  background-color: #329865;
-  -webkit-box-shadow: 0 0 8px black;
-  box-shadow: 0 0 8px black;
-  -webkit-box-shadow: 0 0 0.5rem black;
-  box-shadow: 0 0 0.5rem black;
+  position: relative;
   overflow: initial;
   /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
   width: 100%;
@@ -561,8 +557,6 @@ header {
 @media (min-width: 40.063em) {
   header {
     position: fixed;
-    padding-top: 24px;
-    padding-top: 1.5rem;
     top: 0;
     z-index: 0;
   }
@@ -620,11 +614,22 @@ header {
   }
 }
 
+nav {
+  -webkit-box-shadow: 0 0 8px black;
+  box-shadow: 0 0 8px black;
+  -webkit-box-shadow: 0 0 0.5rem black;
+  box-shadow: 0 0 0.5rem black;
+  background-color: #329865;
+  position: relative;
+}
 @media (max-width: 40.063em) {
   nav {
     padding: 0;
-    float: left;
+    bottom: 32px;
+    bottom: 2rem;
+    bottom: 10vw;
     width: 100%;
+    height: 20%;
     font-size: 62%;
     font-size: 3vw;
   }
@@ -632,11 +637,14 @@ header {
 @media (min-width: 40.063em) {
   nav {
     float: right;
+    width: 100%;
   }
 }
 @media (min-width: 40.063em) and (max-width: 67em) {
   nav {
     padding: 0 10%;
+    padding-top: 24px;
+    padding-top: 1.5rem;
     font-size: 62%;
     font-size: 1.5vw;
   }
@@ -644,6 +652,8 @@ header {
 @media (min-width: 67.063em) and (max-width: 100em) {
   nav {
     padding: 0 12%;
+    padding-top: 24px;
+    padding-top: 1.5rem;
   }
 }
 @media (min-width: 67.063em) {
@@ -655,6 +665,8 @@ header {
 @media (min-width: 100.063em) {
   nav {
     padding: 0 15%;
+    padding-top: 24px;
+    padding-top: 1.5rem;
     font-size: 110%;
     font-size: 1vw;
   }
@@ -725,21 +737,11 @@ nav ul a:last-of-type > li {
   border: none;
 }
 
-body {
-  z-index: -1;
-  background-image: url("../images/wood_pattern.png");
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-@media all and (min-device-pixel-ratio: 2) {
-  body {
-    background-image: url("../images/wood_pattern_@2x.png");
-  }
-}
-
 .subtitle {
   font-weight: normal;
   font-style: italic;
   color: gray;
+  position: absolute;
 }
 @media (max-width: 67.063em) {
   .subtitle {
@@ -755,33 +757,24 @@ body {
 }
 @media (max-width: 40.063em) {
   .subtitle {
-    position: absolute;
-    top: 19.2px;
-    top: 1.2rem;
+    top: 8px;
+    top: 0.5rem;
     top: 7.9vw;
   }
 }
 @media (min-width: 40.063em) {
   .subtitle {
-    position: fixed;
-    top: 67.2px;
-    top: 4.2rem;
-    top: 5.1vw;
-  }
-}
-@media (min-width: 40.063em) and (max-width: 53em) {
-  .subtitle {
-    top: 6.5vw;
+    bottom: -2em;
   }
 }
 @media (min-width: 67.063em) and (max-width: 100em) {
   .subtitle {
-    top: 5vw;
+    bottom: -2em;
   }
 }
 @media (min-width: 100.063em) {
   .subtitle {
-    top: 4vw;
+    bottom: -2em;
   }
 }
 
@@ -814,6 +807,17 @@ body {
 @media (min-width: 40.063em) {
   .right {
     right: 5%;
+  }
+}
+
+body {
+  z-index: -1;
+  background-image: url("../images/wood_pattern.png");
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+@media all and (min-device-pixel-ratio: 2) {
+  body {
+    background-image: url("../images/wood_pattern_@2x.png");
   }
 }
 
