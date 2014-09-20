@@ -1,6 +1,7 @@
 .main-section {
   width: 100%;
   float: left;
+  position:relative;
 
   .code code {
       color: white;
@@ -32,6 +33,7 @@
     }
     img, .code pre{
       width: 100%;
+      @include rem('max-height', 20rem);
       @include shadow();
     }
     .example {
@@ -39,25 +41,22 @@
     }
     .button {
       @include shadow-small();
-      transition: color 1s;
-      transition: background-color 1s;
-      position: relative;
+      transition: background-color 1s, color 1s, border-color 1s;
+      position: absolute;
 
       @include rem('padding', 0.5rem);
       border: 0 solid white;
       color: $green;
       @include rem('border-width', 0.2rem);
       @include rem('border-radius', 99rem);
+      @include rem('top', 0.4rem);
       &.top {
-        @include rem('top', 2.2rem);
         @include rem('left', 1.5rem);
       }
       &.bottom {
-        @include rem('top', 1.5rem);
-        float:right;
         @include rem('right', 1.5rem);
       }
-      &:target {
+      &.btn-selected {
         background-color: $green;
         color: white;
       }
@@ -125,7 +124,7 @@
     }
     .button {
       @include shadow-small();
-      transition: all 1s;
+      transition: background-color 1s, color 1s, border-color 1s;
       position: absolute;
       @include rem('left', 1rem);
       @include rem('padding', 0.5rem);
@@ -139,7 +138,7 @@
       &.bottom {
         @include rem('bottom', 3rem);
       }
-      &:target {
+      &.btn-selected {
         background-color: $green;
         color: white;
       }

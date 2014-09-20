@@ -28,7 +28,7 @@
     </header>
     <section class="main-section">
       <a class="button top" role="button" onclick="showCode(this,'html','scss');" id="scss" href="#scss">scss</a>
-      <a class="button bottom" role="button" onclick="showCode(this,'scss','html');" id="html" href="#html">html</a>
+      <a class="button bottom btn-selected" role="button" onclick="showCode(this,'scss','html');" id="html" href="#html">html</a>
       <article>
         <h1>navigation</h1>
           <div class="code">
@@ -137,7 +137,7 @@ nav {
     </section>
     <section class="main-section">
       <a class="button top" role="button" onclick="showCode(this,'html','scss');" id="scss" href="#scss">scss</a>
-      <a class="button bottom" role="button" onclick="showCode(this,'scss','html');" id="html" href="#html">html</a>
+      <a class="button bottom btn-selected" role="button" onclick="showCode(this,'scss','html');" id="html" href="#html">html</a>
       <article>
         <h1>footer</h1>
           <div class="code">
@@ -221,7 +221,22 @@ footer{
     }
 
     function showCode(elem,hide,show) {
-      var elems = elem.parentNode.getElementsByTagName('pre'), i = 0;
+      var btnElems = elem.parentNode.getElementsByTagName('a'), i = 0;
+      for (i in btnElems) {
+        if ( typeof btnElems[i].className != 'undefined')
+        {
+          btnElems[i].className = btnElems[i].className.replace(/btn-selected/g, "");
+          console.log(btnElems[i].className);
+        }
+      }
+
+      if((' ' + elem.className + ' ').indexOf("btn-selected") === -1) {
+        elem.className += " btn-selected";
+      }
+
+      i = 0;
+
+      var elems = elem.parentNode.getElementsByTagName('pre');
       for (i in elems) {
         if((' ' + elems[i].className + ' ').indexOf(hide) > -1) {
             elems[i].className += " hide";
