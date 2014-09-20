@@ -859,6 +859,45 @@ a, a:visited {
   .main-section .example {
     background-color: white;
   }
+  .main-section .button {
+    -webkit-box-shadow: 0 2px 4px black;
+    box-shadow: 0 2px 4px black;
+    -webkit-box-shadow: 0 0.10rem 0.25rem black;
+    box-shadow: 0 0.10rem 0.25rem black;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    position: relative;
+    padding: 8px;
+    padding: 0.5rem;
+    border: 0 solid white;
+    color: #329865;
+    border-width: 3.2px;
+    border-width: 0.2rem;
+    border-radius: 1584px;
+    border-radius: 99rem;
+  }
+  .main-section .button.top {
+    top: 35.2px;
+    top: 2.2rem;
+    left: 24px;
+    left: 1.5rem;
+  }
+  .main-section .button.bottom {
+    top: 24px;
+    top: 1.5rem;
+    float: right;
+    right: 24px;
+    right: 1.5rem;
+  }
+  .main-section .button:target {
+    background-color: #329865;
+    color: white;
+  }
+  .main-section .button:hover {
+    background-color: #329865;
+    color: white;
+    border-color: #329865;
+  }
 }
 @media (min-width: 40.063em) {
   .main-section {
