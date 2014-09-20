@@ -968,6 +968,17 @@ aside .container img {
   margin: 0;
   height: 100%;
 }
+.main-section .logo {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.main-section .logo-link:hover + nav ul .home {
+  background-position-y: 100%;
+  color: #329865;
+}
+.no-cssgradients .main-section .logo-link:hover + nav ul .home {
+  background-color: white;
+}
 .main-section .button {
   -webkit-box-shadow: 0 2px 4px black;
   box-shadow: 0 2px 4px black;
@@ -999,6 +1010,21 @@ aside .container img {
     margin-bottom: 48px;
     margin-bottom: 3rem;
   }
+  .main-section .logo {
+    float: left;
+    width: 20%;
+    position: relative;
+    left: -30%;
+    margin: 0 0 2rem 0;
+  }
+  .main-section .subtitle {
+    float: left;
+    position: relative;
+    left: 35%;
+    width: 40%;
+    text-align: left;
+    bottom: 30%;
+  }
   .main-section pre {
     max-height: 320px;
     max-height: 20rem;
@@ -1009,6 +1035,7 @@ aside .container img {
     width: 100%;
   }
   .main-section .example {
+    float: left;
     background-color: white;
   }
   .main-section .button {
@@ -1024,11 +1051,23 @@ aside .container img {
     right: 24px;
     right: 1.5rem;
   }
+  .main-section .padding .button {
+    float: left;
+    position: relative;
+    margin-bottom: 1rem;
+  }
 }
 @media (min-width: 40.063em) {
   .main-section {
     position: relative;
     z-index: -1;
+  }
+  .main-section .navlogo {
+    position: absolute;
+    right: 25%;
+  }
+  .main-section .subtitle {
+    width: 100%;
   }
   .styleguide .main-section {
     padding: 48px;
@@ -1059,9 +1098,13 @@ aside .container img {
     left: 55%;
     width: 40%;
   }
-  .main-section .example > * {
+  .main-section .example:not(.padding) > * {
     padding: 0;
     float: left;
+  }
+  .main-section .example.padding {
+    margin-bottom: 32px;
+    margin-bottom: 2rem;
   }
   .main-section .button {
     position: absolute;

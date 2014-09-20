@@ -195,6 +195,221 @@ footer{
         </div>
       </article>
     </section>
+
+    <section class="main-section">
+      <a class="button top" role="button" onclick="showCode(this,'html','scss');">scss</a>
+      <a class="button bottom btn-selected" role="button" onclick="showCode(this,'scss','html');">html</a>
+      <article>
+        <h1>logo + nav</h1>
+          <div class="code">
+            <pre class="html">
+            <code class="language-markup">
+<a href="../index.html" class="logo-link">
+  <h1 class="subtitle left">holz gmbh</h1>
+  <img class="logo" alt="shp holz gmbh" src="../images/shp_logo.svg"/>
+</a>
+<header>
+  <nav role="navigation">
+    <ul>
+      <a href="../index.html" ><li class="home">Home</li></a>
+    </ul>
+  </nav>
+</header>
+          </code>
+        </pre>
+        <pre class="scss hide">
+        <code class="language-scss">
+
+%li-hover {
+  background-position-y: 100%;
+  color: $green;
+  .no-cssgradients & {
+    background-color: white;
+  }
+}
+
+.logo {
+  z-index:1;
+  @include bp-lower('medium') {
+    display: block;
+    @include rem('width', 4rem);
+    width: 20vw;
+    @include rem('margin', .5rem auto);
+    margin: 1vw auto;
+  }
+  @include bp-up('medium') {
+    position: fixed;
+    @include rem('top', 1.5rem);
+    @include rem('width', 6rem);
+    width: 9vw;
+  }
+  @include bp('medium') {
+    left: 10%;
+  }
+  @include bp('large') {
+    left: 12%;
+  }
+  @include bp-up('xlarge') {
+    left: 15%;
+    @include rem('width', 8rem);
+    width: 7vw;
+  }
+}
+.logo-link:hover + header nav ul .home {
+  @extend %li-hover;
+}
+
+
+nav {
+  @include bp-lower('medium') {
+    padding: 0;
+    float: left;
+    width: 100%;
+    font-size: 62%;
+    font-size: 3vw;
+  }
+  @include bp-up('medium') {
+    float: right;
+  }
+  @include bp('medium') {
+    padding: 0 10%;
+    font-size: 62%;
+    font-size: 1.5vw;
+  }
+  @include bp('large') {
+    padding: 0 12%;
+  }
+  @include bp-up('large') {
+    font-size: 100%;
+    font-size: 1.2vw;
+  }
+  @include bp-up('xlarge') {
+    padding: 0 15%;
+    font-size: 110%;
+    font-size: 1vw;
+  }
+  ul {
+    padding:0;
+    float: right;
+    margin-bottom: 0em;
+    @include bp('small') {
+      width: 100%;
+    }
+    li {
+      transition: background 0.5s, color 0.5s;
+      color: white;
+      background: linear-gradient(to top, white 50%, $green 50%);
+      background-size: 200%;
+      background-position-y: 0%;
+      float: left;
+      list-style-type: none;
+      font-size: 1.5em;
+      @include bp('small') {
+        width: 100%;
+        @include rem('padding', 1.5rem);
+        @include rem('padding-bottom', .75rem);
+      }
+      @include bp-up('medium') {
+        @include rem('padding', .5rem);
+        @include rem('border-right-width', .1rem);
+        border-right-style: solid;
+        border-right-color: white;
+      }
+      @include bp-up('xlarge') {
+        @include rem('padding', 1rem 1.2rem);
+        @include rem('padding-bottom', .5rem);
+      }
+
+      &.selected{
+        background-position-y: 75%;
+        color: $green;
+      }
+      &:last-of-type {
+        }
+      &:hover,&.selected:hover{
+        @extend %li-hover;
+      }
+    }
+    a {
+      text-decoration:none;
+      &:last-of-type > li {
+        border: none;
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+          </div>
+          <div class="example">
+<a href="../index.html" class="logo-link">
+  <h1 class="subtitle left">holz gmbh</h1>
+  <img class="logo" alt="shp holz gmbh" src="../images/shp_logo.svg"/>
+</a>
+  <nav role="navigation">
+    <ul>
+      <a href="../index.html" ><li class="home navlogo">Home</li></a>
+    </ul>
+  </nav>
+        </div>
+      </article>
+    </section>
+
+    <section class="main-section">
+      <a class="button top" role="button" onclick="showCode(this,'html','scss');">scss</a>
+      <a class="button bottom btn-selected" role="button" onclick="showCode(this,'scss','html');">html</a>
+      <article>
+        <h1>button</h1>
+          <div class="code">
+            <pre class="html">
+            <code class="language-markup">
+<a class="button" role="button" onclick="clickMe(this)">Button</a>
+
+<script>
+function clickMe(elem)
+{
+  if((' ' + elem.className + ' ').indexOf("btn-selected") === -1) {
+    elem.className += " btn-selected";
+  }
+  else {
+    elem.className = elem.className.substring(0, elem.className.indexOf("btn-selected"))
+  }
+}
+</script>
+          </code>
+        </pre>
+        <pre class="scss hide">
+        <code class="language-scss">
+.button {
+  @include shadow-small();
+  @include rem('padding', 0.5rem);
+  border: 0 solid white;
+  @include rem('border-width', 0.2rem);
+  @include rem('border-radius', 99rem);
+  cursor: pointer;
+  transition: background-color 1s, color 1s, border-color 1s;
+  color: $green;
+
+  &.btn-selected {
+    background-color: $green;
+    color: white;
+  }
+
+  &:hover {
+    background-color: $green;
+    border-color: $green;
+    color: white;
+  }
+}
+</code>
+    </pre>
+          </div>
+          <div class="example padding">
+<a class="button" role="button" onclick="clickMe(this)">Button</a>
+        </div>
+      </article>
+    </section>
+
     <footer class="vcard">
       <span class= "org">shp holz gmbh</span>
       <span class= "fn">DI Gerhard Pipp</span>
@@ -220,13 +435,23 @@ footer{
     }
     }
 
+    function clickMe(elem)
+    {
+      if((' ' + elem.className + ' ').indexOf("btn-selected") === -1) {
+        elem.className += " btn-selected";
+      }
+      else {
+        elem.className = elem.className.substring(0, elem.className.indexOf("btn-selected"))
+      }
+    }
+
     function showCode(elem,hide,show) {
       var btnElems = elem.parentNode.getElementsByTagName('a'), i = 0;
       for (i in btnElems) {
         if ( typeof btnElems[i].className != 'undefined')
         {
           btnElems[i].className = btnElems[i].className.replace(/btn-selected/g, "");
-          console.log(btnElems[i].className);
+
         }
       }
 
