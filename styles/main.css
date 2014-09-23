@@ -1016,7 +1016,7 @@ aside .container div:hover img {
     width: 85%;
   }
 
-  .subtitle {
+  .subtitle.right {
     right: 16%;
   }
 }
