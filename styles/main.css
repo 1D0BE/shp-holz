@@ -877,21 +877,27 @@ a, a:visited {
     left: 55%;
     width: 40%;
   }
-  .main-section img {
+  .main-section .impressum h1, .main-section .impressum p {
+    position: relative;
+    left: 15%;
+    width: 75%;
+  }
+  .main-section img:not(.icon) {
     width: 960px;
     width: 60rem;
     -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
     -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
+    width: auto;
     position: absolute;
     top: -5%;
     right: 50%;
     height: 110%;
     background-color: transparent;
   }
-  .main-section img {
-    width: auto;
+  .main-section .icon path {
+    fill: #329865;
   }
 }
 

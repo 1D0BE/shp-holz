@@ -23,7 +23,7 @@
     background-color: white;
     position: relative;
     z-index: -1;
-    @include rem('padding', 2rem);    
+    @include rem('padding', 2rem);
     & article > *:not(img) {
       background-color: white;
     }
@@ -35,17 +35,23 @@
       left: 55%;
       width: 40%;
     }
-    img {
+    .impressum h1, .impressum p {
+      position: relative;
+      left: 15%;
+      width: 75%;
+    }
+    img:not(.icon) {
       @include rem('width', 60rem);
       @include shadow();
+      width: auto;
       position: absolute;
       top: -5%;
       right: 50%;
       height: 110%;
       background-color:transparent;
     }
-    img {
-      width: auto;
+    .icon path {
+      fill: $green;
     }
   }
 }
