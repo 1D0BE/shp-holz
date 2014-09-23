@@ -984,7 +984,7 @@ aside .container img {
 aside .container a {
   position: relative;
 }
-aside .container a:active img {
+aside .container a.color img {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }

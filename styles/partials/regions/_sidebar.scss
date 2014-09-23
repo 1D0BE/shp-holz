@@ -30,7 +30,7 @@ aside{
     a {
       position: relative;
     }
-    a:active img {
+    a.color img {
       filter: grayscale(0%);
     }
     p {
