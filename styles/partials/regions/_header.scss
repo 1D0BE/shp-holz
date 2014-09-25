@@ -165,7 +165,7 @@ nav {
     font-size: 3vw;
   }
   @include bp-up('large') {
-    font-size: 50%;
+    font-size: 1.4em;
     font-size: 1.5vw;
   }
   @include bp-lower('medium') {
@@ -180,20 +180,21 @@ nav {
   }
   @include bp-up('xlarge') {
     bottom: -2em;
+
   }
 }
 .left{
   @include bp-lower('medium') {
     left: 62%;
   }
-  @include bp-up('medium') {
-    left: 19%;
+  @include bp('medium') {
+    left: 24.2%;
   }
   @include bp('large') {
     left: 21%;
   }
   @include bp-up('xlarge') {
-    left: 22%;
+    left: 23.5%;
   }
 }
 .right{
@@ -202,5 +203,8 @@ nav {
   }
   @include bp-up('medium') {
     right: 5%;
+  }
+  @include bp('large'){
+    right: 2%;
   }
 }
