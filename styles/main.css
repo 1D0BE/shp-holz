@@ -756,7 +756,7 @@ nav ul a:last-of-type > li {
 }
 @media (min-width: 67.063em) {
   .subtitle {
-    font-size: 50%;
+    font-size: 1.4em;
     font-size: 1.5vw;
   }
 }
@@ -788,9 +788,9 @@ nav ul a:last-of-type > li {
     left: 62%;
   }
 }
-@media (min-width: 40.063em) {
+@media (min-width: 40.063em) and (max-width: 67em) {
   .left {
-    left: 19%;
+    left: 24.2%;
   }
 }
 @media (min-width: 67.063em) and (max-width: 100em) {
@@ -800,7 +800,7 @@ nav ul a:last-of-type > li {
 }
 @media (min-width: 100.063em) {
   .left {
-    left: 22%;
+    left: 23.5%;
   }
 }
 
@@ -812,6 +812,11 @@ nav ul a:last-of-type > li {
 @media (min-width: 40.063em) {
   .right {
     right: 5%;
+  }
+}
+@media (min-width: 67.063em) and (max-width: 100em) {
+  .right {
+    right: 2%;
   }
 }
 
@@ -1056,11 +1061,10 @@ aside .container div:hover img {
 }
 
 @media (min-width: 40.063em) {
-  .wrapper.small {
+  .use-wrapper .wrapper.small {
     width: 85%;
   }
-
-  .subtitle.right {
+  .use-wrapper .subtitle.right {
     right: 16%;
   }
 }
