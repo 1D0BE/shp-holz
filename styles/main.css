@@ -907,13 +907,16 @@ a, a:visited {
 
 .wrapper {
   float: left;
-  padding-bottom: 128px;
-  padding-bottom: 8rem;
-  margin: 0;
+  padding-top: 288px;
+  padding-top: 18rem;
 }
 .wrapper:first-of-type {
-  padding-top: 240px;
-  padding-top: 15rem;
+  padding-top: 304px;
+  padding-top: 19rem;
+}
+.wrapper:last-of-type {
+  padding-bottom: 128px;
+  padding-bottom: 8rem;
 }
 
 footer {

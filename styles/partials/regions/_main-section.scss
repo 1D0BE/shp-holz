@@ -61,9 +61,11 @@
 }
 .wrapper{
   float:left;
-  @include rem('padding-bottom', 8rem);
+  @include rem('padding-top', 18rem);
   &:first-of-type {
-    @include rem('padding-top', 15rem);
+    @include rem('padding-top', 19rem);
   }
-  margin:0;
+  &:last-of-type{
+    @include rem('padding-bottom', 8rem);
+  }
 }
