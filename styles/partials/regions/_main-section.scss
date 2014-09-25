@@ -1,5 +1,6 @@
 .main-section {
   float:left;
+  width:100%;
   @include bp-lower('medium') {
     article > *:not(img) {
       background-color: white;
@@ -17,7 +18,9 @@
       @include rem('max-height', 20rem);
       @include shadow();
     }
-
+    .impressum > p:last-of-type {
+      @include rem('padding-bottom', 3rem);
+    }
   }
   @include bp-up('medium') {
     background-color: white;
@@ -56,9 +59,19 @@
       height: 110%;
       background-color:transparent;
     }
-    .icon path {
-      fill: $green;
-    }
+  }
+
+  .icon path {
+    fill: $green;
+  }
+  svg {
+    vertical-align:middle;
+    @include rem('width', 3rem);
+    @include rem('height', 3rem);
+  }
+
+  .impressum p {
+    font-size:25px;
   }
 }
 .wrapper{
