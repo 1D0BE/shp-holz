@@ -831,6 +831,9 @@ a, a:visited {
   color: inherit;
 }
 
+.main-section {
+  float: left;
+}
 @media (max-width: 40.063em) {
   .main-section article > *:not(img) {
     background-color: white;
@@ -905,18 +908,20 @@ a, a:visited {
   }
 }
 
-.wrapper {
-  float: left;
-  padding-top: 288px;
-  padding-top: 18rem;
-}
-.wrapper:first-of-type {
-  padding-top: 304px;
-  padding-top: 19rem;
-}
-.wrapper:last-of-type {
-  padding-bottom: 128px;
-  padding-bottom: 8rem;
+@media (min-width: 40.063em) {
+  .wrapper {
+    float: left;
+    padding-top: 288px;
+    padding-top: 18rem;
+  }
+  .wrapper:first-of-type {
+    padding-top: 304px;
+    padding-top: 19rem;
+  }
+  .wrapper:last-of-type {
+    padding-bottom: 128px;
+    padding-bottom: 8rem;
+  }
 }
 
 footer {
