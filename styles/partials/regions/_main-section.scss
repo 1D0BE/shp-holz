@@ -1,6 +1,4 @@
 .main-section {
-
-  @include rem('margin-bottom', 8rem);
   @include bp-lower('medium') {
     article > *:not(img) {
       background-color: white;
@@ -62,9 +60,10 @@
   }
 }
 .wrapper{
-  z-index: -1;
+  float:left;
   @include rem('padding-bottom', 8rem);
   &:first-of-type {
     @include rem('padding-top', 15rem);
   }
+  margin:0;
 }
