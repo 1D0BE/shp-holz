@@ -866,6 +866,14 @@ a, a:visited {
     padding: 32px;
     padding: 2rem;
   }
+  body:not(.use-wrapper) .main-section {
+    margin-bottom: 128px;
+    margin-bottom: 8rem;
+  }
+  body:not(.use-wrapper) .main-section:first-of-type {
+    margin-top: 240px;
+    margin-top: 15rem;
+  }
   .main-section article > *:not(img) {
     background-color: white;
   }
@@ -899,6 +907,16 @@ a, a:visited {
   .main-section .icon path {
     fill: #329865;
   }
+}
+
+.wrapper {
+  z-index: -1;
+  padding-bottom: 128px;
+  padding-bottom: 8rem;
+}
+.wrapper:first-of-type {
+  padding-top: 240px;
+  padding-top: 15rem;
 }
 
 footer {
@@ -1018,7 +1036,7 @@ aside .container div:hover img {
 }
 
 @media (min-width: 40.063em) {
-  .main-section.small {
+  .wrapper.small {
     width: 85%;
   }
 
@@ -1026,35 +1044,35 @@ aside .container div:hover img {
     right: 16%;
   }
 }
-.main-section {
+.styleguide .main-section {
   width: 100%;
   float: left;
   position: relative;
 }
-.main-section .example {
+.styleguide .main-section .example {
   width: 96%;
   float: left;
 }
-.main-section .example .not-fixed {
+.styleguide .main-section .example .not-fixed {
   position: relative;
   width: 100%;
 }
-.main-section pre {
+.styleguide .main-section pre {
   margin: 0;
   height: 100%;
 }
-.main-section .logo {
+.styleguide .main-section .logo {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.main-section .logo-link:hover + nav ul .home {
+.styleguide .main-section .logo-link:hover + nav ul .home {
   background-position-y: 100%;
   color: #329865;
 }
-.no-cssgradients .main-section .logo-link:hover + nav ul .home {
+.no-cssgradients .styleguide .main-section .logo-link:hover + nav ul .home {
   background-color: white;
 }
-.main-section .button {
+.styleguide .main-section .button {
   -webkit-box-shadow: 0 2px 4px black;
   box-shadow: 0 2px 4px black;
   -webkit-box-shadow: 0 0.10rem 0.25rem black;
@@ -1071,28 +1089,28 @@ aside .container div:hover img {
   transition: background-color 1s, color 1s, border-color 1s;
   color: #329865;
 }
-.main-section .button.btn-selected {
+.styleguide .main-section .button.btn-selected {
   background-color: #329865;
   color: white;
 }
-.main-section .button:hover {
+.styleguide .main-section .button:hover {
   background-color: #329865;
   border-color: #329865;
   color: white;
 }
 @media (max-width: 40.063em) {
-  .main-section {
+  .styleguide .main-section {
     margin-bottom: 48px;
     margin-bottom: 3rem;
   }
-  .main-section .logo {
+  .styleguide .main-section .logo {
     float: left;
     width: 20%;
     position: relative;
     left: -30%;
     margin: 0 0 2rem 0;
   }
-  .main-section .subtitle {
+  .styleguide .main-section .subtitle {
     float: left;
     position: relative;
     left: 35%;
@@ -1100,7 +1118,7 @@ aside .container div:hover img {
     text-align: left;
     bottom: 30%;
   }
-  .main-section pre {
+  .styleguide .main-section pre {
     max-height: 320px;
     max-height: 20rem;
     -webkit-box-shadow: 0 0 8px black;
@@ -1109,55 +1127,51 @@ aside .container div:hover img {
     box-shadow: 0 0 0.5rem black;
     width: 100%;
   }
-  .main-section .example {
+  .styleguide .main-section .example {
     float: left;
     background-color: white;
   }
-  .main-section .example nav {
+  .styleguide .main-section .example nav {
     z-index: 0;
     margin-top: 48px;
     margin-top: 3rem;
   }
-  .main-section .button {
+  .styleguide .main-section .button {
     position: absolute;
     top: 6.4px;
     top: 0.4rem;
   }
-  .main-section .button.top {
+  .styleguide .main-section .button.top {
     left: 24px;
     left: 1.5rem;
   }
-  .main-section .button.bottom {
+  .styleguide .main-section .button.bottom {
     right: 24px;
     right: 1.5rem;
   }
-  .main-section .padding .button {
+  .styleguide .main-section .padding .button {
     float: left;
     position: relative;
     margin-bottom: 1rem;
   }
 }
 @media (min-width: 40.063em) {
-  .main-section {
+  .styleguide .main-section {
     position: relative;
     z-index: -1;
   }
-  .main-section .navlogo {
+  .styleguide .main-section .navlogo {
     position: absolute;
     right: 25%;
   }
-  .main-section .subtitle {
+  .styleguide .main-section .subtitle {
     width: 100%;
   }
-  .styleguide .main-section {
+  .styleguide .styleguide .main-section {
     padding: 48px;
     padding: 3rem;
   }
-  .main-section:first-of-type {
-    margin-top: 240px;
-    margin-top: 15rem;
-  }
-  .main-section .code {
+  .styleguide .main-section .code {
     -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
     -webkit-box-shadow: 0 0 0.5rem black;
@@ -1169,37 +1183,37 @@ aside .container div:hover img {
     width: 40%;
     background-color: transparent;
   }
-  .main-section pre {
+  .styleguide .main-section pre {
     border-radius: 0;
   }
-  .main-section .example {
+  .styleguide .main-section .example {
     background-color: transparent;
     position: relative;
     left: 55%;
     width: 40%;
   }
-  .main-section .example:not(.padding) > * {
+  .styleguide .main-section .example:not(.padding) > * {
     padding: 0;
     float: left;
   }
-  .main-section .example.padding {
+  .styleguide .main-section .example.padding {
     margin-bottom: 32px;
     margin-bottom: 2rem;
   }
-  .main-section .button {
+  .styleguide .main-section .button {
     position: absolute;
     left: 16px;
     left: 1rem;
   }
-  .main-section .button.top {
+  .styleguide .main-section .button.top {
     top: 48px;
     top: 3rem;
   }
-  .main-section .button.bottom {
+  .styleguide .main-section .button.bottom {
     bottom: 48px;
     bottom: 3rem;
   }
 }
-.main-section .hide {
+.styleguide .main-section .hide {
   display: none;
 }

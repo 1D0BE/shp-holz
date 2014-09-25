@@ -1,4 +1,4 @@
-.main-section {
+.styleguide .main-section {
   width: 100%;
   float: left;
   position: relative;
@@ -121,10 +121,6 @@
 
     .styleguide & {
       @include rem('padding', 3rem);
-    }
-
-    &:first-of-type {
-      @include rem('margin-top', 15rem);
     }
 
     .code {

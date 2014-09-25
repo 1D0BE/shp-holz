@@ -23,6 +23,12 @@
     background-color: white;
     position: relative;
     z-index: -1;
+    body:not(.use-wrapper) &{
+      @include rem('margin-bottom', 8rem);
+       &:first-of-type {
+      @include rem('margin-top', 15rem);
+      }
+    }
     @include rem('padding', 2rem);
     & article > *:not(img) {
       background-color: white;
@@ -53,5 +59,12 @@
     .icon path {
       fill: $green;
     }
+  }
+}
+.wrapper{
+  z-index: -1;
+  @include rem('padding-bottom', 8rem);
+  &:first-of-type {
+    @include rem('padding-top', 15rem);
   }
 }
