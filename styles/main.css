@@ -865,11 +865,11 @@ a, a:visited {
 }
 @media (min-width: 40.063em) {
   .main-section {
+    padding: 32px;
+    padding: 2rem;
     background-color: white;
     position: relative;
     z-index: -1;
-    padding: 32px;
-    padding: 2rem;
   }
   body:not(.use-wrapper) .main-section {
     margin-bottom: 128px;
@@ -909,6 +909,7 @@ a, a:visited {
 @media (min-width: 40.063em) {
   .wrapper {
     float: left;
+    width: 100%;
     padding-top: 288px;
     padding-top: 18rem;
   }
@@ -919,6 +920,48 @@ a, a:visited {
   .wrapper:last-of-type {
     padding-bottom: 128px;
     padding-bottom: 8rem;
+  }
+}
+
+.button {
+  -webkit-box-shadow: 0 2px 4px black;
+  box-shadow: 0 2px 4px black;
+  -webkit-box-shadow: 0 0.10rem 0.25rem black;
+  box-shadow: 0 0.10rem 0.25rem black;
+  padding: 8px;
+  padding: 0.5rem;
+  border: 0 solid white;
+  border-width: 3.2px;
+  border-width: 0.2rem;
+  border-radius: 1584px;
+  border-radius: 99rem;
+  cursor: pointer;
+  -webkit-transition: background-color 1s, color 1s, border-color 1s;
+  transition: background-color 1s, color 1s, border-color 1s;
+  color: #329865;
+}
+.button.btn-selected {
+  background-color: #329865;
+  color: white;
+}
+.button:hover {
+  background-color: #329865;
+  border-color: #329865;
+  color: white;
+}
+@media (min-width: 40.063em) {
+  .button {
+    position: fixed;
+    right: 16px;
+    right: 1rem;
+  }
+  .button.upper {
+    top: 128px;
+    top: 8rem;
+  }
+  .button.lower {
+    bottom: 80px;
+    bottom: 5rem;
   }
 }
 
@@ -1103,32 +1146,6 @@ aside .container div:hover img {
 }
 .no-cssgradients .styleguide .main-section .logo-link:hover + nav ul .home {
   background-color: white;
-}
-.styleguide .main-section .button {
-  -webkit-box-shadow: 0 2px 4px black;
-  box-shadow: 0 2px 4px black;
-  -webkit-box-shadow: 0 0.10rem 0.25rem black;
-  box-shadow: 0 0.10rem 0.25rem black;
-  padding: 8px;
-  padding: 0.5rem;
-  border: 0 solid white;
-  border-width: 3.2px;
-  border-width: 0.2rem;
-  border-radius: 1584px;
-  border-radius: 99rem;
-  cursor: pointer;
-  -webkit-transition: background-color 1s, color 1s, border-color 1s;
-  transition: background-color 1s, color 1s, border-color 1s;
-  color: #329865;
-}
-.styleguide .main-section .button.btn-selected {
-  background-color: #329865;
-  color: white;
-}
-.styleguide .main-section .button:hover {
-  background-color: #329865;
-  border-color: #329865;
-  color: white;
 }
 @media (max-width: 40.063em) {
   .styleguide .main-section {

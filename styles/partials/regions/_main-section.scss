@@ -21,6 +21,7 @@
   }
 
   @include bp-up('medium') {
+    @include rem('padding', 2rem);
     background-color: white;
     position: relative;
     z-index: -1;
@@ -30,7 +31,6 @@
       @include rem('margin-top', 15rem);
       }
     }
-    @include rem('padding', 2rem);
     & article > *:not(img) {
       background-color: white;
     }
@@ -57,14 +57,45 @@
 }
 .wrapper{
   @include bp-up("medium"){
-  float:left;
-  @include rem('padding-top', 18rem);
-  &:first-of-type {
-    @include rem('padding-top', 19rem);
-  }
-  &:last-of-type{
-    @include rem('padding-bottom', 8rem);
-
+    float:left;
+    width:100%;
+    @include rem('padding-top', 18rem);
+    &:first-of-type {
+      @include rem('padding-top', 19rem);
+    }
+    &:last-of-type{
+      @include rem('padding-bottom', 8rem);
   }
 }
+}
+.button {
+  @include shadow-small();
+  @include rem('padding', 0.5rem);
+  border: 0 solid white;
+  @include rem('border-width', 0.2rem);
+  @include rem('border-radius', 99rem);
+  cursor: pointer;
+  transition: background-color 1s, color 1s, border-color 1s;
+  color: $green;
+
+  &.btn-selected {
+    background-color: $green;
+    color: white;
+  }
+
+  &:hover {
+    background-color: $green;
+    border-color: $green;
+    color: white;
+  }
+  @include bp-up('medium') {
+    position: fixed;
+    @include rem('right', 1rem);
+    &.upper{
+      @include rem('top', 8rem);
+      }
+    &.lower {
+      @include rem('bottom', 5rem);
+    }
+  }
 }

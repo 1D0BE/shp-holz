@@ -27,29 +27,7 @@
     .no-cssgradients & {
       background-color: white;
     }
-  }
-
-  .button {
-    @include shadow-small();
-    @include rem('padding', 0.5rem);
-    border: 0 solid white;
-    @include rem('border-width', 0.2rem);
-    @include rem('border-radius', 99rem);
-    cursor: pointer;
-    transition: background-color 1s, color 1s, border-color 1s;
-    color: $green;
-
-    &.btn-selected {
-      background-color: $green;
-      color: white;
-    }
-
-    &:hover {
-      background-color: $green;
-      border-color: $green;
-      color: white;
-    }
-  }
+  }  
 
   @include bp-lower('medium') {
     @include rem('margin-bottom', 3rem);
