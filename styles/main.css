@@ -918,8 +918,8 @@ a, a:visited {
     padding-top: 19rem;
   }
   .wrapper:last-of-type {
-    padding-bottom: 128px;
-    padding-bottom: 8rem;
+    padding-bottom: 240px;
+    padding-bottom: 15rem;
   }
 }
 
@@ -928,8 +928,8 @@ a, a:visited {
   box-shadow: 0 2px 4px black;
   -webkit-box-shadow: 0 0.10rem 0.25rem black;
   box-shadow: 0 0.10rem 0.25rem black;
-  padding: 8px;
-  padding: 0.5rem;
+  padding: 16px;
+  padding: 1rem;
   border: 0 solid white;
   border-width: 3.2px;
   border-width: 0.2rem;
@@ -939,6 +939,9 @@ a, a:visited {
   -webkit-transition: background-color 1s, color 1s, border-color 1s;
   transition: background-color 1s, color 1s, border-color 1s;
   color: #329865;
+  font-size: 25px;
+  font-weight: bold;
+  font-color: #329865;
 }
 .button.btn-selected {
   background-color: #329865;
@@ -962,6 +965,14 @@ a, a:visited {
   .button.lower {
     bottom: 80px;
     bottom: 5rem;
+  }
+}
+@media (max-width: 40.063em) {
+  .button.upper {
+    display: none;
+  }
+  .button.lower {
+    display: none;
   }
 }
 
