@@ -862,10 +862,6 @@ a, a:visited {
     -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
   }
-  .main-section .impressum > p:last-of-type {
-    padding-bottom: 48px;
-    padding-bottom: 3rem;
-  }
 }
 @media (min-width: 40.063em) {
   .main-section {
@@ -894,11 +890,6 @@ a, a:visited {
     left: 55%;
     width: 40%;
   }
-  .main-section .impressum h1, .main-section .impressum p {
-    position: relative;
-    left: 15%;
-    width: 75%;
-  }
   .main-section img:not(.icon) {
     width: 960px;
     width: 60rem;
@@ -913,19 +904,6 @@ a, a:visited {
     height: 110%;
     background-color: transparent;
   }
-}
-.main-section .icon path {
-  fill: #329865;
-}
-.main-section svg {
-  vertical-align: middle;
-  width: 48px;
-  width: 3rem;
-  height: 48px;
-  height: 3rem;
-}
-.main-section .impressum p {
-  font-size: 25px;
 }
 
 @media (min-width: 40.063em) {
@@ -1061,13 +1039,43 @@ aside .container div:hover img {
 }
 
 @media (min-width: 40.063em) {
-  .use-wrapper .wrapper.small {
+  .wrapper.small {
     width: 85%;
   }
-  .use-wrapper .subtitle.right {
+
+  .subtitle.right {
     right: 16%;
   }
 }
+@media (max-width: 40.063em) {
+  .main-section .impressum > p:last-of-type {
+    padding-bottom: 48px;
+    padding-bottom: 3rem;
+  }
+}
+@media (min-width: 40.063em) {
+  .main-section .impressum h1, .main-section .impressum p {
+    position: relative;
+    left: 15%;
+    width: 75%;
+  }
+}
+.main-section .icon path {
+  fill: #329865;
+}
+.main-section svg {
+  vertical-align: middle;
+  width: 48px;
+  width: 3rem;
+  height: 48px;
+  height: 3rem;
+  margin-right: 19.2px;
+  margin-right: 1.2rem;
+}
+.main-section .impressum p {
+  font-size: 25px;
+}
+
 .styleguide .main-section {
   width: 100%;
   float: left;
