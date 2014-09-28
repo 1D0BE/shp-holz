@@ -26,6 +26,11 @@ footer{
   }
   > * {
     @include rem('margin', 0.5rem);
-    white-space: nowrap;
+    @include bp('footer-wrap-fix'){
+      white-space: normal;
+    }
+    @include bp-up('footer-no-wrap-fix'){
+      white-space: nowrap;
+    }
   }
 }

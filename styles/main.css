@@ -1016,7 +1016,16 @@ footer {
 footer > * {
   margin: 8px;
   margin: 0.5rem;
-  white-space: nowrap;
+}
+@media (min-width: 0) and (max-width: 23em) {
+  footer > * {
+    white-space: normal;
+  }
+}
+@media (min-width: 23em) {
+  footer > * {
+    white-space: nowrap;
+  }
 }
 
 aside {

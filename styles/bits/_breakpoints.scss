@@ -9,7 +9,10 @@ $breakpoints: (
   'xlarge-max' : 120em,
   'xxlarge-min': 120.063em,
   'subtitle-sm-min':40.063em,
-  'subtitle-sm-max':53em
+  'subtitle-sm-max':53em,
+  'footer-wrap-fix-min': 0,
+  'footer-wrap-fix-max': 23em,
+  'footer-no-wrap-fix-min': 23em
 );
 
 @mixin bp-up($breakpoint) {
