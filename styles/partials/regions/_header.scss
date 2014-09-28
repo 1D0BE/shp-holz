@@ -136,12 +136,19 @@ nav {
       }
       &:last-of-type {
         }
-      &:hover, &.selected:hover{
+      &:hover, &.selected:hover {
         @extend %li-hover;
+        .no-cssgradients &, .no-bgpositionxy &, .no-js & {
+          color: $green;
+        }
       }
       .no-cssgradients &, .no-bgpositionxy &, .no-js & {
         background: none;
         background-color: $green;
+        &.selected {
+          background-color: white;
+          color: $green;
+        }
       }
     }
     a {
@@ -204,7 +211,7 @@ nav {
   @include bp-up('medium') {
     right: 5%;
   }
-  @include bp('large'){
+  @include bp('large') {
     right: 2%;
   }
 }

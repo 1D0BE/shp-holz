@@ -731,9 +731,16 @@ nav ul li.selected {
   background-position-y: 75%;
   color: #329865;
 }
+.no-cssgradients nav ul li:hover, .no-bgpositionxy nav ul li:hover, .no-js nav ul li:hover, .no-cssgradients nav ul li.selected:hover, .no-bgpositionxy nav ul li.selected:hover, .no-js nav ul li.selected:hover {
+  color: #329865;
+}
 .no-cssgradients nav ul li, .no-bgpositionxy nav ul li, .no-js nav ul li {
   background: none;
   background-color: #329865;
+}
+.no-cssgradients nav ul li.selected, .no-bgpositionxy nav ul li.selected, .no-js nav ul li.selected {
+  background-color: white;
+  color: #329865;
 }
 nav ul a {
   text-decoration: none;
