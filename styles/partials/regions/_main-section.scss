@@ -54,9 +54,13 @@
       background-color:transparent;
     }
   }
+
+  .no-boxshadow & {
+    @include rem('margin-top', 10rem);
+  }
 }
 .wrapper{
-  @include bp-up("medium"){
+  @include bp-up("medium") {
     float:left;
     width:100%;
     @include rem('padding-top', 18rem);

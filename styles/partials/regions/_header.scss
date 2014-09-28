@@ -1,3 +1,4 @@
+@media screen {
 header {
   position: relative;
   @include bp-lower('medium') {
@@ -215,4 +216,5 @@ nav {
   @include bp('large') {
     right: 2%;
   }
+}
 }
