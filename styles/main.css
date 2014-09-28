@@ -536,13 +536,15 @@ pre[class*="language-"] {
   cursor: help;
 }
 
-header {
-  position: relative;
-  overflow: initial;
-  /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
-  width: 100%;
+@media screen {
+  header {
+    position: relative;
+    overflow: initial;
+    /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
+    width: 100%;
+  }
 }
-@media (max-width: 40.063em) {
+@media screen and (max-width: 40.063em) {
   header {
     position: relative;
     float: left;
@@ -556,7 +558,7 @@ header {
     z-index: -1;
   }
 }
-@media (min-width: 40.063em) {
+@media screen and (min-width: 40.063em) {
   header {
     position: fixed;
     top: 0;
@@ -564,19 +566,21 @@ header {
   }
 }
 
-.logo-link:hover + nav ul .home, nav ul li:hover, nav ul li.selected:hover {
-  background-position-y: 100%;
-  color: #329865;
-}
-.no-cssgradients .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-cssgradients .home, .no-cssgradients nav ul li:hover, nav ul .no-cssgradients li:hover, .no-bgpositionxy .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-bgpositionxy .home, .no-bgpositionxy nav ul li:hover, nav ul .no-bgpositionxy li:hover, .no-js .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-js .home, .no-js nav ul li:hover, nav ul .no-js li:hover {
-  background: none;
-  background-color: white;
-}
+@media screen {
+  .logo-link:hover + nav ul .home, nav ul li:hover, nav ul li.selected:hover {
+    background-position-y: 100%;
+    color: #329865;
+  }
+  .no-cssgradients .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-cssgradients .home, .no-cssgradients nav ul li:hover, nav ul .no-cssgradients li:hover, .no-bgpositionxy .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-bgpositionxy .home, .no-bgpositionxy nav ul li:hover, nav ul .no-bgpositionxy li:hover, .no-js .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-js .home, .no-js nav ul li:hover, nav ul .no-js li:hover {
+    background: none;
+    background-color: white;
+  }
 
-.logo {
-  z-index: 1;
+  .logo {
+    z-index: 1;
+  }
 }
-@media (max-width: 40.063em) {
+@media screen and (max-width: 40.063em) {
   .logo {
     display: block;
     width: 64px;
@@ -587,7 +591,7 @@ header {
     margin: 1vw auto;
   }
 }
-@media (min-width: 40.063em) {
+@media screen and (min-width: 40.063em) {
   .logo {
     position: fixed;
     top: 24px;
@@ -597,17 +601,17 @@ header {
     width: 9vw;
   }
 }
-@media (min-width: 40.063em) and (max-width: 67em) {
+@media screen and (min-width: 40.063em) and (max-width: 67em) {
   .logo {
     left: 10%;
   }
 }
-@media (min-width: 67.063em) and (max-width: 100em) {
+@media screen and (min-width: 67.063em) and (max-width: 100em) {
   .logo {
     left: 12%;
   }
 }
-@media (min-width: 100.063em) {
+@media screen and (min-width: 100.063em) {
   .logo {
     left: 15%;
     width: 128px;
@@ -616,15 +620,17 @@ header {
   }
 }
 
-nav {
-  -webkit-box-shadow: 0 0 8px black;
-  box-shadow: 0 0 8px black;
-  -webkit-box-shadow: 0 0 0.5rem black;
-  box-shadow: 0 0 0.5rem black;
-  background-color: #329865;
-  position: relative;
+@media screen {
+  nav {
+    -webkit-box-shadow: 0 0 8px black;
+    box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
+    box-shadow: 0 0 0.5rem black;
+    background-color: #329865;
+    position: relative;
+  }
 }
-@media (max-width: 40.063em) {
+@media screen and (max-width: 40.063em) {
   nav {
     z-index: -1;
     padding: 0;
@@ -637,13 +643,13 @@ nav {
     font-size: 3vw;
   }
 }
-@media (min-width: 40.063em) {
+@media screen and (min-width: 40.063em) {
   nav {
     float: right;
     width: 100%;
   }
 }
-@media (min-width: 40.063em) and (max-width: 67em) {
+@media screen and (min-width: 40.063em) and (max-width: 67em) {
   nav {
     padding: 0 10%;
     padding-top: 24px;
@@ -652,20 +658,20 @@ nav {
     font-size: 1.5vw;
   }
 }
-@media (min-width: 67.063em) and (max-width: 100em) {
+@media screen and (min-width: 67.063em) and (max-width: 100em) {
   nav {
     padding: 0 12%;
     padding-top: 24px;
     padding-top: 1.5rem;
   }
 }
-@media (min-width: 67.063em) {
+@media screen and (min-width: 67.063em) {
   nav {
     font-size: 100%;
     font-size: 1.2vw;
   }
 }
-@media (min-width: 100.063em) {
+@media screen and (min-width: 100.063em) {
   nav {
     padding: 0 15%;
     padding-top: 24px;
@@ -674,12 +680,14 @@ nav {
     font-size: 1vw;
   }
 }
-nav ul {
-  padding: 0;
-  float: right;
-  margin-bottom: 0em;
+@media screen {
+  nav ul {
+    padding: 0;
+    float: right;
+    margin-bottom: 0em;
+  }
 }
-@media (min-width: 0) and (max-width: 40em) {
+@media screen and (min-width: 0) and (max-width: 40em) {
   nav ul {
     -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
@@ -688,21 +696,23 @@ nav ul {
     width: 100%;
   }
 }
-nav ul li {
-  -webkit-transition: background 0.5s, color 0.5s;
-  transition: background 0.5s, color 0.5s;
-  color: white;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, white), color-stop(50%, #329865));
-  background: -webkit-linear-gradient(bottom, white 50%, #329865 50%);
-  background: linear-gradient(to top, white 50%, #329865 50%);
-  -webkit-background-size: 200%;
-  background-size: 200%;
-  background-position-y: 0%;
-  float: left;
-  list-style-type: none;
-  font-size: 1.5em;
+@media screen {
+  nav ul li {
+    -webkit-transition: background 0.5s, color 0.5s;
+    transition: background 0.5s, color 0.5s;
+    color: white;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, white), color-stop(50%, #329865));
+    background: -webkit-linear-gradient(bottom, white 50%, #329865 50%);
+    background: linear-gradient(to top, white 50%, #329865 50%);
+    -webkit-background-size: 200%;
+    background-size: 200%;
+    background-position-y: 0%;
+    float: left;
+    list-style-type: none;
+    font-size: 1.5em;
+  }
 }
-@media (min-width: 0) and (max-width: 40em) {
+@media screen and (min-width: 0) and (max-width: 40em) {
   nav ul li {
     width: 100%;
     padding: 24px;
@@ -711,7 +721,7 @@ nav ul li {
     padding-bottom: 0.75rem;
   }
 }
-@media (min-width: 40.063em) {
+@media screen and (min-width: 40.063em) {
   nav ul li {
     padding: 8px;
     padding: 0.5rem;
@@ -721,7 +731,7 @@ nav ul li {
     border-right-color: white;
   }
 }
-@media (min-width: 100.063em) {
+@media screen and (min-width: 100.063em) {
   nav ul li {
     padding: 16px 19.2px;
     padding: 1rem 1.2rem;
@@ -729,101 +739,103 @@ nav ul li {
     padding-bottom: 0.5rem;
   }
 }
-nav ul li.selected {
-  background-position-y: 75%;
-  color: #329865;
-}
-.no-cssgradients nav ul li:hover, .no-bgpositionxy nav ul li:hover, .no-js nav ul li:hover, .no-cssgradients nav ul li.selected:hover, .no-bgpositionxy nav ul li.selected:hover, .no-js nav ul li.selected:hover {
-  color: #329865;
-}
-.no-cssgradients nav ul li, .no-bgpositionxy nav ul li, .no-js nav ul li {
-  background: none;
-  background-color: #329865;
-}
-.no-cssgradients nav ul li.selected, .no-bgpositionxy nav ul li.selected, .no-js nav ul li.selected {
-  background-color: white;
-  color: #329865;
-}
-nav ul a {
-  text-decoration: none;
-}
-nav ul a:last-of-type > li {
-  border: none;
-}
+@media screen {
+  nav ul li.selected {
+    background-position-y: 75%;
+    color: #329865;
+  }
+  .no-cssgradients nav ul li:hover, .no-bgpositionxy nav ul li:hover, .no-js nav ul li:hover, .no-cssgradients nav ul li.selected:hover, .no-bgpositionxy nav ul li.selected:hover, .no-js nav ul li.selected:hover {
+    color: #329865;
+  }
+  .no-cssgradients nav ul li, .no-bgpositionxy nav ul li, .no-js nav ul li {
+    background: none;
+    background-color: #329865;
+  }
+  .no-cssgradients nav ul li.selected, .no-bgpositionxy nav ul li.selected, .no-js nav ul li.selected {
+    background-color: white;
+    color: #329865;
+  }
+  nav ul a {
+    text-decoration: none;
+  }
+  nav ul a:last-of-type > li {
+    border: none;
+  }
 
-.subtitle {
-  font-weight: normal;
-  font-style: italic;
-  color: gray;
-  position: absolute;
+  .subtitle {
+    font-weight: normal;
+    font-style: italic;
+    color: gray;
+    position: absolute;
+  }
 }
-@media (max-width: 67.063em) {
+@media screen and (max-width: 67.063em) {
   .subtitle {
     font-size: 100%;
     font-size: 3vw;
   }
 }
-@media (min-width: 67.063em) {
+@media screen and (min-width: 67.063em) {
   .subtitle {
     font-size: 1.4em;
     font-size: 1.5vw;
   }
 }
-@media (max-width: 40.063em) {
+@media screen and (max-width: 40.063em) {
   .subtitle {
     top: 24px;
     top: 1.5rem;
     top: 7.9vw;
   }
 }
-@media (min-width: 40.063em) {
+@media screen and (min-width: 40.063em) {
   .subtitle {
     bottom: -2em;
   }
 }
-@media (min-width: 67.063em) and (max-width: 100em) {
+@media screen and (min-width: 67.063em) and (max-width: 100em) {
   .subtitle {
     bottom: -2em;
   }
 }
-@media (min-width: 100.063em) {
+@media screen and (min-width: 100.063em) {
   .subtitle {
     bottom: -2em;
   }
 }
 
-@media (max-width: 40.063em) {
+@media screen and (max-width: 40.063em) {
   .left {
     left: 62%;
   }
 }
-@media (min-width: 40.063em) and (max-width: 67em) {
+@media screen and (min-width: 40.063em) and (max-width: 67em) {
   .left {
     left: 24.2%;
   }
 }
-@media (min-width: 67.063em) and (max-width: 100em) {
+@media screen and (min-width: 67.063em) and (max-width: 100em) {
   .left {
     left: 21%;
   }
 }
-@media (min-width: 100.063em) {
+@media screen and (min-width: 100.063em) {
   .left {
     left: 23.5%;
   }
 }
 
-@media (max-width: 40.063em) {
+@media screen and (max-width: 40.063em) {
   .right {
     right: 62%;
   }
 }
-@media (min-width: 40.063em) {
+@media screen and (min-width: 40.063em) {
   .right {
     right: 5%;
   }
 }
-@media (min-width: 67.063em) and (max-width: 100em) {
+@media screen and (min-width: 67.063em) and (max-width: 100em) {
   .right {
     right: 2%;
   }
