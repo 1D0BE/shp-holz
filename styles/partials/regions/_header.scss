@@ -3,6 +3,7 @@ header {
   @include bp-lower('medium') {
     position:relative;
     float: left;
+    @include rem('margin-top', 1.2rem);
     @include rem('padding-top', 0.5rem);
     @include rem('bottom', 2rem);
     bottom: 8vw;
