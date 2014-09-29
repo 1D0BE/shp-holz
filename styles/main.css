@@ -926,6 +926,10 @@ a, a:visited {
     background-color: transparent;
   }
 }
+.no-boxshadow .main-section {
+  margin-top: 160px;
+  margin-top: 10rem;
+}
 
 @media (min-width: 40.063em) {
   .wrapper {
