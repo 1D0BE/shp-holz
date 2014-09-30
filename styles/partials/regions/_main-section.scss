@@ -1,9 +1,10 @@
 .main-section {
+  $back-opac: .7;
   float:left;
   width:100%;
   @include bp-lower('medium') {
     article > *:not(img) {
-      @include rgba('background-color', white, 0.7);
+      @include rgba('background-color', white, $back-opac);
       @include rem('margin-top', -0.5rem);
       @include rem('padding', 0.5rem);
       margin:0 2%;
@@ -11,7 +12,6 @@
     h1 {
       color: $green;
       text-align: center;
-
     }
     img {
       width: 100%;
@@ -25,7 +25,7 @@
 
   @include bp-up('medium') {
     @include rem('padding', 2rem);
-    @include rgba('background-color', white, 0.7);
+    @include rgba('background-color', white, $back-opac);
     position: relative;
     z-index: -1;
     body:not(.use-wrapper) &{
