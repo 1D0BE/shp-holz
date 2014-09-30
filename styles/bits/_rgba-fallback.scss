@@ -1,0 +1,4 @@
+@mixin rgba($property, $color, $opacity) {
+  #{$property}: $color;
+  #{$property}: rgba($color, $opacity);
+}
