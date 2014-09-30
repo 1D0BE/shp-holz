@@ -17,6 +17,9 @@
       width: 100%;
       @include rem('max-height', 20rem);
       @include shadow();
+      .contact & {
+          display: none;
+      }
     }
   }
 
@@ -45,13 +48,19 @@
 
     img:not(.icon) {
       @include rem('width', 60rem);
-      @include shadow();
       width: auto;
       position: absolute;
-      top: -5%;
       right: 50%;
-      height: 110%;
-      background-color:transparent;
+      background-color: transparent;
+      body:not(.contact) & {
+        @include shadow();
+        height: 110%;
+        top: -5%;
+      }
+      .contact & {
+        height: 100%;
+        top: 0;
+      }
     }
   }
 
