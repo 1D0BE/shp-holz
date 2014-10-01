@@ -908,13 +908,13 @@ a, a:visited {
   .main-section h1 {
     color: #329865;
   }
-  .main-section h1, .main-section p {
+  .main-section h1, .main-section p, .main-section .profile {
     position: relative;
     left: 55%;
     width: 40%;
     background-color: none;
   }
-  .main-section img:not(.icon) {
+  .main-section img:not(.icon):not(.profile) {
     width: 960px;
     width: 60rem;
     width: auto;
@@ -922,7 +922,7 @@ a, a:visited {
     right: 50%;
     background-color: transparent;
   }
-  body:not(.contact) .main-section img:not(.icon) {
+  body:not(.contact) .main-section img:not(.icon):not(.profile) {
     -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
     -webkit-box-shadow: 0 0 0.5rem black;
@@ -930,7 +930,7 @@ a, a:visited {
     height: 110%;
     top: -5%;
   }
-  .contact .main-section img:not(.icon) {
+  .contact .main-section img:not(.icon):not(.profile) {
     height: 100%;
     top: 0;
   }
