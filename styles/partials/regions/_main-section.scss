@@ -79,6 +79,11 @@
       &:hover {
         border-color: $green;
       }
+      &:hover ~, .selected {
+        .profile-info {
+          display: block;
+        }
+      }
     }
     .profile-info {
       display: none;

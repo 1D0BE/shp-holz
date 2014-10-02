@@ -957,6 +957,9 @@ a, a:visited {
 .main-section .profile .profile-image:hover {
   border-color: #329865;
 }
+.main-section .profile .profile-image:hover ~ .profile-info, .main-section .profile .profile-image .selected .profile-info {
+  display: block;
+}
 .main-section .profile .profile-info {
   display: none;
   position: absolute;
