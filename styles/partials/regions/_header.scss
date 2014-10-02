@@ -7,7 +7,9 @@ header {
     width:100%;
     z-index: 1;
     input[type=checkbox]:checked ~ nav{
-        left:30%;
+        //left:30%;
+        @include rem('top', -2.1rem);
+        top:-5.7vw;
     }
     &:before {
       width:100%;
@@ -42,7 +44,6 @@ header {
       height:9vw;
       @include rem('width', 2.5rem);
       width:9vw;
-      //margin:1%;
       background-image:url(../images/menu.svg);
       background-size:80% 80%;
       background-repeat:no-repeat;
@@ -108,15 +109,17 @@ nav {
 
   @include bp-lower('medium') {
     width:70%;
-    left:100%;
+    @include rem('top', -25rem);
+    //left:100%;
+    //@include rem('top', -2.1rem);
+    //top:-5.7vw;
+    left:30%;
     z-index: -1;
     padding: 0;
     font-size: 62%;
     font-size: 3vw;
-    @include rem('top', -2.1rem);
-    top:-5.7vw;
     z-index:-2;
-    transition: all 0.3s ease-out;
+    transition: all 0.4s ease-out;
   }
   @include bp-up('medium') {
     float: right;

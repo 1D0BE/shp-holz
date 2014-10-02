@@ -545,7 +545,9 @@ pre[class*="language-"] {
     z-index: 1;
   }
   header input[type=checkbox]:checked ~ nav {
-    left: 30%;
+    top: -33.6px;
+    top: -2.1rem;
+    top: -5.7vw;
   }
   header:before {
     width: 100%;
@@ -659,16 +661,15 @@ pre[class*="language-"] {
 @media screen and (max-width: 40.063em) {
   nav {
     width: 70%;
-    left: 100%;
+    top: -400px;
+    top: -25rem;
+    left: 30%;
     z-index: -1;
     padding: 0;
     font-size: 62%;
     font-size: 3vw;
-    top: -33.6px;
-    top: -2.1rem;
-    top: -5.7vw;
     z-index: -2;
-    transition: all 0.3s ease-out;
+    transition: all 0.4s ease-out;
   }
 }
 @media screen and (min-width: 40.063em) {
