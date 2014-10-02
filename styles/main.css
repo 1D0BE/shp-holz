@@ -942,6 +942,7 @@ a, a:visited {
 .main-section .profile {
   padding-bottom: 96px;
   padding-bottom: 6rem;
+  padding-left: 10%;
 }
 .main-section .profile div {
   display: inline;
@@ -976,7 +977,12 @@ a, a:visited {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 80%;
+}
+@media (max-width: 40.063em) {
+  .main-section .profile .profile-info {
+    left: 10%;
+  }
 }
 .main-section .profile .profile-info p {
   left: 0;

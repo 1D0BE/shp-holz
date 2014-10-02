@@ -67,6 +67,7 @@
 
   .profile {
     @include rem('padding-bottom', 6rem);
+    padding-left: 10%;
     div {
       display: inline;
     }
@@ -95,7 +96,10 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 100%;
+      width: 80%;
+      @include bp-lower('medium') {
+        left: 10%;
+      }
       p {
         left: 0;
       }
