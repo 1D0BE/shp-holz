@@ -539,16 +539,29 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   header {
-    position: relative;
+    position: fixed;
     float: left;
-    margin-top: 19.2px;
-    margin-top: 1.2rem;
-    padding-top: 8px;
-    padding-top: 0.5rem;
-    bottom: 32px;
-    bottom: 2rem;
-    bottom: 8vw;
+    width: 100%;
+    z-index: 1;
+  }
+  header input[type=checkbox]:checked ~ nav {
+    top: -40px;
+    top: -2.5rem;
+    top: -6.1vw;
+  }
+  header:before {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 40px;
+    height: 2.5rem;
+    height: 9vw;
+    background-color: #329865;
+    content: "";
     z-index: -1;
+    box-shadow: 0 0 8px black;
+    box-shadow: 0 0 0.5rem black;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -558,8 +571,36 @@ pre[class*="language-"] {
     z-index: 0;
   }
 }
-
+@media screen and (max-width: 40.063em) {
+  header .show-menu {
+    position: fixed;
+    right: 0%;
+    top: 0;
+    height: 40px;
+    height: 2.5rem;
+    height: 9vw;
+    width: 40px;
+    width: 2.5rem;
+    width: 9vw;
+    background-image: url(../images/menu.svg);
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+@media screen and (min-width: 40.063em) {
+  header .show-menu {
+    display: none;
+  }
+}
 @media screen {
+  header .show-menu:hover {
+    cursor: pointer;
+  }
+  header input[type=checkbox] {
+    display: none;
+  }
+
   .logo-link:hover + nav ul .home, nav ul li:hover, nav ul li.selected:hover {
     background-position-y: 100%;
     color: #329865;
@@ -576,12 +617,8 @@ pre[class*="language-"] {
 @media screen and (max-width: 40.063em) {
   .logo {
     display: block;
-    width: 64px;
-    width: 4rem;
-    width: 20vw;
-    margin: 8px auto;
-    margin: 0.5rem auto;
-    margin: 1vw auto;
+    width: 15%;
+    float: left;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -615,23 +652,24 @@ pre[class*="language-"] {
 
 @media screen {
   nav {
-    box-shadow: 0 0 8px black;
-    box-shadow: 0 0 0.5rem black;
     background-color: #329865;
     position: relative;
+    box-shadow: 0 0 8px black;
+    box-shadow: 0 0 0.5rem black;
   }
 }
 @media screen and (max-width: 40.063em) {
   nav {
+    width: 70%;
+    top: -400px;
+    top: -25rem;
+    left: 30%;
     z-index: -1;
     padding: 0;
-    bottom: 32px;
-    bottom: 2rem;
-    bottom: 10vw;
-    width: 100%;
-    height: 20%;
     font-size: 62%;
     font-size: 3vw;
+    z-index: -2;
+    transition: top 0.4s ease-out;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -680,8 +718,8 @@ pre[class*="language-"] {
 }
 @media screen and (min-width: 0) and (max-width: 40em) {
   nav ul {
-    box-shadow: 0 0 8px black;
-    box-shadow: 0 0 0.5rem black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
     width: 100%;
   }
 }
@@ -768,9 +806,10 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   .subtitle {
-    top: 24px;
-    top: 1.5rem;
-    top: 7.9vw;
+    top: -1.1vw;
+    color: white;
+    font-size: 1.4em;
+    font-size: 5vw;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -791,7 +830,7 @@ pre[class*="language-"] {
 
 @media screen and (max-width: 40.063em) {
   .left {
-    left: 62%;
+    left: 17%;
   }
 }
 @media screen and (min-width: 40.063em) and (max-width: 67em) {
@@ -812,7 +851,7 @@ pre[class*="language-"] {
 
 @media screen and (max-width: 40.063em) {
   .right {
-    right: 62%;
+    right: 12%;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -847,6 +886,10 @@ a, a:visited {
   width: 100%;
 }
 @media (max-width: 40.063em) {
+  .main-section {
+    margin-top: 48px;
+    margin-top: 3rem;
+  }
   .main-section article > *:not(img) {
     background-color: white;
     background-color: rgba(255, 255, 255, 0.7);
