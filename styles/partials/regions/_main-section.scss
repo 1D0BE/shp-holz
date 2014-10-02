@@ -13,7 +13,7 @@
       color: $green;
       text-align: center;
     }
-    img:not(.profile) {
+    img:not(.profile-image) {
       width: 100%;
       @include rem('max-height', 20rem);
       @include shadow();
@@ -43,7 +43,7 @@
       width: 40%;
       background-color: none;
     }
-    img:not(.icon):not(.profile) {
+    img:not(.icon):not(.profile-image) {
       @include rem('width', 60rem);
       width: auto;
       position: absolute;
@@ -66,14 +66,28 @@
   }
 
   .profile {
-    @include rem('width', 8rem);
-    @include rem('height', 8rem);
-    border: 1px white solid;
-    border-radius: 99em;
-    transition: border-color .5s;
-    @include rem('border-width', .7rem);
-    &:hover {
-      border-color: $green;
+    div {
+      display: inline;
+    }
+    .profile-image {
+      @include rem('width', 8rem);
+      @include rem('height', 8rem);
+      border: 1px white solid;
+      border-radius: 99em;
+      transition: border-color .5s;
+      @include rem('border-width', .7rem);
+      &:hover {
+        border-color: $green;
+      }
+    }
+    .profile-info {
+      display: none;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      p {
+        left: 0;
+      }
     }
   }
 }
