@@ -80,12 +80,14 @@
       &:hover {
         border-color: $green;
       }
-      .no-js &:hover ~, .selected {
-        .profile-info {
-          display: inline;
-          opacity: 1;
-        }
-      }
+    }
+    .no-js &:hover ~ {
+      display: inline;
+      opacity: 1;
+    }
+    & .selected .profile-info {
+      display: inline;
+      opacity: 1;
     }
     .profile-info {
       transition: opacity 0.5s;
@@ -100,6 +102,7 @@
     }
   }
 }
+
 .wrapper{
   @include bp-up("medium") {
     float:left;

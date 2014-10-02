@@ -961,7 +961,11 @@ a, a:visited {
 .main-section .profile .profile-image:hover {
   border-color: #329865;
 }
-.no-js .main-section .profile .profile-image:hover ~ .profile-info, .main-section .profile .profile-image .selected .profile-info {
+.no-js .main-section .profile:hover ~ {
+  display: inline;
+  opacity: 1;
+}
+.main-section .profile .selected .profile-info {
   display: inline;
   opacity: 1;
 }
