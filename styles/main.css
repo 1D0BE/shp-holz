@@ -939,6 +939,10 @@ a, a:visited {
   margin-top: 160px;
   margin-top: 10rem;
 }
+.main-section .profile {
+  padding-bottom: 96px;
+  padding-bottom: 6rem;
+}
 .main-section .profile div {
   display: inline;
 }
@@ -948,7 +952,7 @@ a, a:visited {
   height: 128px;
   height: 8rem;
   border: 1px white solid;
-  border-radius: 99em;
+  border-radius: 32px;
   -webkit-transition: border-color .5s;
   transition: border-color .5s;
   border-width: 11.2px;
@@ -957,13 +961,17 @@ a, a:visited {
 .main-section .profile .profile-image:hover {
   border-color: #329865;
 }
-.main-section .profile .profile-image:hover ~ .profile-info, .main-section .profile .profile-image .selected .profile-info {
-  display: block;
+.no-js .main-section .profile .profile-image:hover ~ .profile-info, .main-section .profile .profile-image .selected .profile-info {
+  display: inline;
+  opacity: 1;
 }
 .main-section .profile .profile-info {
-  display: none;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0;
   position: absolute;
   left: 0;
+  bottom: 0;
   width: 100%;
 }
 .main-section .profile .profile-info p {

@@ -66,6 +66,7 @@
   }
 
   .profile {
+    @include rem('padding-bottom', 6rem);
     div {
       display: inline;
     }
@@ -73,22 +74,25 @@
       @include rem('width', 8rem);
       @include rem('height', 8rem);
       border: 1px white solid;
-      border-radius: 99em;
+      border-radius: 32px;
       transition: border-color .5s;
       @include rem('border-width', .7rem);
       &:hover {
         border-color: $green;
       }
-      &:hover ~, .selected {
+      .no-js &:hover ~, .selected {
         .profile-info {
-          display: block;
+          display: inline;
+          opacity: 1;
         }
       }
     }
     .profile-info {
-      display: none;
+      transition: opacity 0.5s;
+      opacity: 0;
       position: absolute;
       left: 0;
+      bottom: 0;
       width: 100%;
       p {
         left: 0;
