@@ -7,12 +7,7 @@ header {
     width:100%;
     z-index: 1;
     input[type=checkbox]:checked ~ nav{
-        display:block;
-        width:70%;
         left:30%;
-        @include rem('top', -2.1rem);
-        //top:-5.7vw;
-        z-index:-2;
     }
     &:before {
       width:100%;
@@ -112,11 +107,16 @@ nav {
   @include shadow();
 
   @include bp-lower('medium') {
-    display:none;
+    width:70%;
+    left:100%;
     z-index: -1;
     padding: 0;
     font-size: 62%;
     font-size: 3vw;
+    @include rem('top', -2.1rem);
+    top:-5.7vw;
+    z-index:-2;
+    transition: all 0.3s ease-out;
   }
   @include bp-up('medium') {
     float: right;
