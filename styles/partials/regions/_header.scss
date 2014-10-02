@@ -2,22 +2,70 @@
 header {
   position: relative;
   @include bp-lower('medium') {
-    position:relative;
+    position:fixed;
     float: left;
-    @include rem('margin-top', 1.2rem);
-    @include rem('padding-top', 0.5rem);
-    @include rem('bottom', 2rem);
-    bottom: 8vw;
-    z-index: -1;
+    width:100%;
+    z-index: 1;
+    input[type=checkbox]:checked ~ nav{
+        display:block;
+        width:70%;
+        left:30%;
+        @include rem('top', -2.1rem);
+        //top:-5.7vw;
+        z-index:-2;
+    }
+    &:before {
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      @include rem('height', 2.5rem);
+      height:9vw;
+      background-color:$green;
+      content:"";
+      z-index:-1;
+      @include shadow();
+    }
   }
+
   @include bp-up('medium') {
     position: fixed;
     top: 0;
     z-index: 0;
   }
+
   overflow: initial; /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
   width: 100%;
+
+
+  .show-menu{
+    @include bp-lower('medium') {
+      position:fixed;
+      right:0%;
+      top:0;
+      @include rem('height', 2.5rem);
+      height:9vw;
+      @include rem('width', 2.5rem);
+      width:9vw;
+      //margin:1%;
+      background-image:url(../images/menu.svg);
+      background-size:80% 80%;
+      background-repeat:no-repeat;
+      background-position: center;
+    }
+    @include bp-up('medium') {
+      display:none;
+    }
+    &:hover {
+      cursor:pointer;
+    }
+  }
+
+  input[type=checkbox] {
+    display:none;
+  }
 }
+
 
 %li-hover {
   background-position-y: 100%;
@@ -32,10 +80,8 @@ header {
   z-index: 1;
   @include bp-lower('medium') {
     display: block;
-    @include rem('width', 4rem);
-    width: 20vw;
-    @include rem('margin', .5rem auto);
-    margin: 1vw auto;
+    width:15%;
+    float:left;
   }
   @include bp-up('medium') {
     position: fixed;
@@ -61,17 +107,14 @@ header {
 
 
 nav {
-  @include shadow();
   background-color: $green;
   position: relative;
+  @include shadow();
 
   @include bp-lower('medium') {
+    display:none;
     z-index: -1;
     padding: 0;
-    @include rem('bottom', 2rem);
-    bottom: 10vw;
-    width: 100%;
-    height: 20%;
     font-size: 62%;
     font-size: 3vw;
   }
@@ -104,7 +147,7 @@ nav {
     float: right;
     margin-bottom: 0em;
     @include bp('small') {
-      @include shadow();
+      @include shadow-mobile();
       width: 100%;
     }
     li {
@@ -178,8 +221,10 @@ nav {
     font-size: 1.5vw;
   }
   @include bp-lower('medium') {
-    @include rem('top', 1.5rem);
-    top: 7.9vw;
+    top: -1.1vw;
+    color: white;
+    font-size: 1.4em;
+    font-size: 5vw;
   }
   @include bp-up('medium') {
     bottom: -2em;
@@ -194,7 +239,7 @@ nav {
 }
 .left{
   @include bp-lower('medium') {
-    left: 62%;
+    left: 17%;
   }
   @include bp('medium') {
     left: 24.2%;
@@ -208,7 +253,7 @@ nav {
 }
 .right{
   @include bp-lower('medium') {
-    right: 62%;
+    right: 12%;
   }
   @include bp-up('medium') {
     right: 5%;
