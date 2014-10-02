@@ -191,7 +191,6 @@ figure {
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -308,8 +307,6 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -404,16 +401,12 @@ th {
  * use border-box as default
  */
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -546,16 +539,29 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   header {
-    position: relative;
+    position: fixed;
     float: left;
-    margin-top: 19.2px;
-    margin-top: 1.2rem;
-    padding-top: 8px;
-    padding-top: 0.5rem;
-    bottom: 32px;
-    bottom: 2rem;
-    bottom: 8vw;
+    width: 100%;
+    z-index: 1;
+  }
+  header input[type=checkbox]:checked ~ nav {
+    top: -33.6px;
+    top: -2.1rem;
+    top: -5.7vw;
+  }
+  header:before {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 40px;
+    height: 2.5rem;
+    height: 9vw;
+    background-color: #329865;
+    content: "";
     z-index: -1;
+    box-shadow: 0 0 8px black;
+    box-shadow: 0 0 0.5rem black;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -565,8 +571,36 @@ pre[class*="language-"] {
     z-index: 0;
   }
 }
-
+@media screen and (max-width: 40.063em) {
+  header .show-menu {
+    position: fixed;
+    right: 0%;
+    top: 0;
+    height: 40px;
+    height: 2.5rem;
+    height: 9vw;
+    width: 40px;
+    width: 2.5rem;
+    width: 9vw;
+    background-image: url(../images/menu.svg);
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+@media screen and (min-width: 40.063em) {
+  header .show-menu {
+    display: none;
+  }
+}
 @media screen {
+  header .show-menu:hover {
+    cursor: pointer;
+  }
+  header input[type=checkbox] {
+    display: none;
+  }
+
   .logo-link:hover + nav ul .home, nav ul li:hover, nav ul li.selected:hover {
     background-position-y: 100%;
     color: #329865;
@@ -583,12 +617,8 @@ pre[class*="language-"] {
 @media screen and (max-width: 40.063em) {
   .logo {
     display: block;
-    width: 64px;
-    width: 4rem;
-    width: 20vw;
-    margin: 8px auto;
-    margin: 0.5rem auto;
-    margin: 1vw auto;
+    width: 15%;
+    float: left;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -622,25 +652,24 @@ pre[class*="language-"] {
 
 @media screen {
   nav {
-    -webkit-box-shadow: 0 0 8px black;
-    box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
-    box-shadow: 0 0 0.5rem black;
     background-color: #329865;
     position: relative;
+    box-shadow: 0 0 8px black;
+    box-shadow: 0 0 0.5rem black;
   }
 }
 @media screen and (max-width: 40.063em) {
   nav {
+    width: 70%;
+    top: -400px;
+    top: -25rem;
+    left: 30%;
     z-index: -1;
     padding: 0;
-    bottom: 32px;
-    bottom: 2rem;
-    bottom: 10vw;
-    width: 100%;
-    height: 20%;
     font-size: 62%;
     font-size: 3vw;
+    z-index: -2;
+    transition: all 0.4s ease-out;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -689,22 +718,16 @@ pre[class*="language-"] {
 }
 @media screen and (min-width: 0) and (max-width: 40em) {
   nav ul {
-    -webkit-box-shadow: 0 0 8px black;
-    box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
-    box-shadow: 0 0 0.5rem black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
     width: 100%;
   }
 }
 @media screen {
   nav ul li {
-    -webkit-transition: background 0.5s, color 0.5s;
     transition: background 0.5s, color 0.5s;
     color: white;
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, white), color-stop(50%, #329865));
-    background: -webkit-linear-gradient(bottom, white 50%, #329865 50%);
     background: linear-gradient(to top, white 50%, #329865 50%);
-    -webkit-background-size: 200%;
     background-size: 200%;
     background-position-y: 0%;
     float: left;
@@ -783,9 +806,10 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   .subtitle {
-    top: 24px;
-    top: 1.5rem;
-    top: 7.9vw;
+    top: -1.1vw;
+    color: white;
+    font-size: 1.4em;
+    font-size: 5vw;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -806,7 +830,7 @@ pre[class*="language-"] {
 
 @media screen and (max-width: 40.063em) {
   .left {
-    left: 62%;
+    left: 17%;
   }
 }
 @media screen and (min-width: 40.063em) and (max-width: 67em) {
@@ -827,7 +851,7 @@ pre[class*="language-"] {
 
 @media screen and (max-width: 40.063em) {
   .right {
-    right: 62%;
+    right: 12%;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -862,6 +886,10 @@ a, a:visited {
   width: 100%;
 }
 @media (max-width: 40.063em) {
+  .main-section {
+    margin-top: 48px;
+    margin-top: 3rem;
+  }
   .main-section article > *:not(img) {
     background-color: white;
     background-color: rgba(255, 255, 255, 0.7);
@@ -879,9 +907,7 @@ a, a:visited {
     width: 100%;
     max-height: 320px;
     max-height: 20rem;
-    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
   }
   .contact .main-section img {
@@ -923,9 +949,7 @@ a, a:visited {
     background-color: transparent;
   }
   body:not(.contact) .main-section img:not(.icon) {
-    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
     height: 110%;
     top: -5%;
@@ -958,9 +982,7 @@ a, a:visited {
 }
 
 .button {
-  -webkit-box-shadow: 0 2px 4px black;
   box-shadow: 0 2px 4px black;
-  -webkit-box-shadow: 0 0.10rem 0.25rem black;
   box-shadow: 0 0.10rem 0.25rem black;
   padding: 16px;
   padding: 1rem;
@@ -970,7 +992,6 @@ a, a:visited {
   border-radius: 1584px;
   border-radius: 99rem;
   cursor: pointer;
-  -webkit-transition: background-color 1s, color 1s, border-color 1s;
   transition: background-color 1s, color 1s, border-color 1s;
   color: #329865;
   font-size: 25px;
@@ -1015,9 +1036,7 @@ footer {
   color: white;
   text-align: center;
   float: left;
-  -webkit-box-shadow: 0 0 8px black;
   box-shadow: 0 0 8px black;
-  -webkit-box-shadow: 0 0 0.5rem black;
   box-shadow: 0 0 0.5rem black;
   padding: 8px;
   padding: 0.5rem;
@@ -1063,9 +1082,7 @@ footer > * {
 }
 
 aside {
-  -webkit-box-shadow: inset 0 4px 8px black;
   box-shadow: inset 0 4px 8px black;
-  -webkit-box-shadow: inset 0 0.25rem 0.5rem black;
   box-shadow: inset 0 0.25rem 0.5rem black;
   position: fixed;
   background-color: white;
@@ -1092,24 +1109,19 @@ aside .container {
 aside .container img {
   width: 80%;
   text-align: center;
-  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  -webkit-box-shadow: 0 2px 4px black;
   box-shadow: 0 2px 4px black;
-  -webkit-box-shadow: 0 0.10rem 0.25rem black;
   box-shadow: 0 0.10rem 0.25rem black;
   border-radius: 24px;
   border-radius: 1.5rem;
   margin-top: 24px;
   margin-top: 1.5rem;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 aside .container a {
   position: relative;
 }
 aside .container a.color img {
-  -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
 aside .container p {
@@ -1121,7 +1133,6 @@ aside .container p {
   bottom: 0;
   width: 100%;
   text-align: center;
-  -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
 aside .container div {
@@ -1131,7 +1142,6 @@ aside .container div:hover p {
   opacity: 1;
 }
 aside .container div:hover img {
-  -webkit-filter: grayscale(100%) opacity(25%);
   filter: grayscale(100%) opacity(25%);
 }
 
@@ -1191,7 +1201,6 @@ aside .container div:hover img {
   height: 100%;
 }
 .styleguide .main-section .logo {
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 .styleguide .main-section .logo-link:hover + nav ul .home {
@@ -1224,9 +1233,7 @@ aside .container div:hover img {
   .styleguide .main-section pre {
     max-height: 320px;
     max-height: 20rem;
-    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
     width: 100%;
   }
@@ -1275,9 +1282,7 @@ aside .container div:hover img {
     padding: 3rem;
   }
   .styleguide .main-section .code {
-    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
     position: absolute;
     top: -5%;
