@@ -43,7 +43,6 @@
       width: 40%;
       background-color: none;
     }
-
     img:not(.icon):not(.profile) {
       @include rem('width', 60rem);
       width: auto;
@@ -64,6 +63,18 @@
 
   .no-boxshadow & {
     @include rem('margin-top', 10rem);
+  }
+
+  .profile {
+    @include rem('width', 8rem);
+    @include rem('height', 8rem);
+    border: 1px white solid;
+    border-radius: 99em;
+    transition: border-color .5s;
+    @include rem('border-width', .7rem);
+    &:hover {
+      border-color: $green;
+    }
   }
 }
 .wrapper{

@@ -939,6 +939,21 @@ a, a:visited {
   margin-top: 160px;
   margin-top: 10rem;
 }
+.main-section .profile {
+  width: 128px;
+  width: 8rem;
+  height: 128px;
+  height: 8rem;
+  border: 1px white solid;
+  border-radius: 99em;
+  -webkit-transition: border-color .5s;
+  transition: border-color .5s;
+  border-width: 11.2px;
+  border-width: 0.7rem;
+}
+.main-section .profile:hover {
+  border-color: #329865;
+}
 
 @media (min-width: 40.063em) {
   .wrapper {
