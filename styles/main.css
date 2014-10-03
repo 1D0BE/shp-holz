@@ -995,12 +995,8 @@ a, a:visited {
     background-color: transparent;
   }
   body:not(.contact) .main-section img:not(.icon) {
-    -webkit-box-shadow: 0 0 8px black;
-    box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
-    box-shadow: 0 0 0.5rem black;
-    height: 110%;
-    top: -5%;
+    height: 100%;
+    top: 0;
   }
   .contact .main-section img:not(.icon) {
     height: 100%;
