@@ -2,22 +2,23 @@
 header {
   position: relative;
   @include bp-lower('medium') {
-    position:fixed;
+    .js & {
+      position:fixed;
+    }
     float: left;
     width:100%;
     z-index: 1;
-    input[type=checkbox]:checked ~ nav{
-        //left:30%;
-        @include rem('top', -2.5rem);
-        top:-6.1vw;
+    .js & input[type=checkbox]:checked ~ nav{
+        @include rem('top', 3.5rem);
+        top:14vw;
     }
     &:before {
       width:100%;
       position:fixed;
       top:0;
       left:0;
-      @include rem('height', 2.5rem);
-      height:9vw;
+      @include rem('height', 3.5rem);
+      height:14vw;
       background-color:$green;
       content:"";
       z-index:-1;
@@ -40,14 +41,17 @@ header {
       position:fixed;
       right:0%;
       top:0;
-      @include rem('height', 2.5rem);
-      height:9vw;
-      @include rem('width', 2.5rem);
-      width:9vw;
+      @include rem('height', 3.5rem);
+      height:14vw;
+      @include rem('width', 3.5rem);
+      width:14vw;
       background-image:url(../images/menu.svg);
       background-size:80% 80%;
       background-repeat:no-repeat;
       background-position: center;
+      .no-js & {
+        display:none;
+      }
     }
     @include bp-up('medium') {
       display:none;
@@ -75,8 +79,9 @@ header {
 .logo {
   z-index: 1;
   @include bp-lower('medium') {
+    position:fixed;
     display: block;
-    width:15%;
+    width:20%;
     float:left;
   }
   @include bp-up('medium') {
@@ -108,12 +113,18 @@ nav {
   @include shadow();
 
   @include bp-lower('medium') {
-    width:70%;
-    @include rem('top', -25rem);
-    //left:100%;
-    //@include rem('top', -2.5rem);
-    //top:-6.1vw;
-    left:30%;
+    .js & {
+        width:45%;
+        position:fixed;
+        left:55%;
+        @include rem('top', -25rem);
+    }
+    .no-js & {
+        width:100%;
+        position:relative;
+        @include rem('margin-top', 7.9rem);
+        margin-top:25vw;
+    }
     z-index: -1;
     padding: 0;
     font-size: 62%;
@@ -164,7 +175,7 @@ nav {
       font-size: 1.5em;
       @include bp('small') {
         width: 100%;
-        @include rem('padding', 1.5rem);
+        @include rem('padding', 1.0rem);
         @include rem('padding-bottom', .75rem);
       }
       @include bp-up('medium') {
@@ -182,8 +193,6 @@ nav {
         background-position-y: 75%;
         color: $green;
       }
-      &:last-of-type {
-        }
       &:hover, &.selected:hover {
         @extend %li-hover;
         .no-cssgradients &, .no-bgpositionxy &, .no-js & {
@@ -224,10 +233,12 @@ nav {
     font-size: 1.5vw;
   }
   @include bp-lower('medium') {
-    top: -1.1vw;
+    @include rem('top', 0.6rem);
+    top: 2.3vw;
     color: white;
     font-size: 1.4em;
-    font-size: 5vw;
+    font-size: 6vw;
+    position:fixed;
   }
   @include bp-up('medium') {
     bottom: -2em;
@@ -242,7 +253,7 @@ nav {
 }
 .left{
   @include bp-lower('medium') {
-    left: 17%;
+    left: 21%;
   }
   @include bp('medium') {
     left: 24.2%;
@@ -256,7 +267,8 @@ nav {
 }
 .right{
   @include bp-lower('medium') {
-    right: 12%;
+    right: 15%;
+    display:none;
   }
   @include bp-up('medium') {
     right: 5%;
@@ -265,4 +277,8 @@ nav {
     right: 2%;
   }
 }
+}
+
+.italic{
+  font-style:italic;
 }

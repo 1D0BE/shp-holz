@@ -3,7 +3,8 @@
   float:left;
   width:100%;
   @include bp-lower('medium') {
-    @include rem('margin-top', 3rem);
+    @include rem('margin-top', 3.5rem);
+    margin-top:14vw;
     article > *:not(img) {
       @include rgba('background-color', white, $back-opac);
       @include rem('margin-top', -0.5rem);
