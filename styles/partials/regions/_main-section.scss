@@ -17,7 +17,6 @@
     }
     img {
       width: 100%;
-      @include rem('max-height', 20rem);
       @include shadow();
       .contact & {
           display: none;
