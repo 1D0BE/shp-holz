@@ -553,7 +553,7 @@ pre[class*="language-"] {
   .js header {
     position: fixed;
   }
-  .js header input[type=checkbox]:checked ~ nav {
+  .js header.expanded nav {
     top: 56px;
     top: 3.5rem;
     top: 14vw;
