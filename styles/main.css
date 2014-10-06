@@ -546,16 +546,33 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   header {
-    position: relative;
     float: left;
-    margin-top: 19.2px;
-    margin-top: 1.2rem;
-    padding-top: 8px;
-    padding-top: 0.5rem;
-    bottom: 32px;
-    bottom: 2rem;
-    bottom: 8vw;
+    width: 100%;
+    z-index: 1;
+  }
+  .js header {
+    position: fixed;
+  }
+  .js header.expanded nav {
+    top: 56px;
+    top: 3.5rem;
+    top: 14vw;
+  }
+  header:before {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 56px;
+    height: 3.5rem;
+    height: 14vw;
+    background-color: #329865;
+    content: "";
     z-index: -1;
+    -webkit-box-shadow: 0 0 8px black;
+    box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
+    box-shadow: 0 0 0.5rem black;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -565,8 +582,40 @@ pre[class*="language-"] {
     z-index: 0;
   }
 }
-
+@media screen and (max-width: 40.063em) {
+  header .show-menu {
+    position: fixed;
+    right: 0%;
+    top: 0;
+    height: 56px;
+    height: 3.5rem;
+    height: 14vw;
+    width: 56px;
+    width: 3.5rem;
+    width: 14vw;
+    background-image: url(../images/menu.svg);
+    -webkit-background-size: 80% 80%;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .no-js header .show-menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 40.063em) {
+  header .show-menu {
+    display: none;
+  }
+}
 @media screen {
+  header .show-menu:hover {
+    cursor: pointer;
+  }
+  header input[type=checkbox] {
+    display: none;
+  }
+
   .logo-link:hover + nav ul .home, nav ul li:hover, nav ul li.selected:hover {
     background-position-y: 100%;
     color: #329865;
@@ -582,13 +631,10 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   .logo {
+    position: fixed;
     display: block;
-    width: 64px;
-    width: 4rem;
-    width: 20vw;
-    margin: 8px auto;
-    margin: 0.5rem auto;
-    margin: 1vw auto;
+    width: 20%;
+    float: left;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -622,25 +668,37 @@ pre[class*="language-"] {
 
 @media screen {
   nav {
+    background-color: #329865;
+    position: relative;
     -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
     -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
-    background-color: #329865;
-    position: relative;
   }
 }
 @media screen and (max-width: 40.063em) {
   nav {
     z-index: -1;
     padding: 0;
-    bottom: 32px;
-    bottom: 2rem;
-    bottom: 10vw;
-    width: 100%;
-    height: 20%;
     font-size: 62%;
     font-size: 3vw;
+    z-index: -2;
+    -webkit-transition: top 0.4s ease-out;
+    transition: top 0.4s ease-out;
+  }
+  .js nav {
+    width: 45%;
+    position: fixed;
+    left: 55%;
+    top: -400px;
+    top: -25rem;
+  }
+  .no-js nav {
+    width: 100%;
+    position: relative;
+    margin-top: 126.4px;
+    margin-top: 7.9rem;
+    margin-top: 25vw;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -689,10 +747,10 @@ pre[class*="language-"] {
 }
 @media screen and (min-width: 0) and (max-width: 40em) {
   nav ul {
-    -webkit-box-shadow: 0 0 8px black;
-    box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
-    box-shadow: 0 0 0.5rem black;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0.45rem 0.4rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.45rem 0.4rem rgba(0, 0, 0, 0.5);
     width: 100%;
   }
 }
@@ -715,8 +773,8 @@ pre[class*="language-"] {
 @media screen and (min-width: 0) and (max-width: 40em) {
   nav ul li {
     width: 100%;
-    padding: 24px;
-    padding: 1.5rem;
+    padding: 16px;
+    padding: 1rem;
     padding-bottom: 12px;
     padding-bottom: 0.75rem;
   }
@@ -783,9 +841,13 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   .subtitle {
-    top: 24px;
-    top: 1.5rem;
-    top: 7.9vw;
+    top: 9.6px;
+    top: 0.6rem;
+    top: 2.3vw;
+    color: white;
+    font-size: 1.4em;
+    font-size: 6vw;
+    position: fixed;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -806,7 +868,7 @@ pre[class*="language-"] {
 
 @media screen and (max-width: 40.063em) {
   .left {
-    left: 62%;
+    left: 21%;
   }
 }
 @media screen and (min-width: 40.063em) and (max-width: 67em) {
@@ -827,7 +889,8 @@ pre[class*="language-"] {
 
 @media screen and (max-width: 40.063em) {
   .right {
-    right: 62%;
+    right: 15%;
+    display: none;
   }
 }
 @media screen and (min-width: 40.063em) {
@@ -839,6 +902,10 @@ pre[class*="language-"] {
   .right {
     right: 2%;
   }
+}
+
+.italic {
+  font-style: italic;
 }
 
 body {
@@ -862,6 +929,11 @@ a, a:visited {
   width: 100%;
 }
 @media (max-width: 40.063em) {
+  .main-section {
+    margin-top: 56px;
+    margin-top: 3.5rem;
+    margin-top: 14vw;
+  }
   .main-section article > *:not(img) {
     background-color: white;
     background-color: rgba(255, 255, 255, 0.7);
