@@ -2,22 +2,70 @@
 header {
   position: relative;
   @include bp-lower('medium') {
-    position:relative;
+    .js & {
+      position:fixed;
+    }
     float: left;
-    @include rem('margin-top', 1.2rem);
-    @include rem('padding-top', 0.5rem);
-    @include rem('bottom', 2rem);
-    bottom: 8vw;
-    z-index: -1;
+    width:100%;
+    z-index: 1;
+    .js &.expanded nav {
+        @include rem('top', 3.5rem);
+        top:14vw;
+    }
+    &:before {
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      @include rem('height', 3.5rem);
+      height:14vw;
+      background-color:$green;
+      content:"";
+      z-index:-1;
+      @include shadow();
+    }
   }
+
   @include bp-up('medium') {
     position: fixed;
     top: 0;
     z-index: 0;
   }
+
   overflow: initial; /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
   width: 100%;
+
+
+  .show-menu{
+    @include bp-lower('medium') {
+      position:fixed;
+      right:0%;
+      top:0;
+      @include rem('height', 3.5rem);
+      height:14vw;
+      @include rem('width', 3.5rem);
+      width:14vw;
+      background-image:url(../images/menu.svg);
+      background-size:80% 80%;
+      background-repeat:no-repeat;
+      background-position: center;
+      .no-js & {
+        display:none;
+      }
+    }
+    @include bp-up('medium') {
+      display:none;
+    }
+    &:hover {
+      cursor:pointer;
+    }
+  }
+
+  input[type=checkbox] {
+    display:none;
+  }
 }
+
 
 %li-hover {
   background-position-y: 100%;
@@ -31,11 +79,10 @@ header {
 .logo {
   z-index: 1;
   @include bp-lower('medium') {
+    position:fixed;
     display: block;
-    @include rem('width', 4rem);
-    width: 20vw;
-    @include rem('margin', .5rem auto);
-    margin: 1vw auto;
+    width:20%;
+    float:left;
   }
   @include bp-up('medium') {
     position: fixed;
@@ -61,19 +108,29 @@ header {
 
 
 nav {
-  @include shadow();
   background-color: $green;
   position: relative;
+  @include shadow();
 
   @include bp-lower('medium') {
+    .js & {
+        width:45%;
+        position:fixed;
+        left:55%;
+        @include rem('top', -25rem);
+    }
+    .no-js & {
+        width:100%;
+        position:relative;
+        @include rem('margin-top', 7.9rem);
+        margin-top:25vw;
+    }
     z-index: -1;
     padding: 0;
-    @include rem('bottom', 2rem);
-    bottom: 10vw;
-    width: 100%;
-    height: 20%;
     font-size: 62%;
     font-size: 3vw;
+    z-index:-2;
+    transition: top 0.4s ease-out;
   }
   @include bp-up('medium') {
     float: right;
@@ -104,7 +161,7 @@ nav {
     float: right;
     margin-bottom: 0em;
     @include bp('small') {
-      @include shadow();
+      @include shadow-mobile();
       width: 100%;
     }
     li {
@@ -118,7 +175,7 @@ nav {
       font-size: 1.5em;
       @include bp('small') {
         width: 100%;
-        @include rem('padding', 1.5rem);
+        @include rem('padding', 1.0rem);
         @include rem('padding-bottom', .75rem);
       }
       @include bp-up('medium') {
@@ -136,8 +193,6 @@ nav {
         background-position-y: 75%;
         color: $green;
       }
-      &:last-of-type {
-        }
       &:hover, &.selected:hover {
         @extend %li-hover;
         .no-cssgradients &, .no-bgpositionxy &, .no-js & {
@@ -178,8 +233,12 @@ nav {
     font-size: 1.5vw;
   }
   @include bp-lower('medium') {
-    @include rem('top', 1.5rem);
-    top: 7.9vw;
+    @include rem('top', 0.6rem);
+    top: 2.3vw;
+    color: white;
+    font-size: 1.4em;
+    font-size: 6vw;
+    position:fixed;
   }
   @include bp-up('medium') {
     bottom: -2em;
@@ -194,7 +253,7 @@ nav {
 }
 .left{
   @include bp-lower('medium') {
-    left: 62%;
+    left: 21%;
   }
   @include bp('medium') {
     left: 24.2%;
@@ -208,7 +267,8 @@ nav {
 }
 .right{
   @include bp-lower('medium') {
-    right: 62%;
+    right: 15%;
+    display:none;
   }
   @include bp-up('medium') {
     right: 5%;
@@ -217,4 +277,8 @@ nav {
     right: 2%;
   }
 }
+}
+
+.italic{
+  font-style:italic;
 }
