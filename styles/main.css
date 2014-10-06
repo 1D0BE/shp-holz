@@ -942,7 +942,12 @@ a, a:visited {
 .main-section .profile {
   padding-bottom: 96px;
   padding-bottom: 6rem;
-  padding-left: 10%;
+  position: relative;
+}
+@media (max-width: 40.063em) {
+  .main-section .profile {
+    padding-left: 10%;
+  }
 }
 .main-section .profile div {
   display: inline;
@@ -975,13 +980,15 @@ a, a:visited {
   transition: opacity 0.5s;
   opacity: 0;
   position: absolute;
-  left: 0;
+  left: 11.2px;
+  left: 0.7rem;
   bottom: 0;
-  width: 80%;
+  width: 90%;
 }
 @media (max-width: 40.063em) {
   .main-section .profile .profile-info {
     left: 10%;
+    width: 80%;
   }
 }
 .main-section .profile .profile-info p {
