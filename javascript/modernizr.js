@@ -836,3 +836,10 @@ Modernizr.addTest('bgpositionxy', function() {
         return xSupport && ySupport;
     });
 });
+
+// cssFilter test.
+  Modernizr.addTest('cssfilters', function() {
+    var el = createElement('div');
+    el.style.cssText = prefixes.join('filter:blur(2px); ');
+    return !!el.style.length && ((document.documentMode === undefined || document.documentMode > 9));
+  });
