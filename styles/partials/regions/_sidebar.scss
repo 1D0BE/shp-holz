@@ -44,6 +44,11 @@ aside{
       width: 100%;
       text-align: center;
       transition: all 0.25s;
+      .no-cssfilters &, .no-js & {
+        @include rem('width', 99rem);
+        background-color: white;
+        text-align: left;
+      }
     }
     div {
       cursor: pointer;

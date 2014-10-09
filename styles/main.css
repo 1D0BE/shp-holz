@@ -1195,6 +1195,12 @@ aside .container p {
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
+.no-cssfilters aside .container p, .no-js aside .container p {
+  width: 1584px;
+  width: 99rem;
+  background-color: white;
+  text-align: left;
+}
 aside .container div {
   cursor: pointer;
 }

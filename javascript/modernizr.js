@@ -838,8 +838,8 @@ Modernizr.addTest('bgpositionxy', function() {
 });
 
 // cssFilter test.
-  Modernizr.addTest('cssfilters', function() {
-    var el = createElement('div');
-    el.style.cssText = prefixes.join('filter:blur(2px); ');
+Modernizr.addTest('cssfilters', function() {
+    var el = document.createElement('div');
+    el.style.cssText = Modernizr._prefixes.join('filter' + ':blur(2px); ');
     return !!el.style.length && ((document.documentMode === undefined || document.documentMode > 9));
-  });
+});;
