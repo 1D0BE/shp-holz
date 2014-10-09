@@ -1,5 +1,6 @@
 @media screen {
 header {
+
   position: relative;
   @include bp-lower('medium') {
     .js & {
@@ -29,7 +30,7 @@ header {
   @include bp-up('medium') {
     position: fixed;
     top: 0;
-    z-index: 0;
+    z-index: 1;
   }
 
   overflow: initial; /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
@@ -64,6 +65,9 @@ header {
   input[type=checkbox] {
     display:none;
   }
+
+    user-select:none;
+
 }
 
 
@@ -125,11 +129,10 @@ nav {
         @include rem('margin-top', 7.9rem);
         margin-top:25vw;
     }
-    z-index: -1;
+    z-index: 1;
     padding: 0;
     font-size: 62%;
     font-size: 3vw;
-    z-index:-2;
     transition: top 0.4s ease-out;
   }
   @include bp-up('medium') {

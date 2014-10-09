@@ -542,6 +542,10 @@ pre[class*="language-"] {
     overflow: initial;
     /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
     width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
 @media screen and (max-width: 40.063em) {
@@ -579,7 +583,7 @@ pre[class*="language-"] {
   header {
     position: fixed;
     top: 0;
-    z-index: 0;
+    z-index: 1;
   }
 }
 @media screen and (max-width: 40.063em) {
@@ -678,11 +682,10 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   nav {
-    z-index: -1;
+    z-index: 1;
     padding: 0;
     font-size: 62%;
     font-size: 3vw;
-    z-index: -2;
     -webkit-transition: top 0.4s ease-out;
     transition: top 0.4s ease-out;
   }
@@ -965,7 +968,7 @@ a, a:visited {
     background-color: white;
     background-color: rgba(255, 255, 255, 0.7);
     position: relative;
-    z-index: -1;
+    z-index: 0;
   }
   body:not(.use-wrapper) .main-section {
     margin-bottom: 128px;
@@ -1203,6 +1206,7 @@ aside .container div:hover img {
 
 @media (min-width: 40.063em) {
   .wrapper.small {
+    float: left;
     width: 85%;
   }
 
