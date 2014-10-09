@@ -1163,6 +1163,8 @@ aside .container img {
   text-align: center;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-box-shadow: 0 2px 4px black;
   box-shadow: 0 2px 4px black;
   -webkit-box-shadow: 0 0.10rem 0.25rem black;
