@@ -733,13 +733,12 @@ pre[class*="language-"] {
   nav {
     z-index: -2;
     padding: 0;
-    -webkit-transition: top 0.4s ease-out;
-    transition: top 0.4s ease-out;
+    -webkit-transition: top .5s ease-out;
+    transition: top .5s ease-out;
   }
   .js nav {
     position: fixed;
-    top: -400px;
-    top: -25rem;
+    top: -100%;
   }
 }
 @media screen and (max-width: 40.063em) and (orientation: landscape) {

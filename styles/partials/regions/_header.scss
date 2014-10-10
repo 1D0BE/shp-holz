@@ -144,14 +144,14 @@ nav {
   @include bp-lower('medium') {
     .js & {
         position:fixed;
-        @include rem('top', -25rem);
+        top: -100%;
         @media screen and (orientation:landscape) {
           width: 22.5%;
-          left:77.5%;
+          left: 77.5%;
         }
         @media screen and (orientation:portrait) {
           width: 45%;
-          left:55%;
+          left: 55%;
         }
     }
     .no-js & {
@@ -170,7 +170,7 @@ nav {
       font-size: 62%;
       font-size: 3vw;
     }
-    transition: top 0.4s ease-out;
+    transition: top .5s ease-out;
   }
   @include bp-up('medium') {
     float: right;
