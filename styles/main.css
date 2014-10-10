@@ -1153,7 +1153,8 @@ aside {
 aside .container {
   overflow: auto;
   height: 100%;
-  top: 4%;
+  top: 48px;
+  top: 3rem;
   padding-top: 2%;
   padding-bottom: 4%;
   position: inherit;
@@ -1198,6 +1199,7 @@ aside .container p {
 .no-cssfilters aside .container p, .no-js aside .container p {
   width: 1584px;
   width: 99rem;
+  font-size: 1.2vw;
   background-color: white;
   text-align: left;
 }
