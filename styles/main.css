@@ -682,7 +682,7 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   nav {
-    z-index: 1;
+    z-index: -2;
     padding: 0;
     font-size: 62%;
     font-size: 3vw;
@@ -952,8 +952,6 @@ a, a:visited {
   }
   .main-section img:not(.profile-image) {
     width: 100%;
-    max-height: 320px;
-    max-height: 20rem;
     -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
     -webkit-box-shadow: 0 0 0.5rem black;
@@ -998,12 +996,8 @@ a, a:visited {
     background-color: transparent;
   }
   body:not(.contact) .main-section img:not(.icon):not(.profile-image) {
-    -webkit-box-shadow: 0 0 8px black;
-    box-shadow: 0 0 8px black;
-    -webkit-box-shadow: 0 0 0.5rem black;
-    box-shadow: 0 0 0.5rem black;
-    height: 110%;
-    top: -5%;
+    height: 100%;
+    top: 0;
   }
   .contact .main-section img:not(.icon):not(.profile-image) {
     height: 100%;
