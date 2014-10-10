@@ -542,6 +542,10 @@ pre[class*="language-"] {
     overflow: initial;
     /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
     width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
 @media screen and (max-width: 40.063em) {
@@ -579,7 +583,7 @@ pre[class*="language-"] {
   header {
     position: fixed;
     top: 0;
-    z-index: 0;
+    z-index: 1;
   }
 }
 @media screen and (max-width: 40.063em) {
@@ -678,11 +682,10 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   nav {
-    z-index: -1;
+    z-index: 1;
     padding: 0;
     font-size: 62%;
     font-size: 3vw;
-    z-index: -2;
     -webkit-transition: top 0.4s ease-out;
     transition: top 0.4s ease-out;
   }
@@ -967,7 +970,7 @@ a, a:visited {
     background-color: white;
     background-color: rgba(255, 255, 255, 0.7);
     position: relative;
-    z-index: -1;
+    z-index: 0;
   }
   body:not(.use-wrapper) .main-section {
     margin-bottom: 128px;
@@ -1211,7 +1214,8 @@ aside {
 aside .container {
   overflow: auto;
   height: 100%;
-  top: 4%;
+  top: 48px;
+  top: 3rem;
   padding-top: 2%;
   padding-bottom: 4%;
   position: inherit;
@@ -1221,6 +1225,8 @@ aside .container img {
   text-align: center;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-box-shadow: 0 2px 4px black;
   box-shadow: 0 2px 4px black;
   -webkit-box-shadow: 0 0.10rem 0.25rem black;
@@ -1251,6 +1257,13 @@ aside .container p {
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
+.no-cssfilters aside .container p, .no-js aside .container p {
+  width: 1584px;
+  width: 99rem;
+  font-size: 1.2vw;
+  background-color: white;
+  text-align: left;
+}
 aside .container div {
   cursor: pointer;
 }
@@ -1264,6 +1277,7 @@ aside .container div:hover img {
 
 @media (min-width: 40.063em) {
   .wrapper.small {
+    float: left;
     width: 85%;
   }
 

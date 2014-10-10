@@ -17,7 +17,6 @@
     }
     img:not(.profile-image) {
       width: 100%;
-      @include rem('max-height', 20rem);
       @include shadow();
       .contact & {
           display: none;
@@ -29,7 +28,7 @@
     @include rem('padding', 2rem);
     @include rgba('background-color', white, $back-opac);
     position: relative;
-    z-index: -1;
+    z-index: 0;
     body:not(.use-wrapper) &{
       @include rem('margin-bottom', 8rem);
        &:first-of-type {
@@ -52,9 +51,11 @@
       right: 50%;
       background-color: transparent;
       body:not(.contact) & {
-        @include shadow();
-        height: 110%;
-        top: -5%;
+        //@include shadow();
+        //top: -5%;
+        //height: 110%;
+        height: 100%;
+        top: 0;
       }
       .contact & {
         height: 100%;
