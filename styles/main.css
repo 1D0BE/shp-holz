@@ -557,19 +557,27 @@ pre[class*="language-"] {
   .js header {
     position: fixed;
   }
+}
+@media screen and (max-width: 40.063em) and (orientation: landscape) {
+  .js header.expanded nav {
+    top: 28px;
+    top: 1.75rem;
+    top: 7vw;
+  }
+}
+@media screen and (max-width: 40.063em) and (orientation: portrait) {
   .js header.expanded nav {
     top: 56px;
     top: 3.5rem;
     top: 14vw;
   }
+}
+@media screen and (max-width: 40.063em) {
   header:before {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    height: 56px;
-    height: 3.5rem;
-    height: 14vw;
     background-color: #329865;
     content: "";
     z-index: -1;
@@ -579,6 +587,21 @@ pre[class*="language-"] {
     box-shadow: 0 0 0.5rem black;
   }
 }
+@media screen and (max-width: 40.063em) and (orientation: landscape) {
+  header:before {
+    height: 28px;
+    height: 1.75rem;
+    height: 7vw;
+  }
+}
+@media screen and (max-width: 40.063em) and (orientation: portrait) {
+  header:before {
+    height: 56px;
+    height: 3.5rem;
+    height: 14vw;
+  }
+}
+
 @media screen and (min-width: 40.063em) {
   header {
     position: fixed;
@@ -591,18 +614,34 @@ pre[class*="language-"] {
     position: fixed;
     right: 0%;
     top: 0;
-    height: 56px;
-    height: 3.5rem;
-    height: 14vw;
-    width: 56px;
-    width: 3.5rem;
-    width: 14vw;
     background-image: url(../images/menu.svg);
     -webkit-background-size: 80% 80%;
     background-size: 80% 80%;
     background-repeat: no-repeat;
     background-position: center;
   }
+}
+@media screen and (max-width: 40.063em) and (orientation: landscape) {
+  header .show-menu {
+    height: 28px;
+    height: 1.75rem;
+    height: 7vw;
+    width: 28px;
+    width: 1.75rem;
+    width: 7vw;
+  }
+}
+@media screen and (max-width: 40.063em) and (orientation: portrait) {
+  header .show-menu {
+    height: 56px;
+    height: 3.5rem;
+    height: 14vw;
+    width: 56px;
+    width: 3.5rem;
+    width: 14vw;
+  }
+}
+@media screen and (max-width: 40.063em) {
   .no-js header .show-menu {
     display: none;
   }
@@ -637,10 +676,20 @@ pre[class*="language-"] {
   .logo {
     position: fixed;
     display: block;
-    width: 20%;
     float: left;
   }
 }
+@media screen and (max-width: 40.063em) and (orientation: landscape) {
+  .logo {
+    width: 10%;
+  }
+}
+@media screen and (max-width: 40.063em) and (orientation: portrait) {
+  .logo {
+    width: 20%;
+  }
+}
+
 @media screen and (min-width: 40.063em) {
   .logo {
     position: fixed;
@@ -684,18 +733,28 @@ pre[class*="language-"] {
   nav {
     z-index: -2;
     padding: 0;
-    font-size: 62%;
-    font-size: 3vw;
     -webkit-transition: top 0.4s ease-out;
     transition: top 0.4s ease-out;
   }
   .js nav {
-    width: 45%;
     position: fixed;
-    left: 55%;
     top: -400px;
     top: -25rem;
   }
+}
+@media screen and (max-width: 40.063em) and (orientation: landscape) {
+  .js nav {
+    width: 22.5%;
+    left: 77.5%;
+  }
+}
+@media screen and (max-width: 40.063em) and (orientation: portrait) {
+  .js nav {
+    width: 45%;
+    left: 55%;
+  }
+}
+@media screen and (max-width: 40.063em) {
   .no-js nav {
     width: 100%;
     position: relative;
@@ -704,6 +763,19 @@ pre[class*="language-"] {
     margin-top: 25vw;
   }
 }
+@media screen and (max-width: 40.063em) and (orientation: landscape) {
+  nav {
+    font-size: 31%;
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 40.063em) and (orientation: portrait) {
+  nav {
+    font-size: 62%;
+    font-size: 3vw;
+  }
+}
+
 @media screen and (min-width: 40.063em) {
   nav {
     float: right;
@@ -844,15 +916,29 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) {
   .subtitle {
-    top: 9.6px;
-    top: 0.6rem;
-    top: 2.3vw;
     color: white;
-    font-size: 1.4em;
-    font-size: 6vw;
     position: fixed;
   }
 }
+@media screen and (max-width: 40.063em) and (orientation: landscape) {
+  .subtitle {
+    top: 4.8px;
+    top: 0.3rem;
+    top: 1.15vw;
+    font-size: 0.7em;
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 40.063em) and (orientation: portrait) {
+  .subtitle {
+    top: 9.6px;
+    top: 0.6rem;
+    top: 2.3vw;
+    font-size: 1.4em;
+    font-size: 6vw;
+  }
+}
+
 @media screen and (min-width: 40.063em) {
   .subtitle {
     bottom: -2em;
@@ -869,11 +955,17 @@ pre[class*="language-"] {
   }
 }
 
-@media screen and (max-width: 40.063em) {
+@media screen and (max-width: 40.063em) and (orientation: landscape) {
+  .left {
+    left: 10.5%;
+  }
+}
+@media screen and (max-width: 40.063em) and (orientation: portrait) {
   .left {
     left: 21%;
   }
 }
+
 @media screen and (min-width: 40.063em) and (max-width: 67em) {
   .left {
     left: 24.2%;

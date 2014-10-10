@@ -10,19 +10,31 @@ header {
     width:100%;
     z-index: 1;
     .js &.expanded nav {
-        @include rem('top', 3.5rem);
-        top:14vw;
+        @media screen and (orientation:landscape) {
+          @include rem('top', 1.75rem);
+          top:7vw;
+        }
+        @media screen and (orientation:portrait) {
+          @include rem('top', 3.5rem);
+          top:14vw;
+        }
     }
     &:before {
       width:100%;
       position:fixed;
       top:0;
       left:0;
-      @include rem('height', 3.5rem);
-      height:14vw;
       background-color:$green;
       content:"";
       z-index:-1;
+      @media screen and (orientation:landscape) {
+        @include rem('height', 1.75rem);
+        height:7vw;
+      }
+      @media screen and (orientation:portrait) {
+        @include rem('height', 3.5rem);
+        height:14vw;
+      }
       @include shadow();
     }
   }
@@ -42,14 +54,22 @@ header {
       position:fixed;
       right:0%;
       top:0;
-      @include rem('height', 3.5rem);
-      height:14vw;
-      @include rem('width', 3.5rem);
-      width:14vw;
       background-image:url(../images/menu.svg);
       background-size:80% 80%;
       background-repeat:no-repeat;
       background-position: center;
+      @media screen and (orientation:landscape) {
+        @include rem('height', 1.75rem);
+        height:7vw;
+        @include rem('width', 1.75rem);
+        width:7vw;
+      }
+      @media screen and (orientation:portrait) {
+        @include rem('height', 3.5rem);
+        height:14vw;
+        @include rem('width', 3.5rem);
+        width:14vw;
+      }
       .no-js & {
         display:none;
       }
@@ -85,8 +105,13 @@ header {
   @include bp-lower('medium') {
     position:fixed;
     display: block;
-    width:20%;
     float:left;
+    @media screen and (orientation:landscape) {
+      width: 10%;
+    }
+    @media screen and (orientation:portrait) {
+      width: 20%;
+    }
   }
   @include bp-up('medium') {
     position: fixed;
@@ -118,10 +143,16 @@ nav {
 
   @include bp-lower('medium') {
     .js & {
-        width:45%;
         position:fixed;
-        left:55%;
         @include rem('top', -25rem);
+        @media screen and (orientation:landscape) {
+          width: 22.5%;
+          left:77.5%;
+        }
+        @media screen and (orientation:portrait) {
+          width: 45%;
+          left:55%;
+        }
     }
     .no-js & {
         width:100%;
@@ -131,8 +162,14 @@ nav {
     }
     z-index: -2;
     padding: 0;
-    font-size: 62%;
-    font-size: 3vw;
+    @media screen and (orientation:landscape) {
+      font-size: 31%;
+      font-size: 1.5vw;
+    }
+    @media screen and (orientation:portrait) {
+      font-size: 62%;
+      font-size: 3vw;
+    }
     transition: top 0.4s ease-out;
   }
   @include bp-up('medium') {
@@ -236,11 +273,19 @@ nav {
     font-size: 1.5vw;
   }
   @include bp-lower('medium') {
-    @include rem('top', 0.6rem);
-    top: 2.3vw;
     color: white;
-    font-size: 1.4em;
-    font-size: 6vw;
+    @media screen and (orientation:landscape) {
+      @include rem('top', 0.3rem);
+      top: 1.15vw;
+      font-size: 0.7em;
+      font-size: 3vw;
+    }
+    @media screen and (orientation:portrait) {
+      @include rem('top', 0.6rem);
+      top: 2.3vw;
+      font-size: 1.4em;
+      font-size: 6vw;
+    }
     position:fixed;
   }
   @include bp-up('medium') {
@@ -251,12 +296,16 @@ nav {
   }
   @include bp-up('xlarge') {
     bottom: -2em;
-
   }
 }
 .left{
   @include bp-lower('medium') {
-    left: 21%;
+    @media screen and (orientation:landscape) {
+      left: 10.5%;
+    }
+    @media screen and (orientation:portrait) {
+      left: 21%;
+    }
   }
   @include bp('medium') {
     left: 24.2%;
