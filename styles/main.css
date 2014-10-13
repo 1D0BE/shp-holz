@@ -1408,12 +1408,22 @@ aside .container div:hover img {
 }
 .main-section .impressum .icon {
   vertical-align: middle;
-  width: 80px;
-  width: 5rem;
-  height: 80px;
-  height: 5rem;
   margin-right: 19.2px;
   margin-right: 1.2rem;
+}
+@media (max-width: 40.063em) {
+  .main-section .impressum .icon {
+    width: 80px;
+    width: 5rem;
+    height: 80px;
+    height: 5rem;
+  }
+}
+@media (min-width: 40.063em) {
+  .main-section .impressum .icon {
+    width: 2em;
+    height: 2em;
+  }
 }
 .main-section .impressum p {
   font-size: 1em;

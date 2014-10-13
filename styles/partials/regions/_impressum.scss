@@ -16,8 +16,15 @@
 
   .impressum .icon {
     vertical-align:middle;
-    @include rem('width', 5rem);
-    @include rem('height', 5rem);
+    @include bp-lower('medium') {
+      @include rem('width', 5rem);
+      @include rem('height', 5rem);
+    }
+    @include bp-up('medium') {
+      width: 2em;
+      height: 2em;
+    }
+
     @include rem('margin-right', 1.2rem);
   }
 
