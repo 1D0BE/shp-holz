@@ -14,17 +14,14 @@
     }
   }
 
-  .icon path {
-    fill: $green;
-  }
-  svg {
+  .impressum .icon {
     vertical-align:middle;
-    @include rem('width', 3rem);
-    @include rem('height', 3rem);
+    @include rem('width', 5rem);
+    @include rem('height', 5rem);
     @include rem('margin-right', 1.2rem);
   }
 
   .impressum p {
-    font-size:25px;
+    font-size: 1em;
   }
 }
