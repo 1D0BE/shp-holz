@@ -9,5 +9,11 @@ $(
         }
       }
     );
+    $(window).resize(
+      function () {
+          $('header').css('width', $(window).width());
+          $('header:before').css('width', $(window).width());
+      }
+    );
   }
 );
