@@ -1,8 +1,16 @@
 footer{
-  background-color:$green;
+  background-color: $green;
   color: white;
   text-align:center;
   float:left;
+  @media screen and (orientation:portrait) {
+    @include rem('margin-top', 5rem);
+    margin-top: 22vw;
+  }
+  @media screen and (orientation:landscape) {
+    @include rem('margin-top', 2.5rem);
+    margin-top: 11vw;
+  }
   @include shadow();
   @include rem('padding', 0.5rem);
   @include bp-lower('medium') {

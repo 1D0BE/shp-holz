@@ -1022,12 +1022,21 @@ a, a:visited {
   float: left;
   width: 100%;
 }
-@media (max-width: 40.063em) {
+@media screen and (max-width: 40.063em) and (orientation: portrait) {
+  .main-section {
+    margin-top: 112px;
+    margin-top: 7rem;
+    margin-top: 30vw;
+  }
+}
+@media screen and (max-width: 40.063em) and (orientation: landscape) {
   .main-section {
     margin-top: 56px;
     margin-top: 3.5rem;
-    margin-top: 14vw;
+    margin-top: 15vw;
   }
+}
+@media (max-width: 40.063em) {
   .main-section article > *:not(img) {
     background-color: white;
     background-color: rgba(255, 255, 255, 0.7);
@@ -1041,14 +1050,14 @@ a, a:visited {
     color: #329865;
     text-align: center;
   }
-  .main-section img:not(.profile-image) {
+  .main-section img:not(.icon):not(.profile-image) {
     width: 100%;
     -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
     -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
   }
-  .contact .main-section img:not(.profile-image) {
+  .contact .main-section img:not(.icon):not(.profile-image) {
     display: none;
   }
 }
@@ -1237,6 +1246,20 @@ footer {
   padding: 8px;
   padding: 0.5rem;
 }
+@media screen and (orientation: portrait) {
+  footer {
+    margin-top: 80px;
+    margin-top: 5rem;
+    margin-top: 22vw;
+  }
+}
+@media screen and (orientation: landscape) {
+  footer {
+    margin-top: 40px;
+    margin-top: 2.5rem;
+    margin-top: 11vw;
+  }
+}
 @media (max-width: 40.063em) {
   footer {
     width: 100%;
@@ -1383,20 +1406,27 @@ aside .container div:hover img {
     width: 75%;
   }
 }
-.main-section .icon path {
-  fill: #329865;
-}
-.main-section svg {
+.main-section .impressum .icon {
   vertical-align: middle;
-  width: 48px;
-  width: 3rem;
-  height: 48px;
-  height: 3rem;
   margin-right: 19.2px;
   margin-right: 1.2rem;
 }
+@media (max-width: 40.063em) {
+  .main-section .impressum .icon {
+    width: 80px;
+    width: 5rem;
+    height: 80px;
+    height: 5rem;
+  }
+}
+@media (min-width: 40.063em) {
+  .main-section .impressum .icon {
+    width: 2em;
+    height: 2em;
+  }
+}
 .main-section .impressum p {
-  font-size: 25px;
+  font-size: 1em;
 }
 
 .styleguide .main-section {

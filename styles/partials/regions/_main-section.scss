@@ -3,8 +3,14 @@
   float:left;
   width:100%;
   @include bp-lower('medium') {
-    @include rem('margin-top', 3.5rem);
-    margin-top:14vw;
+    @media screen and (orientation:portrait) {
+      @include rem('margin-top', 7rem);
+      margin-top: 30vw;
+    }
+    @media screen and (orientation:landscape) {
+      @include rem('margin-top', 3.5rem);
+      margin-top: 15vw;
+    }
     article > *:not(img) {
       @include rgba('background-color', white, $back-opac);
       @include rem('margin-top', -0.5rem);
@@ -15,7 +21,7 @@
       color: $green;
       text-align: center;
     }
-    img:not(.profile-image) {
+    img:not(.icon):not(.profile-image) {
       width: 100%;
       @include shadow();
       .contact & {
@@ -51,9 +57,6 @@
       right: 50%;
       background-color: transparent;
       body:not(.contact) & {
-        //@include shadow();
-        //top: -5%;
-        //height: 110%;
         height: 100%;
         top: 0;
       }
