@@ -743,14 +743,14 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) and (orientation: landscape) {
   .js nav {
-    width: 22.5%;
-    left: 77.5%;
+    width: 40%;
+    left: 60%;
   }
 }
 @media screen and (max-width: 40.063em) and (orientation: portrait) {
   .js nav {
-    width: 45%;
-    left: 55%;
+    width: 60%;
+    left: 40%;
   }
 }
 @media screen and (max-width: 40.063em) {
@@ -921,18 +921,16 @@ pre[class*="language-"] {
 }
 @media screen and (max-width: 40.063em) and (orientation: landscape) {
   .subtitle {
-    top: 4.8px;
-    top: 0.3rem;
-    top: 1.15vw;
+    bottom: 83%;
+    bottom: 83vh;
     font-size: 0.7em;
     font-size: 3vw;
   }
 }
 @media screen and (max-width: 40.063em) and (orientation: portrait) {
   .subtitle {
-    top: 9.6px;
-    top: 0.6rem;
-    top: 2.3vw;
+    bottom: 90%;
+    bottom: 90vh;
     font-size: 1.4em;
     font-size: 6vw;
   }
