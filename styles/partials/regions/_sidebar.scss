@@ -11,6 +11,11 @@ aside{
   height: 100%;
   width: 15%;
   text-align: center;
+  transition: right 2s;
+  &.sided{
+    right: -15%;
+  }
+
   .container{
     overflow: auto;
     height: 100%;
@@ -91,7 +96,12 @@ aside{
   @include rem('border-width', 0.2rem);
   @include rem('border-radius', 99rem);
   cursor: pointer;
-  transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s;
+  transition: background-color 1s,
+              color 1s,
+              border-color 1s,
+              background-position-y 1s,
+              right 2s;
+
   color: $green;
 
   &.btn-selected {
@@ -100,10 +110,16 @@ aside{
   }
 
   &:hover {
-    background-position-y: 100%;    
+    background-position-y: 100%;
     background-color: $green;
     border-color: $green;
     color: white;
+  }
+  &.btnsided{
+    right:-2vw;
+  }
+  &.btnsided:hover{
+    right:0;
   }
 }
 }

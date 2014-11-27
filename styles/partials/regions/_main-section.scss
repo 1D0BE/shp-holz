@@ -4,8 +4,8 @@
   width:100%;
   @include bp-lower('medium') {
     @media screen and (orientation:portrait) {
-      @include rem('margin-top', 7rem);
-      margin-top: 30vw;
+      @include rem('margin-top', 6rem);
+      margin-top: 20vw;
     }
     @media screen and (orientation:landscape) {
       @include rem('margin-top', 3.5rem);
@@ -122,6 +122,7 @@
     float:left;
     width:100%;
     @include rem('padding-top', 16rem);
+    @include rem('padding-bottom', 15rem);
     &:first-of-type {
       @include rem('padding-top', 16rem);
     }

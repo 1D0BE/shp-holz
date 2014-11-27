@@ -1024,9 +1024,9 @@ a, a:visited {
 }
 @media screen and (max-width: 40.063em) and (orientation: portrait) {
   .main-section {
-    margin-top: 112px;
-    margin-top: 7rem;
-    margin-top: 30vw;
+    margin-top: 96px;
+    margin-top: 6rem;
+    margin-top: 20vw;
   }
 }
 @media screen and (max-width: 40.063em) and (orientation: landscape) {
@@ -1170,6 +1170,8 @@ a, a:visited {
     width: 100%;
     padding-top: 256px;
     padding-top: 16rem;
+    padding-bottom: 240px;
+    padding-bottom: 15rem;
   }
   .wrapper:first-of-type {
     padding-top: 256px;
@@ -1313,11 +1315,16 @@ aside {
   height: 100%;
   width: 15%;
   text-align: center;
+  -webkit-transition: right 2s;
+  transition: right 2s;
 }
 @media (min-width: 0) and (max-width: 40em) {
   aside {
     display: none;
   }
+}
+aside.sided {
+  right: -15%;
 }
 aside .container {
   overflow: auto;
@@ -1418,8 +1425,8 @@ aside .container div:hover img {
     border-radius: 1584px;
     border-radius: 99rem;
     cursor: pointer;
-    -webkit-transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s;
-    transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s;
+    -webkit-transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 2s;
+    transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 2s;
     color: #329865;
   }
   .button.btn-selected {
@@ -1431,6 +1438,12 @@ aside .container div:hover img {
     background-color: #329865;
     border-color: #329865;
     color: white;
+  }
+  .button.btnsided {
+    right: -2vw;
+  }
+  .button.btnsided:hover {
+    right: 0;
   }
 }
 @media (max-width: 40.063em) {
