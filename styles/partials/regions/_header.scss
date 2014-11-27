@@ -146,12 +146,12 @@ nav {
         position:fixed;
         top: -100%;
         @media screen and (orientation:landscape) {
-          width: 40%;
-          left: 60%;
+          width: 22.5%;
+          left: 77.5%;
         }
         @media screen and (orientation:portrait) {
-          width: 60%;
-          left: 40%;
+          width: 45%;
+          left: 55%;
         }
     }
     .no-js & {
@@ -275,14 +275,14 @@ nav {
   @include bp-lower('medium') {
     color: white;
     @media screen and (orientation:landscape) {
-      bottom:83%;
-      bottom:83vh;
+      @include rem('top', 0.3rem);
+      top: 1.15vw;
       font-size: 0.7em;
       font-size: 3vw;
     }
     @media screen and (orientation:portrait) {
-      bottom:90%;
-      bottom:90vh;
+      @include rem('top', 0.6rem);
+      top: 2.3vw;
       font-size: 1.4em;
       font-size: 6vw;
     }
