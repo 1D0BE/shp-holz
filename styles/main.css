@@ -1181,12 +1181,12 @@ a, a:visited {
   .wrapper {
     float: left;
     width: 100%;
-    padding-top: 288px;
-    padding-top: 18rem;
+    padding-top: 256px;
+    padding-top: 16rem;
   }
   .wrapper:first-of-type {
-    padding-top: 304px;
-    padding-top: 19rem;
+    padding-top: 256px;
+    padding-top: 16rem;
   }
   .wrapper:last-of-type {
     padding-bottom: 240px;
@@ -1322,7 +1322,7 @@ aside {
   background-color: white;
   right: 0;
   top: 0;
-  z-index: -1;
+  z-index: 0;
   height: 100%;
   width: 15%;
   text-align: center;
@@ -1404,6 +1404,46 @@ aside .container div:hover img {
 
   .subtitle.right {
     right: 16%;
+  }
+
+  .button {
+    position: fixed;
+    top: 50%;
+    right: 13%;
+    width: 4vw;
+    height: 4vw;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #329865));
+    background: -webkit-linear-gradient(top, white 50%, #329865 50%);
+    background: linear-gradient(to bottom, white 50%, #329865 50%);
+    -webkit-background-size: 200%;
+    background-size: 200%;
+    background-position-y: 0%;
+    z-index: 1;
+    -webkit-box-shadow: 0 2px 4px black;
+    box-shadow: 0 2px 4px black;
+    -webkit-box-shadow: 0 0.10rem 0.25rem black;
+    box-shadow: 0 0.10rem 0.25rem black;
+    padding: 8px;
+    padding: 0.5rem;
+    border: 0 solid white;
+    border-width: 3.2px;
+    border-width: 0.2rem;
+    border-radius: 1584px;
+    border-radius: 99rem;
+    cursor: pointer;
+    -webkit-transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s;
+    transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s;
+    color: #329865;
+  }
+  .button.btn-selected {
+    background-color: #329865;
+    color: white;
+  }
+  .button:hover {
+    background-position-y: 100%;
+    background-color: #329865;
+    border-color: #329865;
+    color: white;
   }
 }
 @media (max-width: 40.063em) {

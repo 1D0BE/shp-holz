@@ -121,9 +121,9 @@
   @include bp-up("medium") {
     float:left;
     width:100%;
-    @include rem('padding-top', 18rem);
+    @include rem('padding-top', 16rem);
     &:first-of-type {
-      @include rem('padding-top', 19rem);
+      @include rem('padding-top', 16rem);
     }
     &:last-of-type{
       @include rem('padding-bottom', 15rem);
