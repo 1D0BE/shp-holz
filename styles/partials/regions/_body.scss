@@ -1,11 +1,12 @@
 body {
   z-index:-1;
   background-image: url("../images/wood_pattern.png");
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   @media all and (min-device-pixel-ratio:2) {
     background-image: url("../images/wood_pattern_@2x.png");
   }
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
+
 
 a,a:visited{
   text-decoration:inherit;

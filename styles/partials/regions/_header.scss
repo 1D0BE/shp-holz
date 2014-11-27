@@ -334,3 +334,12 @@ nav {
 .italic{
   font-style:italic;
 }
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  @include rem('height', 7rem);
+  @include rem('bottom', -7rem);
+  z-index: -1;
+  background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+}
