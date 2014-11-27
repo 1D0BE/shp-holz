@@ -7,7 +7,7 @@ aside{
   background-color: white;
   right: 0;
   top: 0;
-  z-index: -1;
+  z-index: 0;
   height: 100%;
   width: 15%;
   text-align: center;
@@ -75,4 +75,35 @@ aside{
   .subtitle.right {
     right: 16%;
   }
+  .button {
+    position: fixed;
+    top:50%;
+    right:13%;
+    width: 4vw;
+    height: 4vw;
+    background: linear-gradient(to bottom, white 50%, $green 50%);
+    background-size: 200%;
+    background-position-y: 0%;
+    z-index:1;
+  @include shadow-small();
+  @include rem('padding', 0.5rem);
+  border: 0 solid white;
+  @include rem('border-width', 0.2rem);
+  @include rem('border-radius', 99rem);
+  cursor: pointer;
+  transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s;
+  color: $green;
+
+  &.btn-selected {
+    background-color: $green;
+    color: white;
+  }
+
+  &:hover {
+    background-position-y: 100%;    
+    background-color: $green;
+    border-color: $green;
+    color: white;
+  }
+}
 }
