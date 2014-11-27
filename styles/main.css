@@ -191,6 +191,7 @@ figure {
  */
 hr {
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -307,6 +308,8 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -401,12 +404,16 @@ th {
  * use border-box as default
  */
 html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -535,6 +542,9 @@ pre[class*="language-"] {
     overflow: initial;
     /* to make sure that header wraps around content(nav) http://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements */
     width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
   }
 }
@@ -571,7 +581,9 @@ pre[class*="language-"] {
     background-color: #329865;
     content: "";
     z-index: -1;
+    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
   }
 }
@@ -603,6 +615,7 @@ pre[class*="language-"] {
     right: 0%;
     top: 0;
     background-image: url(../images/menu.svg);
+    -webkit-background-size: 80% 80%;
     background-size: 80% 80%;
     background-repeat: no-repeat;
     background-position: center;
@@ -710,7 +723,9 @@ pre[class*="language-"] {
   nav {
     background-color: #329865;
     position: relative;
+    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
   }
 }
@@ -718,6 +733,7 @@ pre[class*="language-"] {
   nav {
     z-index: -2;
     padding: 0;
+    -webkit-transition: top .5s ease-out;
     transition: top .5s ease-out;
   }
   .js nav {
@@ -805,16 +821,22 @@ pre[class*="language-"] {
 }
 @media screen and (min-width: 0) and (max-width: 40em) {
   nav ul {
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0.45rem 0.4rem rgba(0, 0, 0, 0.5);
     box-shadow: 0 0.45rem 0.4rem rgba(0, 0, 0, 0.5);
     width: 100%;
   }
 }
 @media screen {
   nav ul li {
+    -webkit-transition: background 0.5s, color 0.5s;
     transition: background 0.5s, color 0.5s;
     color: white;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, white), color-stop(50%, #329865));
+    background: -webkit-linear-gradient(bottom, white 50%, #329865 50%);
     background: linear-gradient(to top, white 50%, #329865 50%);
+    -webkit-background-size: 200%;
     background-size: 200%;
     background-position-y: 0%;
     float: left;
@@ -988,6 +1010,8 @@ pre[class*="language-"] {
   bottom: -112px;
   bottom: -7rem;
   z-index: -1;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
   background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
 }
 
@@ -1041,7 +1065,9 @@ a, a:visited {
   }
   .main-section img:not(.icon):not(.profile-image) {
     width: 100%;
+    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
   }
   .contact .main-section img:not(.icon):not(.profile-image) {
@@ -1115,6 +1141,7 @@ a, a:visited {
   height: 8rem;
   border: 1px white solid;
   border-radius: 32px;
+  -webkit-transition: border-color .5s;
   transition: border-color .5s;
   border-width: 11.2px;
   border-width: 0.7rem;
@@ -1131,6 +1158,7 @@ a, a:visited {
   opacity: 1;
 }
 .main-section .profile .profile-info {
+  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   opacity: 0;
   position: absolute;
@@ -1169,7 +1197,9 @@ a, a:visited {
 }
 
 .button {
+  -webkit-box-shadow: 0 2px 4px black;
   box-shadow: 0 2px 4px black;
+  -webkit-box-shadow: 0 0.10rem 0.25rem black;
   box-shadow: 0 0.10rem 0.25rem black;
   padding: 16px;
   padding: 1rem;
@@ -1179,6 +1209,7 @@ a, a:visited {
   border-radius: 1584px;
   border-radius: 99rem;
   cursor: pointer;
+  -webkit-transition: background-color 1s, color 1s, border-color 1s;
   transition: background-color 1s, color 1s, border-color 1s;
   color: #329865;
   font-size: 25px;
@@ -1223,7 +1254,9 @@ footer {
   color: white;
   text-align: center;
   float: left;
+  -webkit-box-shadow: 0 0 8px black;
   box-shadow: 0 0 8px black;
+  -webkit-box-shadow: 0 0 0.5rem black;
   box-shadow: 0 0 0.5rem black;
   padding: 8px;
   padding: 0.5rem;
@@ -1283,7 +1316,9 @@ footer > * {
 }
 
 aside {
+  -webkit-box-shadow: inset 0 4px 8px black;
   box-shadow: inset 0 4px 8px black;
+  -webkit-box-shadow: inset 0 0.25rem 0.5rem black;
   box-shadow: inset 0 0.25rem 0.5rem black;
   position: fixed;
   background-color: white;
@@ -1293,6 +1328,7 @@ aside {
   height: 100%;
   width: 15%;
   text-align: center;
+  -webkit-transition: right 2s;
   transition: right 2s;
 }
 @media (min-width: 0) and (max-width: 40em) {
@@ -1315,20 +1351,26 @@ aside .container {
 aside .container img {
   width: 80%;
   text-align: center;
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-box-shadow: 0 2px 4px black;
   box-shadow: 0 2px 4px black;
+  -webkit-box-shadow: 0 0.10rem 0.25rem black;
   box-shadow: 0 0.10rem 0.25rem black;
   border-radius: 24px;
   border-radius: 1.5rem;
   margin-top: 24px;
   margin-top: 1.5rem;
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 aside .container a {
   position: relative;
 }
 aside .container a.color img {
+  -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
 aside .container p {
@@ -1340,6 +1382,7 @@ aside .container p {
   bottom: 0;
   width: 100%;
   text-align: center;
+  -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
 .no-cssfilters aside .container p, .no-js aside .container p {
@@ -1356,6 +1399,7 @@ aside .container div:hover p {
   opacity: 1;
 }
 aside .container div:hover img {
+  -webkit-filter: grayscale(100%) opacity(25%);
   filter: grayscale(100%) opacity(25%);
 }
 
@@ -1375,11 +1419,16 @@ aside .container div:hover img {
     right: 13%;
     width: 4vw;
     height: 4vw;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #329865));
+    background: -webkit-linear-gradient(top, white 50%, #329865 50%);
     background: linear-gradient(to bottom, white 50%, #329865 50%);
+    -webkit-background-size: 200%;
     background-size: 200%;
     background-position-y: 0%;
     z-index: 1;
+    -webkit-box-shadow: 0 2px 4px black;
     box-shadow: 0 2px 4px black;
+    -webkit-box-shadow: 0 0.10rem 0.25rem black;
     box-shadow: 0 0.10rem 0.25rem black;
     padding: 8px;
     padding: 0.5rem;
@@ -1389,6 +1438,7 @@ aside .container div:hover img {
     border-radius: 1584px;
     border-radius: 99rem;
     cursor: pointer;
+    -webkit-transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 2s;
     transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 2s;
     color: #329865;
   }
@@ -1463,6 +1513,7 @@ aside .container div:hover img {
   height: 100%;
 }
 .styleguide .main-section .logo {
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 .styleguide .main-section .logo-link:hover + nav ul .home {
@@ -1495,7 +1546,9 @@ aside .container div:hover img {
   .styleguide .main-section pre {
     max-height: 320px;
     max-height: 20rem;
+    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
     width: 100%;
   }
@@ -1544,7 +1597,9 @@ aside .container div:hover img {
     padding: 3rem;
   }
   .styleguide .main-section .code {
+    -webkit-box-shadow: 0 0 8px black;
     box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 0.5rem black;
     box-shadow: 0 0 0.5rem black;
     position: absolute;
     top: -5%;
