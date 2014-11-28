@@ -345,5 +345,5 @@ nav {
   @include rem('height', 7rem);
   @include rem('bottom', -7rem);
   z-index: -3;
-  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0));
+  background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0));
 }
