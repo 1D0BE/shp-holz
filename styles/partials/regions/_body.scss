@@ -1,6 +1,7 @@
 body {
   z-index:-1;
   background-image: url("../images/wood_pattern.png");
+  background-attachment: fixed;
   @media all and (min-device-pixel-ratio:2) {
     background-image: url("../images/wood_pattern_@2x.png");
   }

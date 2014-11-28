@@ -1023,6 +1023,7 @@ pre[class*="language-"] {
 body {
   z-index: -1;
   background-image: url("../images/wood_pattern.png");
+  background-attachment: fixed;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 @media all and (min-device-pixel-ratio: 2) {
