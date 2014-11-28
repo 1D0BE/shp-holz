@@ -1003,8 +1003,8 @@ pre[class*="language-"] {
 }
 
 .gradient {
-  -webkit-transition: width 2s;
-  transition: width 2s;
+  -webkit-transition: width 1s;
+  transition: width 1s;
   position: absolute;
   width: 100%;
   height: 112px;
@@ -1337,8 +1337,8 @@ aside {
   height: 100%;
   width: 15%;
   text-align: center;
-  -webkit-transition: right 2s;
-  transition: right 2s;
+  -webkit-transition: right 1s;
+  transition: right 1s;
 }
 @media (min-width: 0) and (max-width: 40em) {
   aside {
@@ -1348,7 +1348,8 @@ aside {
 aside.sided {
   right: -15%;
 }
-aside .container {
+
+.container {
   overflow: auto;
   height: 100%;
   top: 48px;
@@ -1357,7 +1358,7 @@ aside .container {
   padding-bottom: 4%;
   position: inherit;
 }
-aside .container img {
+.container img {
   width: 80%;
   text-align: center;
   -webkit-filter: grayscale(100%);
@@ -1374,15 +1375,22 @@ aside .container img {
   margin-top: 1.5rem;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  -webkit-transition: left 1s;
+  transition: left 1s;
+  position: relative;
+  left: 0;
 }
-aside .container a {
+.sided .container img {
+  left: 15vw;
+}
+.container a {
   position: relative;
 }
-aside .container a.color img {
+.container a.color img {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
-aside .container p {
+.container p {
   font-size: 120%;
   color: #329865;
   font-weight: bold;
@@ -1394,27 +1402,34 @@ aside .container p {
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.no-cssfilters aside .container p, .no-js aside .container p {
+.no-cssfilters .container p, .no-js .container p {
   width: 1584px;
   width: 99rem;
   font-size: 1.2vw;
   background-color: white;
   text-align: left;
 }
-aside .container div {
+.container div {
   cursor: pointer;
 }
-aside .container div:hover p {
+.container div:hover p {
   opacity: 1;
 }
-aside .container div:hover img {
+.container div:hover img {
   -webkit-filter: grayscale(100%) opacity(25%);
   filter: grayscale(100%) opacity(25%);
 }
 
 @media (min-width: 40.063em) {
+  .wrapper {
+    width: 100%;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+  }
   .wrapper.small {
     float: left;
+  }
+  .has-sidebar .wrapper.small {
     width: 85%;
   }
 
@@ -1447,8 +1462,8 @@ aside .container div:hover img {
     border-radius: 1584px;
     border-radius: 99rem;
     cursor: pointer;
-    -webkit-transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 2s;
-    transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 2s;
+    -webkit-transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 1s;
+    transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 1s;
     color: #329865;
   }
   .button.btn-selected {

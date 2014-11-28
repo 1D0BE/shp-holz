@@ -11,69 +11,80 @@ aside{
   height: 100%;
   width: 15%;
   text-align: center;
-  transition: right 2s;
+  transition: right 1s;
   &.sided{
     right: -15%;
   }
 
-  .container{
-    overflow: auto;
-    height: 100%;
-    @include rem('top', 3rem);
-    padding-top: 2%;
-    padding-bottom: 4%;
-    position: inherit;
-    img {
-      width: 80%;
-      text-align: center;
-      filter: grayscale(100%);
-      backface-visibility: hidden;
-      @include shadow-small();
-      @include rem('border-radius', 1.5rem);
-      @include rem('margin-top', 1.5rem);
-      transition: all 0.5s;
+
+}
+
+.container{
+  overflow: auto;
+  height: 100%;
+  @include rem('top', 3rem);
+  padding-top: 2%;
+  padding-bottom: 4%;
+  position: inherit;
+  img {
+    width: 80%;
+    text-align: center;
+    filter: grayscale(100%);
+    backface-visibility: hidden;
+    @include shadow-small();
+    @include rem('border-radius', 1.5rem);
+    @include rem('margin-top', 1.5rem);
+    transition: all 0.5s;
+    transition: left 1s;
+    position: relative;
+    left: 0;
+    .sided & {
+      left: 15vw;
     }
-    a {
-      position: relative;
+  }
+  a {
+    position: relative;
+  }
+  a.color img {
+    filter: grayscale(0%);
+  }
+  p {
+    font-size: 120%;
+    color: $green;
+    font-weight: bold;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    transition: all 0.25s;
+    .no-cssfilters &, .no-js & {
+      @include rem('width', 99rem);
+      font-size: 1.2vw;
+      background-color: white;
+      text-align: left;
     }
-    a.color img {
-      filter: grayscale(0%);
-    }
-    p {
-      font-size: 120%;
-      color: $green;
-      font-weight: bold;
-      opacity: 0;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      transition: all 0.25s;
-      .no-cssfilters &, .no-js & {
-        @include rem('width', 99rem);
-        font-size: 1.2vw;
-        background-color: white;
-        text-align: left;
-      }
-    }
-    div {
-      cursor: pointer;
-    }
-    div:hover p {
-      opacity: 1;
-    }
-    div:hover img {
-      filter: grayscale(100%) opacity(25%);
-    }
+  }
+  div {
+    cursor: pointer;
+  }
+  div:hover p {
+    opacity: 1;
+  }
+  div:hover img {
+    filter: grayscale(100%) opacity(25%);
   }
 }
 @include bp-up('medium') {
 
   .wrapper{
+    width: 100%;
+    transition: width 1s;
     &.small{
+      .has-sidebar & {
+        width:85%;
+      }
       float:left;
-      width:85%;
-
     }
   }
 
@@ -100,7 +111,7 @@ aside{
               color 1s,
               border-color 1s,
               background-position-y 1s,
-              right 2s;
+              right 1s;
 
   color: $green;
 
