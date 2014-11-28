@@ -1373,10 +1373,8 @@ aside.sided {
   border-radius: 1.5rem;
   margin-top: 24px;
   margin-top: 1.5rem;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transition: left 1s;
-  transition: left 1s;
+  -webkit-transition: all 0.5s, left 1s;
+  transition: all 0.5s, left 1s;
   position: relative;
   left: 0;
 }
