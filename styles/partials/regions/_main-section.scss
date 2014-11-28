@@ -1,5 +1,6 @@
 .main-section {
   $back-opac: .7;
+  @include shadow();
   float:left;
   width:100%;
   @include bp-lower('medium') {
