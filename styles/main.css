@@ -1464,8 +1464,8 @@ aside.sided {
     border-radius: 1584px;
     border-radius: 99rem;
     cursor: pointer;
-    -webkit-transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 1s;
-    transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
     color: #329865;
   }
   .button.btn-selected {

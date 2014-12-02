@@ -104,19 +104,14 @@ aside{
     background-size: 200%;
     background-position-y: 0%;
     z-index:1;
-  @include shadow-small();
-  @include rem('padding', 0.5rem);
-  border: 0 solid white;
-  @include rem('border-width', 0.2rem);
-  @include rem('border-radius', 99rem);
-  cursor: pointer;
-  transition: background-color 1s,
-              color 1s,
-              border-color 1s,
-              background-position-y 1s,
-              right 1s;
-
-  color: $green;
+    @include shadow-small();
+    @include rem('padding', 0.5rem);
+    border: 0 solid white;
+    @include rem('border-width', 0.2rem);
+    @include rem('border-radius', 99rem);
+    cursor: pointer;
+    transition: all 1s;
+    color: $green;
 
   &.btn-selected {
     background-color: $green;
