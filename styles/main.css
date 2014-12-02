@@ -1468,15 +1468,19 @@ aside.sided {
     transition: all 1s;
     color: #329865;
   }
+  .no-cssgradients .button, .no-bgpositionxy .button, .no-js .button {
+    background: white;
+  }
   .button.btn-selected {
     background-color: #329865;
     color: white;
   }
   .button:hover {
     background-position-y: 100%;
-    background-color: #329865;
     border-color: #329865;
-    color: white;
+  }
+  .no-cssgradients .button:hover, .no-bgpositionxy .button:hover, .no-js .button:hover {
+    background-color: #329865;
   }
   .button.btnsided {
     right: -2vw;

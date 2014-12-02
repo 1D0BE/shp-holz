@@ -113,6 +113,10 @@ aside{
     transition: all 1s;
     color: $green;
 
+  .no-cssgradients &, .no-bgpositionxy &, .no-js & {
+      background: white;
+  }
+
   &.btn-selected {
     background-color: $green;
     color: white;
@@ -120,9 +124,10 @@ aside{
 
   &:hover {
     background-position-y: 100%;
-    background-color: $green;
     border-color: $green;
-    color: white;
+    .no-cssgradients &, .no-bgpositionxy &, .no-js & {
+        background-color: $green;
+    }
   }
   &.btnsided{
     right:-2vw;
