@@ -1,10 +1,18 @@
 body {
-  z-index:-1;
-  background-image: url("../images/wood_pattern.png");
-  background-attachment: fixed;
-  @media all and (min-device-pixel-ratio:2) {
-    background-image: url("../images/wood_pattern_@2x.png");
+  @include bp-lower('medium') {
+      background-image: url("../images/wood_pattern.png");
+      @media all and (min-device-pixel-ratio:2) {
+        background-image: url("../images/wood_pattern_@2x.png");
+      }
   }
+  @include bp-up('medium') {
+      background-image: url("../images/wood_pattern_light.png");
+      @media all and (min-device-pixel-ratio:2) {
+        background-image: url("../images/wood_pattern_light@2x.png");
+      }
+  }
+  z-index:-1;
+  background-attachment: fixed;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
