@@ -1359,6 +1359,9 @@ aside.sided {
   padding-bottom: 4%;
   position: inherit;
 }
+.container div {
+  position: relative;
+}
 .container img {
   width: 80%;
   text-align: center;
@@ -1402,11 +1405,11 @@ aside.sided {
   transition: all 0.25s;
 }
 .no-cssfilters .container p, .no-js .container p {
-  width: 1584px;
-  width: 99rem;
+  width: 90%;
   font-size: 1.2vw;
   background-color: white;
-  text-align: left;
+  text-align: center;
+  margin: 0 5%;
 }
 .container div {
   cursor: pointer;
