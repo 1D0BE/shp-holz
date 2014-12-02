@@ -1373,6 +1373,9 @@ aside.sided {
   padding-bottom: 4%;
   position: inherit;
 }
+.container div {
+  position: relative;
+}
 .container img {
   width: 80%;
   text-align: center;
@@ -1416,11 +1419,11 @@ aside.sided {
   transition: all 0.25s;
 }
 .no-cssfilters .container p, .no-js .container p {
-  width: 1584px;
-  width: 99rem;
+  width: 90%;
   font-size: 1.2vw;
   background-color: white;
-  text-align: left;
+  text-align: center;
+  margin: 0 5%;
 }
 .container div {
   cursor: pointer;
@@ -1475,9 +1478,12 @@ aside.sided {
     border-radius: 1584px;
     border-radius: 99rem;
     cursor: pointer;
-    -webkit-transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 1s;
-    transition: background-color 1s, color 1s, border-color 1s, background-position-y 1s, right 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
     color: #329865;
+  }
+  .no-cssgradients .button, .no-bgpositionxy .button, .no-js .button {
+    background: white;
   }
   .button.btn-selected {
     background-color: #329865;
@@ -1485,9 +1491,10 @@ aside.sided {
   }
   .button:hover {
     background-position-y: 100%;
-    background-color: #329865;
     border-color: #329865;
-    color: white;
+  }
+  .no-cssgradients .button:hover, .no-bgpositionxy .button:hover, .no-js .button:hover {
+    background-color: #329865;
   }
   .button.btnsided {
     right: -2vw;
