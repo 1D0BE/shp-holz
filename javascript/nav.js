@@ -20,7 +20,7 @@ $(
         imgHeight = imgRatio*($(document).width()/2);
             side = (imgHeight-$mainImg.parent().parent().outerHeight());
             actHeight = $mainImg.parent().parent().outerHeight() + side/2;
-            if(imgHeight >= $mainImg.parent().parent().outerHeight()) {
+            if(imgHeight >= $mainImg.parent().parent().outerHeight() && !window.matchMedia('(max-width: 40.063em)').matches) {
               $mainImg.css({
                 'height': 'auto',
                 'width': '50vw'
@@ -31,10 +31,10 @@ $(
               });
             } else {
               $mainImg.css({
-                'height': '100%',
-                'width': 'auto',
-                'clip': 'auto',
-                'top': 0
+                'height': '',
+                'width': '',
+                'clip': '',
+                'top': ''
                 });
             }
     }
