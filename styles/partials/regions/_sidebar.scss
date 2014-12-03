@@ -110,8 +110,28 @@ aside{
     @include rem('border-width', 0.2rem);
     @include rem('border-radius', 99rem);
     cursor: pointer;
-    transition: all 1s;
+    transition: all 0.5s;
     color: $green;
+
+  &::after {
+    background: url(../images/arrow-in.png);
+  }
+
+  &::before {
+    background: url(../images/arrow-out.png);
+  }
+
+  &::after, &::before {
+    transition: opacity 0.5s;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    @include rem('border-radius', 99rem);
+  }
 
   .no-cssgradients &, .no-bgpositionxy &, .no-js & {
       background: white;
@@ -123,6 +143,9 @@ aside{
   }
 
   &:hover {
+    &::after {
+      opacity: 0;
+    }
     background-position-y: 100%;
     border-color: $green;
     .no-cssgradients &, .no-bgpositionxy &, .no-js & {
@@ -130,9 +153,31 @@ aside{
     }
   }
   &.btnsided{
+    &::before {
+      opacity: 1;
+    }
+    &::after {
+      opacity: 0;
+    }
+    background-position-y: 100%;
+    border-color: $green;
+    .no-cssgradients &, .no-bgpositionxy &, .no-js & {
+        background-color: $green;
+    }
     right:-2vw;
   }
   &.btnsided:hover{
+    &::before {
+      opacity: 0;
+    }
+    &::after {
+      opacity: 1;
+    }
+    background-position-y: 0%;
+    border-color: $green;
+    .no-cssgradients &, .no-bgpositionxy &, .no-js & {
+        background-color: white;
+    }
     right:0;
   }
 }
