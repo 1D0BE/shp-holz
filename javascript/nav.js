@@ -21,10 +21,6 @@ $(
         side = (imgHeight-$mainImg.parent().parent().outerHeight());
         actHeight = $mainImg.parent().parent().outerHeight() + side/2;
         if(imgHeight >= $mainImg.parent().parent().outerHeight() && !window.matchMedia('(max-width: 40.063em)').matches) {
-          if(side === 0) {
-            side = 1;
-          }
-          console.log('-'+side/2+'px'+$mainImg.width());
           $mainImg.css({
             'height': 'auto',
             'width': '50vw',
