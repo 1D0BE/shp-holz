@@ -1490,8 +1490,8 @@ aside.sided {
     border-radius: 1584px;
     border-radius: 99rem;
     cursor: pointer;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: right 1s, background-position-y 0.5s, background-color 0.5s;
+    transition: right 1s, background-position-y 0.5s, background-color 0.5s;
     color: #329865;
   }
   .button::after {

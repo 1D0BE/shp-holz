@@ -115,7 +115,7 @@ aside{
     @include rem('border-width', 0.2rem);
     @include rem('border-radius', 99rem);
     cursor: pointer;
-    transition: all 0.5s;
+    transition: right 1s, background-position-y 0.5s, background-color 0.5s;
     color: $green;
 
   &::after {
