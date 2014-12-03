@@ -10,7 +10,7 @@ $(
       }
     );
 
-    var $mainImg = $('.main-section>article>img'),
+    var $mainImg = $('.main-section>article>img:not(.no-clip)'),
     side,
     actHeight;
     $mainImg.css({
