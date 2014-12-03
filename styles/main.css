@@ -1002,24 +1002,31 @@ pre[class*="language-"] {
   font-style: italic;
 }
 
-.gradient {
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transition: width 1s;
-  transition: width 1s;
-  position: absolute;
-  width: 100%;
-  height: 112px;
-  height: 7rem;
-  bottom: -112px;
-  bottom: -7rem;
-  z-index: -3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, rgba(255, 255, 255, 0.9)), color-stop(30%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0)));
-  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0));
-  background: linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0));
+@media (max-width: 40.063em) {
+  .gradient {
+    visibility: hidden;
+  }
 }
-.has-sidebar .gradient {
-  width: 85%;
+@media (min-width: 40.063em) {
+  .gradient {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+    position: absolute;
+    width: 100%;
+    height: 112px;
+    height: 7rem;
+    bottom: -112px;
+    bottom: -7rem;
+    z-index: -3;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, rgba(255, 255, 255, 0.9)), color-stop(30%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0));
+    background: linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0));
+  }
+  .has-sidebar .gradient {
+    width: 85%;
+  }
 }
 
 body {
@@ -1057,10 +1064,6 @@ a, a:visited {
 .main-section {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-box-shadow: 0 0 8px gray;
-  box-shadow: 0 0 8px gray;
-  -webkit-box-shadow: 0 0 0.5rem gray;
-  box-shadow: 0 0 0.5rem gray;
   float: left;
   width: 100%;
 }
@@ -1105,6 +1108,10 @@ a, a:visited {
 }
 @media (min-width: 40.063em) {
   .main-section {
+    -webkit-box-shadow: 0 0 8px gray;
+    box-shadow: 0 0 8px gray;
+    -webkit-box-shadow: 0 0 0.5rem gray;
+    box-shadow: 0 0 0.5rem gray;
     padding: 32px;
     padding: 2rem;
     background-color: white;

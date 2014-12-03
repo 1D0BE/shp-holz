@@ -1,7 +1,6 @@
 .main-section {
   $back-opac: .7;
   transform-style: preserve-3d;
-  @include shadow();
   float:left;
   width:100%;
   @include bp-lower('medium') {
@@ -33,6 +32,7 @@
   }
 
   @include bp-up('medium') {
+    @include shadow();
     @include rem('padding', 2rem);
     @include rgba('background-color', white, $back-opac);
     position: relative;

@@ -336,15 +336,20 @@ nav {
 }
 
 .gradient {
-  transform-style: preserve-3d;
-  transition: width 1s;
-  position: absolute;
-  width: 100%;
-  .has-sidebar & {
-    width: 85%;
+  @include bp-lower('medium') {
+    visibility: hidden;
   }
-  @include rem('height', 7rem);
-  @include rem('bottom', -7rem);
-  z-index: -3;
-  background: linear-gradient(rgba(255,255,255,.9) 10%, rgba(255,255,255,.8) 30%, rgba(255,255,255,0));
+  @include bp-up('medium') {
+    transform-style: preserve-3d;
+    transition: width 1s;
+    position: absolute;
+    width: 100%;
+    .has-sidebar & {
+      width: 85%;
+    }
+    @include rem('height', 7rem);
+    @include rem('bottom', -7rem);
+    z-index: -3;
+    background: linear-gradient(rgba(255,255,255,.9) 10%, rgba(255,255,255,.8) 30%, rgba(255,255,255,0));
+  }
 }
