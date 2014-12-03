@@ -1512,7 +1512,7 @@ aside.sided {
   }
   .button:hover {
     background-position-y: 100%;
-    border-color: #329865;
+    border-color: white;
   }
   .button:hover::after {
     opacity: 0;
