@@ -336,6 +336,7 @@ nav {
 }
 
 .gradient {
+  transform-style: preserve-3d;
   transition: width 1s;
   position: absolute;
   width: 100%;

@@ -1,5 +1,6 @@
 .main-section {
   $back-opac: .7;
+  transform-style: preserve-3d;
   @include shadow();
   float:left;
   width:100%;

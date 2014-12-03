@@ -2,6 +2,7 @@ aside{
   @include bp('small') {
     display: none;
   }
+  transform-style: preserve-3d;
   @include shadow-inner();
   position: fixed;
   background-color: white;
@@ -33,7 +34,9 @@ aside{
     width: 80%;
     text-align: center;
     filter: grayscale(100%);
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    transform-style: preserve-3d;
     @include shadow-small();
     @include rem('border-radius', 1.5rem);
     @include rem('margin-top', 1.5rem);
@@ -95,9 +98,11 @@ aside{
     right: 16%;
   }
   .button {
+    transform-style: preserve-3d;
     position: fixed;
     top:50%;
     right:13%;
+    right:13vw;
     width: 4vw;
     height: 4vw;
     background: linear-gradient(to bottom, white 50%, $green 50%);
@@ -164,7 +169,7 @@ aside{
     .no-cssgradients &, .no-bgpositionxy &, .no-js & {
         background-color: $green;
     }
-    right:-2vw;
+    right: 14vw;
   }
   &.btnsided:hover{
     &::before {
@@ -178,7 +183,7 @@ aside{
     .no-cssgradients &, .no-bgpositionxy &, .no-js & {
         background-color: white;
     }
-    right:0;
+    right:15vw;
   }
 }
 }
