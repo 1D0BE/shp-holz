@@ -1023,6 +1023,7 @@ pre[class*="language-"] {
 body {
   z-index: -1;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: gray;
 }
 @media (max-width: 40.063em) {
   body {
