@@ -1219,8 +1219,8 @@ a, a:visited {
     width: 100%;
     padding-top: 256px;
     padding-top: 16rem;
-    padding-bottom: 240px;
-    padding-bottom: 15rem;
+    padding-bottom: 256px;
+    padding-bottom: 16rem;
   }
   .wrapper:first-of-type {
     padding-top: 256px;

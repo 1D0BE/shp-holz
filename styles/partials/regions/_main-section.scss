@@ -124,7 +124,7 @@
     float:left;
     width:100%;
     @include rem('padding-top', 16rem);
-    @include rem('padding-bottom', 15rem);
+    @include rem('padding-bottom', 16rem);
     &:first-of-type {
       @include rem('padding-top', 16rem);
     }

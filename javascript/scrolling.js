@@ -2,9 +2,16 @@ $(
   function(){
     var firstTime = true,
     topPosition,
-    $main = $(".main-section");
+    $main = $(".main-section"),
+    lastScrollTop = 0,
+    fontSize=$main.css("font-size");
 
-    $(window).on("mousewheel", function(){
+    $("body").css({
+      "height":"100%",
+      "overflow":"hidden"
+    });
+
+    $(window).on("mousewheel", function(event){
       if(firstTime) {
           $(".main-section").css({
             "width": "50%",
@@ -19,7 +26,14 @@ $(
           });
           firstTime = false;
       }
-      TweenLite.to($main, 1, {top:$main.offset().top-500});
+      var st = $(this).scrollTop();
+      console.log(16*fontSize.replace("px",""));
+      if (event.deltaY<0){
+        TweenLite.to($main, 1, {top:$main.offset().top-(32*fontSize.replace("px","")+$main.height())});
+      } else {
+        TweenLite.to($main, 1, {top:$main.offset().top+(32*fontSize.replace("px",""))});
+      }
+      lastScrollTop = st;
     });
   }
 );
