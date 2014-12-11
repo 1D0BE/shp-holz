@@ -1779,7 +1779,7 @@ aside.sided {
   -webkit-transition: right 1s;
   transition: right 1s;
 }
-.scrolling .wrapper:not(:first-of-type) {
+.scrolling .wrapper:not(.show) {
   display: none;
 }
 .scrolling.has-sidebar .main-section img:not(.icon):not(.profile-image) {

@@ -7,6 +7,7 @@ $(
     fontSize=$main.css("font-size");
 
     $("body").addClass("scrolling");
+    $(".wrapper:first-of-type").addClass("show");
 
     $(document).keydown(function(e) {
       switch(e.which) {
@@ -15,6 +16,7 @@ $(
           break;
 
           case 38: // up
+          goUp();
           break;
 
           case 39: // right
@@ -24,9 +26,9 @@ $(
           case 40: // down
           break;
 
-          default: return; // exit this handler for other keys
+          default: return;
       }
-      e.preventDefault(); // prevent the default action (scroll / move caret)
+      e.preventDefault();
     });
 
     $(window).on("mousewheel", function(event){

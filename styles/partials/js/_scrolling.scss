@@ -21,7 +21,7 @@
      right: 50vw;
      transition: right 1s;
   }
-  .wrapper:not(:first-of-type) {
+  .wrapper:not(.show) {
     display: none;
   }
   &.has-sidebar .main-section img:not(.icon):not(.profile-image) {
