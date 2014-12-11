@@ -1413,7 +1413,7 @@ aside.sided {
   left: 0;
 }
 .sided .container img {
-  left: 15vw;
+  left: 1vw;
 }
 .container a {
   position: relative;
@@ -1749,4 +1749,39 @@ aside.sided {
 }
 .styleguide .main-section .hide {
   display: none;
+}
+
+.scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+.scrolling .main-section {
+  width: 50%;
+  left: 50%;
+  position: fixed;
+  -webkit-transition: left 1s;
+  transition: left 1s;
+}
+.scrolling.has-sidebar .main-section {
+  left: 35%;
+}
+.scrolling .main-section p, .scrolling .main-section h1 {
+  left: 0;
+  width: 100%;
+}
+.scrolling .main-section img:not(.icon):not(.profile-image) {
+  -webkit-box-shadow: 0 0 8px gray;
+  box-shadow: 0 0 8px gray;
+  -webkit-box-shadow: 0 0 0.5rem gray;
+  box-shadow: 0 0 0.5rem gray;
+  position: fixed;
+  right: 50vw;
+  -webkit-transition: right 1s;
+  transition: right 1s;
+}
+.scrolling .wrapper:not(:first-of-type) {
+  display: none;
+}
+.scrolling.has-sidebar .main-section img:not(.icon):not(.profile-image) {
+  right: 50vw;
 }
