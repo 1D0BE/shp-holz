@@ -1413,7 +1413,7 @@ aside.sided {
   left: 0;
 }
 .sided .container img {
-  left: 1vw;
+  left: 15vw;
 }
 .container a {
   position: relative;
@@ -1774,10 +1774,13 @@ aside.sided {
   box-shadow: 0 0 8px gray;
   -webkit-box-shadow: 0 0 0.5rem gray;
   box-shadow: 0 0 0.5rem gray;
-  position: fixed;
+  position: absolute;
   right: 50vw;
   -webkit-transition: right 1s;
   transition: right 1s;
+}
+.scrolling .wrapper {
+  position: fixed;
 }
 .scrolling .wrapper:not(.show) {
   display: none;

@@ -1,13 +1,9 @@
 $(
   function(){
-    var firstTime = true,
-    topPosition,
-    $main = $(".main-section"),
-    lastScrollTop = 0,
-    fontSize=$main.css("font-size");
+    var $showNow = $(".wrapper:first-of-type");
 
     $("body").addClass("scrolling");
-    $(".wrapper:first-of-type").addClass("show");
+    $showNow.addClass("show");
 
     $(document).keydown(function(e) {
       switch(e.which) {
@@ -16,7 +12,8 @@ $(
           break;
 
           case 38: // up
-          goUp();
+          goUp($showNow);
+          $showNow = $showNow.next();
           break;
 
           case 39: // right
@@ -24,6 +21,8 @@ $(
           break;
 
           case 40: // down
+          goDown($showNow);
+          $showNow = $showNow.prev();
           break;
 
           default: return;
@@ -32,21 +31,32 @@ $(
     });
 
     $(window).on("mousewheel", function(event){
-      var st = $(this).scrollTop();
       if (event.deltaY<0){
-        TweenLite.to($main, 1, {top:$main.offset().top-(32*fontSize.replace("px","")+$main.height())});
+
       } else {
-        TweenLite.to($main, 1, {top:$main.offset().top+(32*fontSize.replace("px",""))});
+
       }
-      lastScrollTop = st;
     });
+
   }
 );
 
 function goUp($elem) {
-  TweenLite.to($elem, 1, {bottom:"100%"});
+  var $next = $elem.next(),
+  height=$(document).height();
+  $next.addClass("show");
+  TweenLite.to($elem.find("img"), 1.5, {y:height*2, ease:Back.easeInOut});
+  TweenLite.fromTo($next.find("img"), 1.5, {y:-height*2}, {y:0, ease:Back.easeInOut});
+  TweenLite.to($elem.find(".main-section"), 1.5, {y:-height, ease:Back.easeInOut});
+  TweenLite.fromTo($next.find(".main-section"), 1.5, {y:height}, {y:0, ease:Back.easeInOut});
 }
 
 function goDown($elem) {
-  TweenLite.to($elem, 1, {top:"100%"});
+  var $previous = $elem.prev(),
+  height=$(document).height();
+  $previous.addClass("show");
+  TweenLite.to($elem.find("img"), 1.5, {y:-height*2, ease:Back.easeInOut});
+  TweenLite.fromTo($previous.find("img"), 1.5, {y:height*2}, {y:0, ease:Back.easeInOut});
+  TweenLite.to($elem.find(".main-section"), 1.5, {y:height, ease:Back.easeInOut});
+  TweenLite.fromTo($previous.find(".main-section"), 1.5, {y:-height}, {y:0, ease:Back.easeInOut});
 }

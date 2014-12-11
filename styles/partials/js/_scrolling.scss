@@ -17,9 +17,12 @@
   }
   .main-section img:not(.icon):not(.profile-image) {
      @include shadow();
-     position: fixed;
+     position: absolute;
      right: 50vw;
      transition: right 1s;
+  }
+  .wrapper {
+    position: fixed;
   }
   .wrapper:not(.show) {
     display: none;
