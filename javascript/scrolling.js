@@ -8,6 +8,27 @@ $(
 
     $("body").addClass("scrolling");
 
+    $(document).keydown(function(e) {
+      switch(e.which) {
+          case 37: // left
+          showSidebar();
+          break;
+
+          case 38: // up
+          break;
+
+          case 39: // right
+          hideSidebar();
+          break;
+
+          case 40: // down
+          break;
+
+          default: return; // exit this handler for other keys
+      }
+      e.preventDefault(); // prevent the default action (scroll / move caret)
+    });
+
     $(window).on("mousewheel", function(event){
       var st = $(this).scrollTop();
       if (event.deltaY<0){
