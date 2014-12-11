@@ -32,9 +32,11 @@ $(
 
     $(window).on("mousewheel", function(event){
       if (event.deltaY<0){
-
+        goUp($showNow);
+        $showNow = $showNow.next();
       } else {
-
+        goDown($showNow);
+        $showNow = $showNow.prev();
       }
     });
 
