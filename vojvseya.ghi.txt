@@ -1,0 +1,13 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Explicit paths specified without -i or -o; assuming --only paths...
+# On branch create-scroll
+# Your branch and 'origin/create-scroll' have diverged,
+# and have 3 and 1 different commit each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# Changes to be committed:
+#	new file:   bfcuj3kz.4gj.txt
+#
+
