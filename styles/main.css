@@ -1215,7 +1215,6 @@ a, a:visited {
 
 @media (min-width: 40.063em) {
   .wrapper {
-    float: left;
     width: 100%;
     padding-top: 256px;
     padding-top: 16rem;
@@ -1457,9 +1456,6 @@ aside.sided {
     width: 100%;
     -webkit-transition: width 1s;
     transition: width 1s;
-  }
-  .wrapper.small {
-    float: left;
   }
   .has-sidebar .wrapper.small {
     width: 85%;
