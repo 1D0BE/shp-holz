@@ -1,9 +1,15 @@
 $(
   function(){
-    var $showNow = $(".wrapper:first-of-type");
+    var $showNow = $(".wrapper:first-of-type"),
+    hash = window.location.hash;
 
     $("body").addClass("scrolling");
     $showNow.addClass("show");
+
+    if(hash.lenght != 0 && !$(hash).is($showNow)) {
+      scrollTo($showNow, $(hash));
+      $showNow = $(hash);
+    }
 
     $(document).keydown(function(e) {
       switch(e.which) {
@@ -41,8 +47,10 @@ $(
     });
 
     $(".container a").click(function() {
-      scrollTo($showNow, $($(this).attr('href')))
-      $showNow = $($(this).attr('href'));
+      if(!$showNow.is($($(this).attr('href')))) {
+          scrollTo($showNow, $($(this).attr('href')))
+          $showNow = $($(this).attr('href'));
+      }
     });
 
   }
