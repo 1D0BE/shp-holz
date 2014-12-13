@@ -38,10 +38,20 @@ $(
     }
 
     $mainImg.on('load', function () {
+      var mobile = false;
+      if(window.matchMedia('(max-width: 40.063em)').matches) {
+        mobile = true;
+      }
       imgRatio = $mainImg.height()/$mainImg.width();
       placeImg();
       $(window).resize(function () {
         placeImg();
+        if(window.matchMedia('(max-width: 40.063em)').matches && mobile == false) {
+          window.location.reload();
+        }
+        if(!window.matchMedia('(max-width: 40.063em)').matches) {
+          mobile = false;
+        }
       });
     });
 

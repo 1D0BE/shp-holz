@@ -1,0 +1,35 @@
+@include bp-up('medium') {
+  .scrolling {
+    height: 100%;
+    overflow: hidden;
+
+    .main-section {
+       width: 50%;
+       left: 50%;
+       position: fixed;
+       transition: left 1s;
+    }
+    &.has-sidebar .main-section {
+      left: 35%;
+    }
+    .main-section p, .main-section h1  {
+      left: 0;
+      width: 100%;
+    }
+    .main-section img:not(.icon):not(.profile-image) {
+       @include shadow();
+       position: absolute;
+       right: 50vw;
+       transition: right 1s;
+    }
+    .wrapper {
+      position: fixed;
+    }
+    .wrapper:not(.show) {
+      display: none;
+    }
+    &.has-sidebar .main-section img:not(.icon):not(.profile-image) {
+      right: 50vw;
+    }
+  }
+}

@@ -1219,8 +1219,8 @@ a, a:visited {
     width: 100%;
     padding-top: 256px;
     padding-top: 16rem;
-    padding-bottom: 240px;
-    padding-bottom: 15rem;
+    padding-bottom: 256px;
+    padding-bottom: 16rem;
   }
   .wrapper:first-of-type {
     padding-top: 256px;
@@ -1749,4 +1749,44 @@ aside.sided {
 }
 .styleguide .main-section .hide {
   display: none;
+}
+
+@media (min-width: 40.063em) {
+  .scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
+  .scrolling .main-section {
+    width: 50%;
+    left: 50%;
+    position: fixed;
+    -webkit-transition: left 1s;
+    transition: left 1s;
+  }
+  .scrolling.has-sidebar .main-section {
+    left: 35%;
+  }
+  .scrolling .main-section p, .scrolling .main-section h1 {
+    left: 0;
+    width: 100%;
+  }
+  .scrolling .main-section img:not(.icon):not(.profile-image) {
+    -webkit-box-shadow: 0 0 8px gray;
+    box-shadow: 0 0 8px gray;
+    -webkit-box-shadow: 0 0 0.5rem gray;
+    box-shadow: 0 0 0.5rem gray;
+    position: absolute;
+    right: 50vw;
+    -webkit-transition: right 1s;
+    transition: right 1s;
+  }
+  .scrolling .wrapper {
+    position: fixed;
+  }
+  .scrolling .wrapper:not(.show) {
+    display: none;
+  }
+  .scrolling.has-sidebar .main-section img:not(.icon):not(.profile-image) {
+    right: 50vw;
+  }
 }
