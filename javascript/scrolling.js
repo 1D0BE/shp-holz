@@ -42,12 +42,12 @@ $(
     });
 
     $(window).on("mousewheel", function(event){
-      if (event.deltaY<0){
+      if (event.deltaY>0){
         goUp($showNow);
-        $showNow = $showNow.next(".wrapper").length == 0 ? $showNow : $showNow.next();
+        $showNow = $showNow.prev(".wrapper").length == 0 ? $showNow : $showNow.prev();
       } else {
         goDown($showNow);
-        $showNow = $showNow.prev(".wrapper").length == 0 ? $showNow : $showNow.prev();
+        $showNow = $showNow.next(".wrapper").length == 0 ? $showNow : $showNow.next();
       }
     });
 
