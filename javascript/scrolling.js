@@ -13,7 +13,7 @@ $(
 
           case 38: // up
           goUp($showNow);
-          $showNow = $showNow.next();
+          $showNow = $showNow.prev(".wrapper").length == 0 ? $showNow : $showNow.prev();
           break;
 
           case 39: // right
@@ -22,7 +22,7 @@ $(
 
           case 40: // down
           goDown($showNow);
-          $showNow = $showNow.prev();
+          $showNow = $showNow.next(".wrapper").length == 0 ? $showNow : $showNow.next();
           break;
 
           default: return;
@@ -33,32 +33,36 @@ $(
     $(window).on("mousewheel", function(event){
       if (event.deltaY<0){
         goUp($showNow);
-        $showNow = $showNow.next();
+        $showNow = $showNow.next(".wrapper").length == 0 ? $showNow : $showNow.next();
       } else {
         goDown($showNow);
-        $showNow = $showNow.prev();
+        $showNow = $showNow.prev(".wrapper").length == 0 ? $showNow : $showNow.prev();
       }
     });
 
   }
 );
 
-function goUp($elem) {
-  var $next = $elem.next(),
+function goDown($elem) {
+  var $next = $elem.next(".wrapper"),
   height=$(document).height();
-  $next.addClass("show");
-  TweenLite.to($elem.find("img"), 1.5, {y:height*2, ease:Back.easeInOut});
-  TweenLite.fromTo($next.find("img"), 1.5, {y:-height*2}, {y:0, ease:Back.easeInOut});
-  TweenLite.to($elem.find(".main-section"), 1.5, {y:-height, ease:Back.easeInOut});
-  TweenLite.fromTo($next.find(".main-section"), 1.5, {y:height}, {y:0, ease:Back.easeInOut});
+  if($next.length != 0) {
+    $next.addClass("show");
+    TweenLite.to($elem.find("img"), 1.5, {y:height*2, ease:Back.easeInOut});
+    TweenLite.fromTo($next.find("img"), 1.5, {y:-height*2}, {y:0, ease:Back.easeInOut});
+    TweenLite.to($elem.find(".main-section"), 1.5, {y:-height, ease:Back.easeInOut});
+    TweenLite.fromTo($next.find(".main-section"), 1.5, {y:height}, {y:0, ease:Back.easeInOut});
+  }
 }
 
-function goDown($elem) {
-  var $previous = $elem.prev(),
+function goUp($elem) {
+  var $previous = $elem.prev(".wrapper"),
   height=$(document).height();
-  $previous.addClass("show");
-  TweenLite.to($elem.find("img"), 1.5, {y:-height*2, ease:Back.easeInOut});
-  TweenLite.fromTo($previous.find("img"), 1.5, {y:height*2}, {y:0, ease:Back.easeInOut});
-  TweenLite.to($elem.find(".main-section"), 1.5, {y:height, ease:Back.easeInOut});
-  TweenLite.fromTo($previous.find(".main-section"), 1.5, {y:-height}, {y:0, ease:Back.easeInOut});
+  if($previous.length != 0) {
+    $previous.addClass("show");
+    TweenLite.to($elem.find("img"), 1.5, {y:-height*2, ease:Back.easeInOut});
+    TweenLite.fromTo($previous.find("img"), 1.5, {y:height*2}, {y:0, ease:Back.easeInOut});
+    TweenLite.to($elem.find(".main-section"), 1.5, {y:height, ease:Back.easeInOut});
+    TweenLite.fromTo($previous.find(".main-section"), 1.5, {y:-height}, {y:0, ease:Back.easeInOut});
+  }
 }
