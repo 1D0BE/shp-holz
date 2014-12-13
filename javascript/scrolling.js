@@ -3,13 +3,18 @@ $(
     var $showNow = $(".wrapper:first-of-type"),
     hash = window.location.hash;
 
-    $("body").addClass("scrolling");
     $showNow.addClass("show");
 
-    if(hash.lenght != 0 && !$(hash).is($showNow)) {
+    if ($(hash).length) {
       scrollTo($showNow, $(hash));
+      setTimeout(function () {
+        $showNow.remove("show");
+      }, 3);
       $showNow = $(hash);
     }
+
+    $("body").addClass("scrolling");
+    $showNow.addClass("show");
 
     $(document).keydown(function(e) {
       switch(e.which) {
