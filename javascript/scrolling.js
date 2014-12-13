@@ -46,7 +46,7 @@ $(
 function goDown($elem) {
   var $next = $elem.next(".wrapper"),
   height=$(document).height();
-  if($next.length != 0) {
+  if($next.length != 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.addClass("show");
     TweenLite.to($elem.find("img"), 3, {y:height*2 , ease:Elastic.easeOut});
     TweenLite.fromTo($next.find("img"), 3, {y:-height*2}, {y:0 , ease:Elastic.easeOut});
@@ -58,7 +58,7 @@ function goDown($elem) {
 function goUp($elem) {
   var $previous = $elem.prev(".wrapper"),
   height=$(document).height();
-  if($previous.length != 0) {
+  if($previous.length != 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $previous.addClass("show");
     TweenLite.to($elem.find("img"), 3, {y:-height*2 , ease:Elastic.easeOut});
     TweenLite.fromTo($previous.find("img"), 3, {y:height*2}, {y:0 , ease:Elastic.easeOut});
