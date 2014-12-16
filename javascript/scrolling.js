@@ -66,10 +66,10 @@ function goDown($elem) {
   height=$(document).height();
   if($next.length != 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.addClass("show");
-    TweenLite.to($elem.find("img"), 3, {y:height*2 , ease:Elastic.easeOut});
-    TweenLite.fromTo($next.find("img"), 3, {y:-height*2}, {y:0 , ease:Elastic.easeOut});
-    TweenLite.to($elem.find(".main-section"), 3, {y:-height , ease:Elastic.easeOut});
-    TweenLite.fromTo($next.find(".main-section"), 3, {y:height}, {y:0 , ease:Elastic.easeOut});
+    TweenLite.to($elem.find("img"), 0.8, {y:height*2 , ease:Back.easeOut});
+    TweenLite.fromTo($next.find("img"), 0.8, {y:-height*2}, {y:0 , ease:Back.easeOut});
+    TweenLite.to($elem.find(".main-section"), 0.8, {y:-height , ease:Back.easeOut});
+    TweenLite.fromTo($next.find(".main-section"), 0.8, {y:height}, {y:0 , ease:Back.easeOut, onComplete: hide, onCompleteParams: [$elem]});
   }
 }
 
@@ -78,10 +78,10 @@ function goUp($elem) {
   height=$(document).height();
   if($previous.length != 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $previous.addClass("show");
-    TweenLite.to($elem.find("img"), 3, {y:-height*2 , ease:Elastic.easeOut});
-    TweenLite.fromTo($previous.find("img"), 3, {y:height*2}, {y:0 , ease:Elastic.easeOut});
-    TweenLite.to($elem.find(".main-section"), 3, {y:height , ease:Elastic.easeOut});
-    TweenLite.fromTo($previous.find(".main-section"), 3, {y:-height}, {y:0 , ease:Elastic.easeOut});
+    TweenLite.to($elem.find("img"), 0.8, {y:-height*2 , ease:Back.easeOut});
+    TweenLite.fromTo($previous.find("img"), 0.8, {y:height*2}, {y:0 , ease:Back.easeOut});
+    TweenLite.to($elem.find(".main-section"), 0.8, {y:height , ease:Back.easeOut});
+    TweenLite.fromTo($previous.find(".main-section"), 0.8, {y:-height}, {y:0 , ease:Back.easeOut, onComplete: hide, onCompleteParams: [$elem]});
   }
 }
 
@@ -90,9 +90,17 @@ function scrollTo($elem, $next) {
   temp;
   if($next.length != 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.addClass("show");
-    TweenLite.to($elem.find("img"), 3, {y:height*2 , ease:Elastic.easeOut});
-    TweenLite.fromTo($next.find("img"), 3, {y:-height*2}, {y:0 , ease:Elastic.easeOut});
-    TweenLite.to($elem.find(".main-section"), 3, {y:-height , ease:Elastic.easeOut});
-    TweenLite.fromTo($next.find(".main-section"), 3, {y:height}, {y:0 , ease:Elastic.easeOut});
+    TweenLite.to($elem.find("img"), 0.8, {y:height*2 , ease:Back.easeOut});
+    TweenLite.fromTo($next.find("img"), 0.8, {y:-height*2}, {y:0 , ease:Back.easeOut});
+    TweenLite.to($elem.find(".main-section"), 0.8, {y:-height , ease:Back.easeOut});
+    TweenLite.fromTo($next.find(".main-section"), 0.8, {y:height}, {y:0 , ease:Back.easeOut, onComplete: hide, onCompleteParams: [$elem]});
   }
+}
+
+function show($elem) {
+  $elem.addClass("show");
+}
+
+function hide($elem) {
+  $elem.removeClass("show");
 }

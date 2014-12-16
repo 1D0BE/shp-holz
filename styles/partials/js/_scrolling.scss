@@ -26,7 +26,8 @@
       position: fixed;
     }
     .wrapper:not(.show) {
-      display: none;
+      opacity: 0;
+      transition: opacity 0.5s;
     }
     &.has-sidebar .main-section img:not(.icon):not(.profile-image) {
       right: 50vw;

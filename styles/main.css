@@ -1780,7 +1780,9 @@ aside.sided {
     position: fixed;
   }
   .scrolling .wrapper:not(.show) {
-    display: none;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
   }
   .scrolling.has-sidebar .main-section img:not(.icon):not(.profile-image) {
     right: 50vw;
