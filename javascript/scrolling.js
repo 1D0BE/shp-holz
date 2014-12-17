@@ -84,46 +84,43 @@ function centerWrappers() {
 
 function isOverflow($showNow) {
   var overflow = $showNow.find(".main-section").offset().top + $showNow.find(".main-section").height() - $(window).height() + 50;
-  console.log(overflow);
   return (overflow > 0);
 }
 
 function goDown($elem) {
   var $next = $elem.next(".wrapper"),
-  height=$elem.find(".main-section").offset().top+$elem.find(".main-section").height(),
-  heightDown=($(window).height()-$elem.find(".main-section").offset().top)+$elem.find(".main-section").height();
+  height=$elem.offset().top + $elem.find(".main-section").height();
   if($next.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.addClass("show");
     TweenLite.to($elem.find("img"), 0.8, {y:height*2 , ease:Back.easeOut});
     TweenLite.fromTo($next.find("img"), 0.8, {y:-height*2}, {y:0 , ease:Back.easeOut});
     TweenLite.to($elem.find(".main-section"), 0.8, {y:-height , ease:Back.easeOut});
-    TweenLite.fromTo($next.find(".main-section"), 0.8, {y:height}, {y:0 , ease:Back.easeOut, onComplete: hide, onCompleteParams: [$elem]});
+    TweenLite.fromTo($next.find(".main-section"), 0.8, {y:height}, {y:0 , ease:Back.easeOut, onComplete: hide, onCompleteParams: [$next]});
   }
 }
 
 function goUp($elem) {
   var $previous = $elem.prev(".wrapper"),
-  height=$elem.find(".main-section").offset().top+$elem.find(".main-section").height(),
-  heightDown=($(window).height()-$elem.find(".main-section").offset().top)+$elem.find(".main-section").height();
+  height=$elem.offset().top + $elem.find(".main-section").height();
   if($previous.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $previous.addClass("show");
     TweenLite.to($elem.find("img"), 0.8, {y:-height*2 , ease:Back.easeOut});
     TweenLite.fromTo($previous.find("img"), 0.8, {y:height*2}, {y:0 , ease:Back.easeOut});
     TweenLite.to($elem.find(".main-section"), 0.8, {y:height , ease:Back.easeOut});
-    TweenLite.fromTo($previous.find(".main-section"), 0.8, {y:-height}, {y:0 , ease:Back.easeOut, onComplete: hide, onCompleteParams: [$elem]});
+    TweenLite.fromTo($previous.find(".main-section"), 0.8, {y:-height}, {y:0 , ease:Back.easeOut, onComplete: hide, onCompleteParams: [$previous]});
   }
 }
 
 function scrollTo($elem, $next) {
-  var height=$elem.find(".main-section").offset().top+$elem.find(".main-section").height(),
-  heightDown=($(window).height()-$elem.find(".main-section").offset().top)+$elem.find(".main-section").height(),
+  var height=$elem.offset().top + $elem.find(".main-section").height(),
   temp;
+  console.log(height);
   if($next.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.addClass("show");
     TweenLite.to($elem.find("img"), 0.8, {y:height*2 , ease:Back.easeOut});
     TweenLite.fromTo($next.find("img"), 0.8, {y:-height*2}, {y:0 , ease:Back.easeOut});
     TweenLite.to($elem.find(".main-section"), 0.8, {y:-height , ease:Back.easeOut});
-    TweenLite.fromTo($next.find(".main-section"), 0.8, {y:height}, {y:0 , ease:Back.easeOut, onComplete: hide, onCompleteParams: [$elem]});
+    TweenLite.fromTo($next.find(".main-section"), 0.8, {y:height}, {y:0 , ease:Back.easeOut, onComplete: hide, onCompleteParams: [$next]});
   }
 }
 
@@ -132,5 +129,9 @@ function show($elem) {
 }
 
 function hide($elem) {
-  $elem.removeClass("show");
+  $(".wrapper").each(function() {
+    if(!$(this).is($elem)) {
+        $(this).removeClass("show");
+    }
+  });
 }
