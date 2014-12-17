@@ -133,5 +133,6 @@ function hide($elem) {
     if(!$(this).is($elem)) {
         $(this).removeClass("show");
     }
+    $elem.addClass("show");
   });
 }
