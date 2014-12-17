@@ -92,6 +92,7 @@ function goDown($elem) {
   height=$elem.offset().top + $elem.find(".main-section").height();
   if($next.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.addClass("show");
+    $next.addClass("show-fix");
     TweenLite.to($elem.find("img"), 0.8, {y:height*2 , ease:Sine.easeOut});
     TweenLite.fromTo($next.find("img"), 0.8, {y:-height*2}, {y:0 , ease:Sine.easeOut});
     TweenLite.to($elem.find(".main-section"), 0.8, {y:-height , ease:Sine.easeOut});
@@ -104,6 +105,7 @@ function goUp($elem) {
   height=$elem.offset().top + $elem.find(".main-section").height();
   if($previous.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $previous.addClass("show");
+    $previous.addClass("show-fix");
     TweenLite.to($elem.find("img"), 0.8, {y:-height*2 , ease:Sine.easeOut});
     TweenLite.fromTo($previous.find("img"), 0.8, {y:height*2}, {y:0 , ease:Sine.easeOut});
     TweenLite.to($elem.find(".main-section"), 0.8, {y:height , ease:Sine.easeOut});
@@ -117,6 +119,7 @@ function scrollTo($elem, $next) {
   console.log(height);
   if($next.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.addClass("show");
+    $next.addClass("show-fix");
     TweenLite.to($elem.find("img"), 0.8, {y:height*2 , ease:Sine.easeOut});
     TweenLite.fromTo($next.find("img"), 0.8, {y:-height*2}, {y:0 , ease:Sine.easeOut});
     TweenLite.to($elem.find(".main-section"), 0.8, {y:-height , ease:Sine.easeOut});
@@ -129,10 +132,11 @@ function show($elem) {
 }
 
 function hide($elem) {
+  $elem.addClass("show");
   $(".wrapper").each(function() {
     if(!$(this).is($elem)) {
         $(this).removeClass("show");
     }
-    $elem.addClass("show");
   });
+  $elem.removeClass("show-fix");
 }
