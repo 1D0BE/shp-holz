@@ -1216,10 +1216,11 @@ a, a:visited {
 @media (min-width: 40.063em) {
   .wrapper {
     width: 100%;
-    padding-top: 256px;
-    padding-top: 16rem;
-    padding-bottom: 256px;
-    padding-bottom: 16rem;
+    float: left;
+    padding-top: 80px;
+    padding-top: 5rem;
+    padding-bottom: 80px;
+    padding-bottom: 5rem;
   }
   .wrapper:first-of-type {
     padding-top: 256px;

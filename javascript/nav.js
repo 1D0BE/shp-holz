@@ -46,7 +46,7 @@ $(
       placeImg();
       $(window).resize(function () {
         placeImg();
-        if(window.matchMedia('(max-width: 40.063em)').matches && mobile == false) {
+        if(window.matchMedia('(max-width: 40.063em)').matches && mobile === false) {
           window.location.reload();
         }
         if(!window.matchMedia('(max-width: 40.063em)').matches) {

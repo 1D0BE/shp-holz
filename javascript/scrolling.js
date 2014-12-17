@@ -1,11 +1,12 @@
 $(
   function(){
     var $showNow = $(".wrapper:first-of-type"),
-    hash = window.location.hash;
+    hash = window.location.hash,
+    overflow = isOverflow($showNow);
 
     $showNow.addClass("show");
 
-    if ($(hash).length) {
+    if ($(hash).length && !overflow) {
       scrollTo($showNow, $(hash));
       setTimeout(function () {
         $showNow.remove("show");
@@ -13,46 +14,61 @@ $(
       $showNow = $(hash);
     }
 
-    $("body").addClass("scrolling");
-    $showNow.addClass("show");
+    if(!overflow) {
+      $("body").addClass("scrolling");
+      $showNow.addClass("show");
+      centerWrappers();
+    }
 
     $(document).keydown(function(e) {
-      switch(e.which) {
-          case 37: // left
-          showSidebar();
-          break;
+      if(!overflow) {
+        switch(e.which) {
+            case 37: // left
+            showSidebar();
+            break;
 
-          case 38: // up
-          goUp($showNow);
-          $showNow = $showNow.prev(".wrapper").length == 0 ? $showNow : $showNow.prev();
-          break;
+            case 38: // up
+            goUp($showNow);
+            $showNow = $showNow.prev(".wrapper").length === 0 ? $showNow : $showNow.prev();
+            break;
 
-          case 39: // right
-          hideSidebar();
-          break;
+            case 39: // right
+            hideSidebar();
+            break;
 
-          case 40: // down
-          goDown($showNow);
-          $showNow = $showNow.next(".wrapper").length === 0 ? $showNow : $showNow.next();
-          break;
+            case 40: // down
+            goDown($showNow);
+            $showNow = $showNow.next(".wrapper").length === 0 ? $showNow : $showNow.next();
+            break;
 
-          default: return;
+            default: return;
+        }
+        e.preventDefault();
       }
-      e.preventDefault();
+    });
+
+    $(window).on("resize", function() {
+      if(overflow !== isOverflow($showNow)) {
+        window.location.reload();
+      } else if (!overflow) {
+        centerWrappers();
+      }
     });
 
     $(window).on("mousewheel", function(event){
-      if (event.deltaY>0){
-        goUp($showNow);
-        $showNow = $showNow.prev(".wrapper").length === 0 ? $showNow : $showNow.prev();
-      } else {
-        goDown($showNow);
-        $showNow = $showNow.next(".wrapper").length === 0 ? $showNow : $showNow.next();
+      if(!overflow) {
+        if (event.deltaY>0){
+          goUp($showNow);
+          $showNow = $showNow.prev(".wrapper").length === 0 ? $showNow : $showNow.prev();
+        } else {
+          goDown($showNow);
+          $showNow = $showNow.next(".wrapper").length === 0 ? $showNow : $showNow.next();
+        }
       }
     });
 
     $(".container a").click(function() {
-      if(!$showNow.is($($(this).attr('href')))) {
+      if(!$showNow.is($($(this).attr('href'))) && !overflow) {
           scrollTo($showNow, $($(this).attr('href')));
           $showNow = $($(this).attr('href'));
       }
@@ -61,9 +77,21 @@ $(
   }
 );
 
+function centerWrappers() {
+  $(".scrolling .wrapper").css("top", $(window).height()/2 - $(".wrapper").find(".main-section").height()/2);
+  $(".scrolling .wrapper").css({"padding-top": "0", "padding-bottom": "0"});
+}
+
+function isOverflow($showNow) {
+  var overflow = $showNow.find(".main-section").offset().top + $showNow.find(".main-section").height() - $(window).height() + 50;
+  console.log(overflow);
+  return (overflow > 0);
+}
+
 function goDown($elem) {
   var $next = $elem.next(".wrapper"),
-  height=$(document).height();
+  height=$elem.find(".main-section").offset().top+$elem.find(".main-section").height(),
+  heightDown=($(window).height()-$elem.find(".main-section").offset().top)+$elem.find(".main-section").height();
   if($next.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.addClass("show");
     TweenLite.to($elem.find("img"), 0.8, {y:height*2 , ease:Back.easeOut});
@@ -75,7 +103,8 @@ function goDown($elem) {
 
 function goUp($elem) {
   var $previous = $elem.prev(".wrapper"),
-  height=$(document).height();
+  height=$elem.find(".main-section").offset().top+$elem.find(".main-section").height(),
+  heightDown=($(window).height()-$elem.find(".main-section").offset().top)+$elem.find(".main-section").height();
   if($previous.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $previous.addClass("show");
     TweenLite.to($elem.find("img"), 0.8, {y:-height*2 , ease:Back.easeOut});
@@ -86,7 +115,8 @@ function goUp($elem) {
 }
 
 function scrollTo($elem, $next) {
-  var height=$(document).height(),
+  var height=$elem.find(".main-section").offset().top+$elem.find(".main-section").height(),
+  heightDown=($(window).height()-$elem.find(".main-section").offset().top)+$elem.find(".main-section").height(),
   temp;
   if($next.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.addClass("show");

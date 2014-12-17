@@ -122,8 +122,9 @@
 .wrapper{
   @include bp-up("medium") {
     width:100%;
-    @include rem('padding-top', 16rem);
-    @include rem('padding-bottom', 16rem);
+    float: left;
+    @include rem('padding-top', 5rem);
+    @include rem('padding-bottom', 5rem);
     &:first-of-type {
       @include rem('padding-top', 16rem);
     }
