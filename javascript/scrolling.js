@@ -4,20 +4,19 @@ $(
     hash = window.location.hash,
     overflow = isOverflow($showNow);
 
-    if ($(hash).length && !overflow) {
-      scrollTo($showNow, $(hash));
-      $showNow = $(hash);
-    }
-
     if(!overflow) {
       $("body").addClass("scrolling");
       $(".wrapper").css("display", "none");
       $showNow.css("display", "inline");
       centerWrappers();
+      if ($(hash).length) {
+        scrollTo($showNow, $(hash));
+        $showNow = $(hash);
+      }
     }
 
     $(document).keydown(function(e) {
-      if(!overflow) {
+      if(!overflow && $("aside").is(":hover")) {
         switch(e.which) {
             case 37: // left
             showSidebar();
@@ -52,7 +51,7 @@ $(
     });
 
     $(window).on("mousewheel", function(event){
-      if(!overflow) {
+      if(!overflow && !$("aside").is(":hover")) {
         if (event.deltaY>0){
           goUp($showNow);
           $showNow = $showNow.prev(".wrapper").length === 0 ? $showNow : $showNow.prev();
