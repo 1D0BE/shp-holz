@@ -16,7 +16,7 @@ $(
     }
 
     $(document).keydown(function(e) {
-      if(!overflow && $("aside").is(":hover")) {
+      if(!overflow) {
         switch(e.which) {
             case 37: // left
             showSidebar();
