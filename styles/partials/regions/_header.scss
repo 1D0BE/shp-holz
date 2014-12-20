@@ -90,7 +90,6 @@ header {
 
 }
 
-
 %li-hover {
   background-position-y: 100%;
   color: $green;
@@ -99,6 +98,7 @@ header {
     background-color: white;
   }
 }
+
 
 .logo {
   z-index: 1;
@@ -233,11 +233,18 @@ nav {
         background-position-y: 85%;
         color: $green;
       }
+      @include bp-up('medium') {
       &:hover, &.selected:hover {
-        @extend %li-hover;
+        background-position-y: 100%;
+        color: $green;
+        .no-cssgradients &, .no-bgpositionxy &, .no-js & {
+          background: none;
+          background-color: white;
+        }
         .no-cssgradients &, .no-bgpositionxy &, .no-js & {
           color: $green;
         }
+      }
       }
       .no-cssgradients &, .no-bgpositionxy &, .no-js & {
         background: none;

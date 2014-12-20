@@ -659,11 +659,11 @@ pre[class*="language-"] {
     display: none;
   }
 
-  .logo-link:hover + nav ul .home, nav ul li:hover, nav ul li.selected:hover {
+  .logo-link:hover + nav ul .home {
     background-position-y: 100%;
     color: #329865;
   }
-  .no-cssgradients .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-cssgradients .home, .no-cssgradients nav ul li:hover, nav ul .no-cssgradients li:hover, .no-bgpositionxy .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-bgpositionxy .home, .no-bgpositionxy nav ul li:hover, nav ul .no-bgpositionxy li:hover, .no-js .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-js .home, .no-js nav ul li:hover, nav ul .no-js li:hover {
+  .no-cssgradients .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-cssgradients .home, .no-bgpositionxy .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-bgpositionxy .home, .no-js .logo-link:hover + nav ul .home, .logo-link:hover + nav ul .no-js .home {
     background: none;
     background-color: white;
   }
@@ -876,9 +876,21 @@ pre[class*="language-"] {
     background-position-y: 85%;
     color: #329865;
   }
+}
+@media screen and (min-width: 40.063em) {
+  nav ul li:hover, nav ul li.selected:hover {
+    background-position-y: 100%;
+    color: #329865;
+  }
+  .no-cssgradients nav ul li:hover, .no-bgpositionxy nav ul li:hover, .no-js nav ul li:hover, .no-cssgradients nav ul li.selected:hover, .no-bgpositionxy nav ul li.selected:hover, .no-js nav ul li.selected:hover {
+    background: none;
+    background-color: white;
+  }
   .no-cssgradients nav ul li:hover, .no-bgpositionxy nav ul li:hover, .no-js nav ul li:hover, .no-cssgradients nav ul li.selected:hover, .no-bgpositionxy nav ul li.selected:hover, .no-js nav ul li.selected:hover {
     color: #329865;
   }
+}
+@media screen {
   .no-cssgradients nav ul li, .no-bgpositionxy nav ul li, .no-js nav ul li {
     background: none;
     background-color: #329865;
