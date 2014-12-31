@@ -53,7 +53,7 @@
       background-color: none;
     }
     a {
-      text-style: underline;
+      text-decoration: underline;
     }
     img:not(.icon):not(.profile-image) {
       @include rem('width', 60rem);

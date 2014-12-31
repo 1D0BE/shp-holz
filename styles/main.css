@@ -1149,7 +1149,7 @@ a, a:visited {
     background-color: none;
   }
   .main-section a {
-    text-style: underline;
+    text-decoration: underline;
   }
   .main-section img:not(.icon):not(.profile-image) {
     width: 960px;
