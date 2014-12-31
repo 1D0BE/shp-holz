@@ -1148,6 +1148,9 @@ a, a:visited {
     width: 40%;
     background-color: none;
   }
+  .main-section a {
+    text-style: underline;
+  }
   .main-section img:not(.icon):not(.profile-image) {
     width: 960px;
     width: 60rem;
