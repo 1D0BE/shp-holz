@@ -96,7 +96,7 @@ function goDown($elem) {
 
 function goUp($elem) {
   var $previous = $elem.prev(".wrapper"),
-  height=$elem.offset().top + $elem.find(".main-section").height();
+  height=$elem.offset().top + $elem.find(".main-section").height() + 200;
   if($previous.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $previous.css("display", "inline");
     TweenLite.to($elem.find("img"), 0.8, {y:-height*2 , ease:Sine.easeOut});
@@ -107,7 +107,7 @@ function goUp($elem) {
 }
 
 function scrollTo($elem, $next) {
-  var height=$elem.offset().top + $elem.find(".main-section").height(),
+  var height=$elem.offset().top + $elem.find(".main-section").height() + 200,
   temp;
   if($next.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
     $next.css("display", "inline");
