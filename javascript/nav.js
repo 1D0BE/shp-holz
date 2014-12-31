@@ -18,7 +18,7 @@ $(
         var side,
         actHeight,
         imgHeight;
-        imgHeight = imgRatio*($(document).width()/2);
+        imgHeight = $(this).outerHeight();
         side = (imgHeight-$(this).parent().parent().outerHeight());
         actHeight = $(this).parent().parent().outerHeight() + side/2;
         console.log($(this));
