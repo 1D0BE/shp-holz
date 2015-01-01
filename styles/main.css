@@ -1439,6 +1439,7 @@ aside.sided {
 }
 .container p {
   font-size: 120%;
+  font-size: 1.5vw;
   color: #329865;
   font-weight: bold;
   opacity: 0;
