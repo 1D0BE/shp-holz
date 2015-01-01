@@ -110,9 +110,6 @@
       @include rem('left', .7rem);
       bottom: 0;
       width: 90%;
-      &.info {
-        top: 20px;
-      }
       @include bp-lower('medium') {
         left: 10%;
         width: 80%;
