@@ -1145,8 +1145,7 @@ a, a:visited {
   .main-section h1, .main-section p, .main-section .profile {
     position: relative;
     left: 55%;
-    width: 40%;
-    background-color: none;
+    width: 45%;
   }
   .main-section a {
     text-decoration: underline;
