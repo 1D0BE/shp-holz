@@ -21,7 +21,6 @@ $(
         imgHeight = imgRatio*($(document).width()/2);
         side = (imgHeight-$(this).parent().parent().outerHeight());
         actHeight = $(this).parent().parent().outerHeight() + side/2;
-        console.log($(this).parent().parent().outerHeight());
         if(imgHeight >= $(this).parent().parent().outerHeight() && !window.matchMedia('(max-width: 40.063em)').matches) {
           $(this).css({
             'height': 'auto',
