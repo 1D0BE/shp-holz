@@ -55,6 +55,7 @@ aside{
   }
   p {
     font-size: 120%;
+    font-size: 1.5vw;
     color: $green;
     font-weight: bold;
     opacity: 0;
@@ -90,7 +91,7 @@ aside{
       .has-sidebar & {
         width:85%;
       }
-      
+
     }
   }
 
