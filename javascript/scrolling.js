@@ -6,8 +6,8 @@ $(
 
     if(!overflow) {
       $("body").addClass("scrolling");
-      $(".wrapper").css("display", "none");
-      $showNow.css("display", "inline");
+      $(".wrapper").css("visibility", "hidden");
+      $showNow.css("visibility", "");
       centerWrappers();
       if ($(hash).length) {
         scrollTo($showNow, $(hash));
@@ -86,7 +86,7 @@ function goDown($elem) {
   var $next = $elem.next(".wrapper"),
   height=$elem.offset().top + $elem.find(".main-section").height() + 200;
   if($next.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
-    $next.css("display", "inline");
+    $next.css("visibility", "");
     TweenLite.to($elem.find("img"), 0.8, {y:height*2 , ease:Sine.easeOut});
     TweenLite.fromTo($next.find("img"), 0.8, {y:-height*2}, {y:0 , ease:Sine.easeOut});
     TweenLite.to($elem.find(".main-section"), 0.8, {y:-height , ease:Sine.easeOut});
@@ -98,7 +98,7 @@ function goUp($elem) {
   var $previous = $elem.prev(".wrapper"),
   height=$elem.offset().top + $elem.find(".main-section").height() + 200;
   if($previous.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
-    $previous.css("display", "inline");
+    $previous.css("visibility", "");
     TweenLite.to($elem.find("img"), 0.8, {y:-height*2 , ease:Sine.easeOut});
     TweenLite.fromTo($previous.find("img"), 0.8, {y:height*2}, {y:0 , ease:Sine.easeOut});
     TweenLite.to($elem.find(".main-section"), 0.8, {y:height , ease:Sine.easeOut});
@@ -110,7 +110,7 @@ function scrollTo($elem, $next) {
   var height=$elem.offset().top + $elem.find(".main-section").height() + 200,
   temp;
   if($next.length !== 0 && !window.matchMedia('(max-width: 40.063em)').matches) {
-    $next.css("display", "inline");
+    $next.css("visibility", "");
     TweenLite.to($elem.find("img"), 0.8, {y:height*2 , ease:Sine.easeOut});
     TweenLite.fromTo($next.find("img"), 0.8, {y:-height*2}, {y:0 , ease:Sine.easeOut});
     TweenLite.to($elem.find(".main-section"), 0.8, {y:-height , ease:Sine.easeOut});
