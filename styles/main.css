@@ -1217,6 +1217,9 @@ a, a:visited {
   bottom: 0;
   width: 90%;
 }
+.main-section .profile .profile-info.info {
+  top: 20px;
+}
 @media (max-width: 40.063em) {
   .main-section .profile .profile-info {
     left: 10%;
