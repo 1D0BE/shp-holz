@@ -4,7 +4,7 @@ $(
     hash = window.location.hash,
     overflow = isOverflow($showNow);
 
-    if(!overflow) {
+    if(!overflow && !window.matchMedia('(max-width: 40.063em)').matches) {
       $("body").addClass("scrolling");
       $(".wrapper").css("visibility", "hidden");
       $showNow.css("visibility", "");
