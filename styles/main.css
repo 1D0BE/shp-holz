@@ -1172,8 +1172,8 @@ a, a:visited {
   margin-top: 10rem;
 }
 .main-section .profile {
-  padding-bottom: 96px;
-  padding-bottom: 6rem;
+  padding-bottom: 144px;
+  padding-bottom: 9rem;
   position: relative;
 }
 @media (max-width: 40.063em) {
@@ -1211,6 +1211,7 @@ a, a:visited {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   opacity: 0;
+  display: none;
   position: absolute;
   left: 11.2px;
   left: 0.7rem;
