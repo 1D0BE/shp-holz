@@ -43,7 +43,7 @@ $(
     });
 
     $(window).on("resize", function() {
-      if(overflow !== isOverflow($showNow) || !window.matchMedia('(max-width: 40.063em)').matches) {
+      if(overflow !== isOverflow($showNow)) {
         window.location.reload();
       } else if (!overflow) {
         centerWrappers();
