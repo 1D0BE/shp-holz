@@ -2,7 +2,6 @@
 
 This respository will contain plain html, css, scss and js files.
 The final product will be powered by <a href=www.grabaperch.com>perch</a> and use the latest and best web technologies available.
-Participants: Christoph, Matthias, Jakob
 
 <h2>Browser Support</h2>
 
